@@ -8,22 +8,26 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Pacific AI Infrastructure supplies liquid cooling systems, rack infrastructure, and deployment hardware for data centers and AI environments.">
+  <meta name="description" content="Pacific AI Infrastructure supplies liquid cooling systems, rack infrastructure, and deployment hardware for AI data centers, rack-scale GPU clusters, and modular high-performance nodes.">
 
   <meta property="og:title" content="Pacific AI Infrastructure">
-  <meta property="og:description" content="Data center infrastructure supply. Liquid cooling, rack systems, and deployment hardware.">
+  <meta property="og:description" content="Liquid cooling systems, rack infrastructure, and deployment hardware for rack-scale and modular AI deployments.">
   <meta property="og:image" content="https://pacificaiinfrastructure.com/social-preview.png">
-  <meta property="og:url" content="https://pacificaiinfrastructure.com/">
+  <meta property="og:url" content="https://www.pacificaiinfrastructure.com/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pacific AI Infrastructure">
-  <meta name="twitter:description" content="Data center infrastructure supply. Liquid cooling, rack systems, and deployment hardware.">
+  <meta name="twitter:description" content="Liquid cooling systems, rack infrastructure, and deployment hardware for rack-scale and modular AI deployments.">
   <meta name="twitter:image" content="https://pacificaiinfrastructure.com/social-preview.png">
 
   <style>
   * {
     box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -34,7 +38,7 @@
   }
 
   .container {
-    max-width: 1200px; /* widened */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 28px 22px 56px;
   }
@@ -71,7 +75,7 @@
 
   .hero-title {
     margin: 0 0 20px;
-    max-width: 500px;
+    max-width: 760px;
     font-size: 52px;
     line-height: 1.02;
     font-weight: 800;
@@ -82,7 +86,7 @@
     font-size: 20px;
     line-height: 1.55;
     color: #cbd5e1;
-    max-width: 700px;
+    max-width: 780px;
   }
 
   .hero-list {
@@ -104,7 +108,7 @@
     flex-wrap: wrap;
     gap: 14px;
     align-items: center;
-    margin-bottom: 42px;
+    margin-bottom: 14px;
   }
 
   .btn-primary {
@@ -124,6 +128,31 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
+  }
+
+  .support-line {
+    margin: 0 0 28px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 760px;
+  }
+
+  .secondary-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 42px;
+  }
+
+  .secondary-btn {
+    display: inline-block;
+    border: 1px solid #3b82f6;
+    color: #93c5fd;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
   }
 
   .divider {
@@ -151,10 +180,9 @@
     max-width: 760px;
   }
 
-  /* ✅ FIXED GRID */
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 across */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
@@ -165,7 +193,7 @@
     border: 1px solid #1e293b;
     border-radius: 18px;
     padding: 22px;
-    min-height: 220px; /* makes all cards same height */
+    min-height: 220px;
     transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
@@ -213,10 +241,14 @@
     color: #94a3b8;
   }
 
-  /* ✅ RESPONSIVE */
   @media (max-width: 900px) {
     .product-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+      font-size: 44px;
+      max-width: 100%;
     }
   }
 
@@ -226,17 +258,18 @@
     }
 
     .hero-title {
-      font-size: 40px;
+      font-size: 36px;
     }
 
     .hero-text {
       font-size: 18px;
     }
+
+    .section-title {
+      font-size: 24px;
+    }
   }
-    html {
-  scroll-behavior: smooth;
-}
-</style>
+  </style>
 </head>
 
 <body>
@@ -249,10 +282,10 @@
 
     <p class="eyebrow">AI Data Center Infrastructure</p>
 
-    <h1 class="hero-title">Built for scale.</h1>
+    <h1 class="hero-title">Built for scale and modular deployment.</h1>
 
     <p class="hero-text">
-      Supplying critical infrastructure for AI data centers at scale.
+      Supplying critical infrastructure for AI data centers, from rack-scale liquid cooling systems to modular high-performance GPU nodes.
     </p>
 
     <div class="hero-list">
@@ -267,23 +300,54 @@
     </p>
 
     <div class="cta-wrap">
-  <a href="mailto:info@pacificaiinfrastructure.com" class="btn-primary">Request Quote</a>
-  <a href="mailto:info@pacificaiinfrastructure.com" class="email-link">info@pacificaiinfrastructure.com</a>
-</div>
+      <a href="mailto:info@pacificaiinfrastructure.com" class="btn-primary">Request Quote</a>
+      <a href="mailto:info@pacificaiinfrastructure.com" class="email-link">info@pacificaiinfrastructure.com</a>
+    </div>
 
-<div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:42px;">
+    <p class="support-line">
+      Supporting liquid cooling component sourcing for both large-scale AI racks and modular high-performance GPU systems.
+    </p>
 
-  <a href="#products"
-     style="display:inline-block; border:1px solid #3b82f6; color:#93c5fd; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:600;">
-    View Products
-  </a>
+    <div class="secondary-links">
+      <a href="#deployment-types" class="secondary-btn">Deployment Types</a>
+      <a href="#products" class="secondary-btn">View Products</a>
+      <a href="#solutions" class="secondary-btn">View Solutions</a>
+    </div>
 
-  <a href="#solutions"
-     style="display:inline-block; border:1px solid #3b82f6; color:#93c5fd; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:600;">
-    View Solutions
-  </a>
+    <div class="divider"></div>
 
-</div>
+    <section id="deployment-types" class="section">
+      <h2 class="section-title">Deployment Types We Support</h2>
+      <p class="section-text">
+        Pacific AI Infrastructure supports both rack-scale liquid cooling environments and modular GPU server deployments, with component sourcing aligned to performance, density, and deployment speed.
+      </p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-label">Rack-Scale</div>
+          <h3 class="product-title">Rack-Scale Deployments</h3>
+          <p class="product-description">
+            Support for NVL72 and other high-density liquid-cooled rack architectures requiring manifold, CDU, connector, and rack-level integration.
+          </p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-label">Modular</div>
+          <h3 class="product-title">Modular GPU Nodes</h3>
+          <p class="product-description">
+            Support for 2 to 4 GPU liquid-cooled systems, including NVLink-connected platforms requiring compact cold plate, tubing, connector, and CDU interface support.
+          </p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-label">Flexible</div>
+          <h3 class="product-title">Mixed Deployment Strategies</h3>
+          <p class="product-description">
+            Support for environments operating across multiple GPU platforms, deployment phases, and cooling architectures as infrastructure scales over time.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <div class="divider"></div>
 
@@ -295,57 +359,55 @@
 
       <div class="product-grid">
         <a href="/products/cold-plates.html" class="product-card">
+          <img src="/images/cold-plate.png"
+               style="width:100%; height:140px; object-fit:contain; border-radius:10px; margin-bottom:14px; background:rgba(255,255,255,0.02);">
 
-<img src="/images/cold-plate.png"
-     style="width:100%; height:140px; object-fit:contain; border-radius:10px; margin-bottom:14px; background:rgba(255,255,255,0.02);">
-
-  <div class="product-label">Cooling</div>
-  <h3 class="product-title">Cold Plates</h3>
-  <p class="product-description">
-    Direct-to-chip cooling components for GPU, CPU, and high-performance compute environments.
-  </p>
-  <div class="product-link">View category →</div>
-</a>
+          <div class="product-label">Cooling</div>
+          <h3 class="product-title">Cold Plates</h3>
+          <p class="product-description">
+            Direct-to-chip cooling components for GPU and CPU platforms across rack-scale and modular AI server deployments.
+          </p>
+          <div class="product-link">View category →</div>
+        </a>
 
         <a href="/products/manifolds.html" class="product-card">
           <div class="product-label">Rack Systems</div>
           <h3 class="product-title">Manifolds</h3>
           <p class="product-description">
-            Rack-level fluid distribution assemblies designed for dense AI and accelerated compute platforms.
+            Rack-level and server-level fluid distribution assemblies for dense AI infrastructure and liquid-cooled GPU systems.
           </p>
           <div class="product-link">View category →</div>
         </a>
 
-       <a href="/products/qdc.html" class="product-card">
+        <a href="/products/qdc.html" class="product-card">
+          <img src="/images/qdc.png"
+               style="width:100%; height:140px; object-fit:contain; border-radius:10px; margin-bottom:14px; background:rgba(255,255,255,0.02); padding:10px;">
 
-  <img src="/images/qdc.png"
-       style="width:100%; height:140px; object-fit:contain; border-radius:10px; margin-bottom:14px; background:rgba(255,255,255,0.02); padding:10px;">
-
-  <div class="product-label">Connection</div>
-  <h3 class="product-title">Quick Disconnects</h3>
-  <p class="product-description">
-    High-reliability fluid connectors for GPU, manifold, and CDU integration.
-  </p>
-  <div class="product-link">View category →</div>
-</a>
+          <div class="product-label">Connection</div>
+          <h3 class="product-title">Quick Disconnects</h3>
+          <p class="product-description">
+            High-reliability fluid connectors for GPU, manifold, and CDU integration across modular nodes and rack-scale deployments.
+          </p>
+          <div class="product-link">View category →</div>
+        </a>
 
         <a href="/products/cdu-interfaces.html" class="product-card">
+          <img src="/images/cdu-main.png"
+               style="width:100%; height:140px; object-fit:contain; border-radius:10px; margin-bottom:14px; background:rgba(255,255,255,0.02);">
 
-  <img src="/images/cdu-main.png"
-       style="width:100%; height:140px; object-fit:contain; border-radius:10px; margin-bottom:14px; background:rgba(255,255,255,0.02);">
+          <div class="product-label">Thermal Interface</div>
+          <h3 class="product-title">CDU Interfaces</h3>
+          <p class="product-description">
+            Interface hardware and supporting assemblies for coolant distribution integration in both cabinet-scale and modular liquid cooling architectures.
+          </p>
+          <div class="product-link">View category →</div>
+        </a>
 
-  <div class="product-label">Thermal Interface</div>
-  <h3 class="product-title">CDU Interfaces</h3>
-  <p class="product-description">
-    Interface hardware and supporting assemblies for coolant distribution unit integration.
-  </p>
-  <div class="product-link">View category →</div>
-</a>
         <a href="/products/rack-hardware.html" class="product-card">
           <div class="product-label">Infrastructure</div>
           <h3 class="product-title">Rack Hardware</h3>
           <p class="product-description">
-            Supporting rack-level components for deployment, fluid routing, and system integration.
+            Supporting rack-level components for deployment, fluid routing, mechanical integration, and high-density system support.
           </p>
           <div class="product-link">View category →</div>
         </a>
@@ -354,48 +416,60 @@
           <div class="product-label">Deployment</div>
           <h3 class="product-title">Deployment Components</h3>
           <p class="product-description">
-            Critical supporting hardware for AI data center buildouts, integration, and expansion phases.
+            Critical supporting hardware for AI data center buildouts, modular node deployment, integration, and infrastructure expansion phases.
           </p>
           <div class="product-link">View category →</div>
         </a>
       </div>
     </section>
+
     <div class="divider"></div>
-<section id="solutions" class="section">
-  <h2 class="section-title">Solutions</h2>
-  <p class="section-text">
-    Pacific AI Infrastructure supports liquid cooling adoption through retrofit planning, hybrid system integration, and deployment-oriented component alignment.
-  </p>
 
-  <div class="product-grid">
-    <a href="/solutions/air-to-liquid-conversion.html" class="product-card">
-      <div class="product-label">Retrofit</div>
-      <h3 class="product-title">Air-to-Liquid Conversion</h3>
-      <p class="product-description">
-        Support for transitioning existing air-cooled infrastructure to liquid-cooled rack environments with aligned component sourcing and integration planning.
+    <section id="solutions" class="section">
+      <h2 class="section-title">Solutions</h2>
+      <p class="section-text">
+        Pacific AI Infrastructure supports liquid cooling adoption through retrofit planning, hybrid system integration, modular deployment support, and deployment-oriented component alignment.
       </p>
-      <div class="product-link">View solution →</div>
-    </a>
 
-    <a href="/solutions/hybrid-cooling-integration.html" class="product-card">
-      <div class="product-label">Hybrid</div>
-      <h3 class="product-title">Hybrid Cooling Integration</h3>
-      <p class="product-description">
-        Support for environments operating mixed air-cooled and liquid-cooled systems during phased upgrades or partial rack conversion strategies.
-      </p>
-      <div class="product-link">View solution →</div>
-    </a>
+      <div class="product-grid">
+        <a href="/solutions/air-to-liquid-conversion.html" class="product-card">
+          <div class="product-label">Retrofit</div>
+          <h3 class="product-title">Air-to-Liquid Conversion</h3>
+          <p class="product-description">
+            Support for transitioning existing air-cooled infrastructure to liquid-cooled rack environments with aligned component sourcing and integration planning.
+          </p>
+          <div class="product-link">View solution →</div>
+        </a>
 
-    <a href="/solutions/liquid-cooling-deployment.html" class="product-card">
-      <div class="product-label">Deployment</div>
-      <h3 class="product-title">Liquid Cooling Deployment</h3>
-      <p class="product-description">
-        Component alignment and deployment support for new liquid-cooled AI infrastructure builds, including rack-level and CDU-connected architectures.
-      </p>
-      <div class="product-link">View solution →</div>
-    </a>
-  </div>
-</section>
+        <a href="/solutions/hybrid-cooling-integration.html" class="product-card">
+          <div class="product-label">Hybrid</div>
+          <h3 class="product-title">Hybrid Cooling Integration</h3>
+          <p class="product-description">
+            Support for environments operating mixed air-cooled and liquid-cooled systems during phased upgrades or partial rack conversion strategies.
+          </p>
+          <div class="product-link">View solution →</div>
+        </a>
+
+        <a href="/solutions/liquid-cooling-deployment.html" class="product-card">
+          <div class="product-label">Deployment</div>
+          <h3 class="product-title">Liquid Cooling Deployment</h3>
+          <p class="product-description">
+            Component alignment and deployment support for new liquid-cooled AI infrastructure builds, including rack-level and CDU-connected architectures.
+          </p>
+          <div class="product-link">View solution →</div>
+        </a>
+
+        <a href="/solutions/modular-gpu-deployment.html" class="product-card">
+          <div class="product-label">Modular</div>
+          <h3 class="product-title">Modular GPU Deployment Support</h3>
+          <p class="product-description">
+            Component alignment and sourcing support for liquid-cooled 2 to 4 GPU systems, including NVLink-connected nodes and compact direct-to-chip architectures.
+          </p>
+          <div class="product-link">View solution →</div>
+        </a>
+      </div>
+    </section>
+
     <div class="divider"></div>
 
     <p class="location">Honolulu, Hawaii</p>
