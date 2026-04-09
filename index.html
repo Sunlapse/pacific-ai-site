@@ -186,6 +186,7 @@
     margin: 0 0 18px;
     font-size: 26px;
     font-weight: 700;
+    color: #f8fafc;
   }
 
   .section-text {
@@ -203,13 +204,14 @@
   }
 
   .product-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     background: rgba(15, 23, 42, 0.9);
     border: 1px solid #1e293b;
     border-radius: 18px;
     padding: 22px;
-    min-height: 220px;
+    min-height: 320px;
     transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
@@ -218,7 +220,7 @@
     border-color: #3b82f6;
   }
 
-  .product-image-wrap {
+  .product-card.has-image .product-image-wrap {
     width: 100%;
     height: 140px;
     border-radius: 10px;
@@ -236,8 +238,8 @@
     object-fit: contain;
   }
 
-  .product-image-wrap.empty {
-    background: rgba(255,255,255,0.02);
+  .product-card.text-only {
+    padding-top: 30px;
   }
 
   .product-label {
@@ -257,6 +259,7 @@
     margin: 0 0 10px;
     font-size: 20px;
     font-weight: 700;
+    color: #f8fafc;
   }
 
   .product-description {
@@ -267,6 +270,7 @@
   }
 
   .product-link {
+    margin-top: auto;
     font-size: 14px;
     font-weight: 700;
     color: #60a5fa;
@@ -355,7 +359,7 @@
       </p>
 
       <div class="product-grid">
-        <div class="product-card">
+        <div class="product-card text-only">
           <div class="product-label">Rack-Scale</div>
           <h3 class="product-title">Rack-Scale Deployments</h3>
           <p class="product-description">
@@ -363,7 +367,7 @@
           </p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card text-only">
           <div class="product-label">Modular</div>
           <h3 class="product-title">Modular GPU Nodes</h3>
           <p class="product-description">
@@ -371,7 +375,7 @@
           </p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card text-only">
           <div class="product-label">Flexible</div>
           <h3 class="product-title">Mixed Deployment Strategies</h3>
           <p class="product-description">
@@ -390,7 +394,7 @@
       </p>
 
       <div class="product-grid">
-        <a href="/products/cold-plates.html" class="product-card">
+        <a href="/products/cold-plates.html" class="product-card has-image">
           <div class="product-image-wrap">
             <img src="/images/cold-plate.png" alt="Cold plate" class="product-image">
           </div>
@@ -403,9 +407,7 @@
           <div class="product-link">View category →</div>
         </a>
 
-        <a href="/products/manifolds.html" class="product-card">
-          <div class="product-image-wrap empty"></div>
-
+        <a href="/products/manifolds.html" class="product-card text-only">
           <div class="product-label">Rack Systems</div>
           <h3 class="product-title">Manifolds</h3>
           <p class="product-description">
@@ -414,7 +416,7 @@
           <div class="product-link">View category →</div>
         </a>
 
-        <a href="/products/qdc.html" class="product-card">
+        <a href="/products/qdc.html" class="product-card has-image">
           <div class="product-image-wrap">
             <img src="/images/qdc.png" alt="Quick disconnects" class="product-image">
           </div>
@@ -427,7 +429,7 @@
           <div class="product-link">View category →</div>
         </a>
 
-        <a href="/products/cdu-interfaces.html" class="product-card">
+        <a href="/products/cdu-interfaces.html" class="product-card has-image">
           <div class="product-image-wrap">
             <img src="/images/cdu-main.png" alt="CDU interface" class="product-image">
           </div>
@@ -440,9 +442,7 @@
           <div class="product-link">View category →</div>
         </a>
 
-        <a href="/products/rack-hardware.html" class="product-card">
-          <div class="product-image-wrap empty"></div>
-
+        <a href="/products/rack-hardware.html" class="product-card text-only">
           <div class="product-label">Infrastructure</div>
           <h3 class="product-title">Rack Hardware</h3>
           <p class="product-description">
@@ -451,9 +451,7 @@
           <div class="product-link">View category →</div>
         </a>
 
-        <a href="/products/deployment-components.html" class="product-card">
-          <div class="product-image-wrap empty"></div>
-
+        <a href="/products/deployment-components.html" class="product-card text-only">
           <div class="product-label">Deployment</div>
           <h3 class="product-title">Deployment Components</h3>
           <p class="product-description">
@@ -473,7 +471,7 @@
       </p>
 
       <div class="product-grid">
-        <a href="/solutions/air-to-liquid-conversion.html" class="product-card">
+        <a href="/solutions/air-to-liquid-conversion.html" class="product-card text-only">
           <div class="product-label">Retrofit</div>
           <h3 class="product-title">Air-to-Liquid Conversion</h3>
           <p class="product-description">
@@ -482,7 +480,7 @@
           <div class="product-link">View solution →</div>
         </a>
 
-        <a href="/solutions/hybrid-cooling-integration.html" class="product-card">
+        <a href="/solutions/hybrid-cooling-integration.html" class="product-card text-only">
           <div class="product-label">Hybrid</div>
           <h3 class="product-title">Hybrid Cooling Integration</h3>
           <p class="product-description">
@@ -491,7 +489,7 @@
           <div class="product-link">View solution →</div>
         </a>
 
-        <a href="/solutions/liquid-cooling-deployment.html" class="product-card">
+        <a href="/solutions/liquid-cooling-deployment.html" class="product-card text-only">
           <div class="product-label">Deployment</div>
           <h3 class="product-title">Liquid Cooling Deployment</h3>
           <p class="product-description">
@@ -500,7 +498,7 @@
           <div class="product-link">View solution →</div>
         </a>
 
-        <a href="/solutions/modular-gpu-deployment.html" class="product-card">
+        <a href="/solutions/modular-gpu-deployment.html" class="product-card text-only">
           <div class="product-label">Modular</div>
           <h3 class="product-title">Modular GPU Deployment Support</h3>
           <p class="product-description">
