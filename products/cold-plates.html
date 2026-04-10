@@ -421,39 +421,47 @@
     </div>
 
     <div class="section">
-      <div class="card">
-        <h2 class="section-title">Where cold plates fit in the cooling loop</h2>
-        <p class="section-text">
-          In single-phase direct-to-chip liquid cooling systems, coolant is circulated from the CDU through rack manifolds and connection hardware before reaching the cold plate mounted on the processor. The cold plate absorbs heat directly from the GPU or CPU, then returns warmed coolant through the loop for heat rejection.
+  <div class="card">
+    <h2 class="section-title">Cold plate position within the liquid cooling loop</h2>
+    <p class="section-text">
+      In single-phase direct-to-chip liquid cooling systems, coolant is circulated from the CDU through rack manifolds and server-side liquid routing before reaching the cold plate mounted on the processor. At the cold plate, heat is transferred from the chip into the coolant, which then returns through the loop for heat rejection.
+    </p>
+
+    <div class="system-flow">
+      <div class="flow-box">
+        <div class="flow-label">Step 1</div>
+        <h3 class="flow-title">CDU</h3>
+        <p class="flow-text">
+          The cooling distribution unit circulates coolant and interfaces the rack loop with facility-side cooling infrastructure.
         </p>
+      </div>
 
-        <div class="system-flow">
-          <div class="flow-box">
-            <div class="flow-label">Step 1</div>
-            <h3 class="flow-title">CDU</h3>
-            <p class="flow-text">The cooling distribution unit circulates coolant and interfaces the rack loop with facility-side cooling infrastructure.</p>
-          </div>
+      <div class="flow-box">
+        <div class="flow-label">Step 2</div>
+        <h3 class="flow-title">Rack Manifold</h3>
+        <p class="flow-text">
+          The manifold distributes <span class="cold">cold coolant</span> to multiple compute nodes and collects <span class="warm">warm return</span> fluid across the rack.
+        </p>
+      </div>
 
-          <div class="flow-box">
-            <div class="flow-label">Step 2</div>
-            <h3 class="flow-title">Rack Manifold</h3>
-            <p class="flow-text">The manifold distributes <span class="cold">cold coolant</span> to multiple compute nodes and collects <span class="warm">warm return</span> fluid.</p>
-          </div>
+      <div class="flow-box">
+        <div class="flow-label">Step 3</div>
+        <h3 class="flow-title">Server Liquid Routing</h3>
+        <p class="flow-text">
+          Hoses, fittings, and internal liquid routing assemblies carry coolant from the rack manifold into each server or processor assembly.
+        </p>
+      </div>
 
-          <div class="flow-box">
-            <div class="flow-label">Step 3</div>
-            <h3 class="flow-title">Connection Hardware</h3>
-            <p class="flow-text">Hoses, fittings, and quick disconnects route coolant from rack infrastructure into each server assembly.</p>
-          </div>
-
-          <div class="flow-box">
-            <div class="flow-label">Step 4</div>
-            <h3 class="flow-title">Cold Plate</h3>
-            <p class="flow-text">The cold plate transfers heat away from the chip into the liquid loop, where thermal energy is carried out of the server.</p>
-          </div>
-        </div>
+      <div class="flow-box">
+        <div class="flow-label">Step 4</div>
+        <h3 class="flow-title">Cold Plate Heat Transfer</h3>
+        <p class="flow-text">
+          The cold plate removes heat directly from the processor package, transferring thermal energy into the coolant before it returns through the loop for rejection.
+        </p>
       </div>
     </div>
+  </div>
+</div>
 
     <div class="section grid-3">
       <div class="card">
