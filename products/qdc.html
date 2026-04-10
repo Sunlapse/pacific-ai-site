@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Leak-free quick disconnect couplings for AI liquid cooling systems. High-reliability QDC solutions for CDU, manifold, rack, and cold plate integration.">
+  <meta name="description" content="Leak-free quick disconnect couplings for AI liquid cooling systems. High-reliability QDC solutions for CDU, manifold, rack, server, and cold plate integration.">
 
   <style>
     * { box-sizing: border-box; }
@@ -404,7 +404,7 @@
         <div class="hero-note">AI liquid cooling infrastructure, rack deployment, serviceability</div>
         <h1 class="page-title">Quick Disconnect Couplings for AI Liquid Cooling Systems</h1>
         <p class="page-text">
-          Leak-free, high-reliability quick disconnect couplings designed for liquid-cooled AI infrastructure. QDCs support rapid connection and disconnection of coolant loops while minimizing fluid loss, reducing maintenance time, and improving serviceability across CDU, rack manifold, and cold plate integrations.
+          Leak-free, high-reliability quick disconnect couplings designed for liquid-cooled AI infrastructure. QDCs are used across CDU, manifold, server, and cold plate connection points to enable secure fluid routing, modular deployment, and fast maintenance in high-density cooling systems.
         </p>
 
         <div class="cta-wrap">
@@ -424,34 +424,42 @@
 
     <div class="section">
       <div class="card">
-        <h2 class="section-title">Where QDCs fit in the cooling loop</h2>
+        <h2 class="section-title">Where QDCs are used across the liquid cooling system</h2>
         <p class="section-text">
-          In direct-to-chip liquid cooling, quick disconnect couplings are used at key interface points throughout the system. They connect rack-level distribution hardware to compute nodes and support modular installation, replacement, and service without major fluid loss.
+          Quick disconnect couplings are not limited to a single point in the cooling loop. In direct-to-chip liquid cooling architectures, QDCs are deployed across multiple interface layers to enable secure fluid connections, modular system design, and fast serviceability without draining the loop.
         </p>
 
         <div class="system-flow">
           <div class="flow-box">
-            <div class="flow-label">Step 1</div>
-            <h3 class="flow-title">CDU</h3>
-            <p class="flow-text">The cooling distribution unit circulates coolant and interfaces the rack loop with facility water.</p>
+            <div class="flow-label">Interface 1</div>
+            <h3 class="flow-title">CDU to Rack Manifold</h3>
+            <p class="flow-text">
+              QDCs are often used between the cooling distribution unit and rack manifolds, allowing racks to be connected or isolated without disrupting facility-side cooling infrastructure.
+            </p>
           </div>
 
           <div class="flow-box">
-            <div class="flow-label">Step 2</div>
-            <h3 class="flow-title">Rack Manifold</h3>
-            <p class="flow-text">Supply and return manifolds distribute <span class="cold">cold coolant</span> and collect <span class="warm">warm return</span> fluid across the rack.</p>
+            <div class="flow-label">Interface 2</div>
+            <h3 class="flow-title">Rack Manifold Distribution</h3>
+            <p class="flow-text">
+              Within the rack, manifolds distribute <span class="cold">cold coolant</span> and collect <span class="warm">warm return</span> fluid. QDCs enable modular connections to each compute node.
+            </p>
           </div>
 
           <div class="flow-box">
-            <div class="flow-label">Step 3</div>
-            <h3 class="flow-title">QDC Interface</h3>
-            <p class="flow-text">QDCs provide fast, secure connection points between manifold lines, server assemblies, and liquid cooling hardware.</p>
+            <div class="flow-label">Interface 3</div>
+            <h3 class="flow-title">Server &amp; Node Connections</h3>
+            <p class="flow-text">
+              QDCs are used to connect individual server trays or GPU nodes, allowing systems to be installed, removed, or serviced without breaking the entire cooling loop.
+            </p>
           </div>
 
           <div class="flow-box">
-            <div class="flow-label">Step 4</div>
-            <h3 class="flow-title">Cold Plate</h3>
-            <p class="flow-text">Coolant reaches the CPU or GPU cold plate, removes heat at the chip level, then returns through the rack loop.</p>
+            <div class="flow-label">Interface 4</div>
+            <h3 class="flow-title">Cold Plate Loop Integration</h3>
+            <p class="flow-text">
+              In some designs, QDCs are positioned near cold plate interfaces or internal hose assemblies to support platform-specific routing and maintenance flexibility.
+            </p>
           </div>
         </div>
       </div>
@@ -553,13 +561,14 @@
     <div class="section grid-2">
       <div class="card">
         <h2 class="section-title">Available connector configurations</h2>
-        <ul class="list">
-          <li>UQD and MQD format options</li>
-          <li>Threaded and panel-mount styles</li>
-          <li>Valve-integrated configurations</li>
-          <li>Male and female coupler sets</li>
-          <li>Project-specific sizing and layout options</li>
-        </ul>
+       <ul class="list">
+  <li>QDC solutions across multiple flow and size classes</li>
+  <li>Available in UQD, MQD, and related connector formats</li>
+  <li>Threaded and panel-mount styles</li>
+  <li>Valve-integrated configurations</li>
+  <li>Male and female coupler sets</li>
+  <li>Project-specific sizing and layout options</li>
+</ul>
       </div>
 
       <div class="card">
@@ -573,7 +582,46 @@
         </ul>
       </div>
     </div>
+<div class="section">
+  <div class="card">
+    <h2 class="section-title">Connector types by application</h2>
+    <p class="section-text">
+      Quick disconnect coupling is the system-level category. Within that category, different connector series are typically selected based on flow requirement, physical space, serviceability, and the specific connection point within the cooling architecture.
+    </p>
 
+    <table>
+      <thead>
+        <tr>
+          <th>Connection point</th>
+          <th>Typical QDC type</th>
+          <th>What usually matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CDU to rack manifold</td>
+          <td>Higher-flow QDC, often UQD series</td>
+          <td>Larger flow capacity, low restriction, reliable rack isolation</td>
+        </tr>
+        <tr>
+          <td>Rack manifold to server</td>
+          <td>Mid-size QDC, often UQD or similar formats</td>
+          <td>Balanced flow, compact fit, repeatable service connections</td>
+        </tr>
+        <tr>
+          <td>Server or node-level liquid routing</td>
+          <td>Compact QDC, often MQD or similar formats</td>
+          <td>Dense spacing, ease of maintenance, modular replacement</td>
+        </tr>
+        <tr>
+          <td>Cold plate loop integration</td>
+          <td>Application-specific compact QDC or fitting configuration</td>
+          <td>Platform fit, routing flexibility, service access</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
     <div class="section">
       <div class="quote-box">
         <h2 class="quote-title">Request QDC supply for your deployment</h2>
@@ -591,7 +639,7 @@
 
     <div class="footer-row">
       <p class="location">Honolulu, Hawaii</p>
-      <a href="/index.html" class="footer-link">View All Products</a>
+      <a href="/index.html" class="footer-link">Home</a>
     </div>
 
   </div>
