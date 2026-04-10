@@ -204,20 +204,47 @@
   }
 
   .product-card {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid #1e293b;
-    border-radius: 18px;
-    padding: 22px;
-    min-height: 320px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 22px;
+  min-height: 320px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.compact-grid .product-card {
+  display: block;
+  min-height: 220px;
+  padding: 20px;
+}
 
+.compact-grid .product-title {
+  margin: 0 0 8px;
+}
+
+.compact-grid .product-description {
+  margin: 0;
+  line-height: 1.55;
+}
   .product-card:hover {
     transform: translateY(-4px);
     border-color: #3b82f6;
+  }
+
+  .compact-grid .product-card {
+    display: block;
+    min-height: 220px;
+    padding: 22px;
+  }
+
+  .compact-grid .product-title {
+    margin: 0 0 10px;
+  }
+
+  .compact-grid .product-description {
+    margin: 0;
   }
 
   .product-card.has-image .product-image-wrap {
@@ -358,7 +385,7 @@
         Pacific AI Infrastructure supports both rack-scale liquid cooling environments and modular GPU server deployments, with component sourcing aligned to performance, density, and deployment speed.
       </p>
 
-      <div class="product-grid">
+      <div class="product-grid compact-grid">
         <div class="product-card text-only">
           <div class="product-label">Rack-Scale</div>
           <h3 class="product-title">Rack-Scale Deployments</h3>
@@ -470,7 +497,7 @@
         Pacific AI Infrastructure supports liquid cooling adoption through retrofit planning, hybrid system integration, modular deployment support, and deployment-oriented component alignment.
       </p>
 
-      <div class="product-grid">
+      <div class="product-grid compact-grid">
         <a href="/solutions/air-to-liquid-conversion.html" class="product-card text-only">
           <div class="product-label">Retrofit</div>
           <h3 class="product-title">Air-to-Liquid Conversion</h3>
