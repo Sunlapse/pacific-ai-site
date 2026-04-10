@@ -8,29 +8,45 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="CDU interface components for liquid-cooled AI infrastructure. Connection hardware and integration assemblies for rack-to-CDU coolant systems.">
+  <meta name="description" content="CDU interface hardware and integration assemblies for liquid-cooled AI infrastructure. Supporting rack-to-CDU coolant distribution, serviceability, and system integration.">
 
   <style>
     * { box-sizing: border-box; }
 
+    :root {
+      --bg1: #111827;
+      --bg2: #020617;
+      --bg3: #01040f;
+      --card: rgba(255,255,255,0.04);
+      --card-border: #1e293b;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --text-soft: #cbd5e1;
+      --blue: #60a5fa;
+      --blue-strong: #2563eb;
+      --blue-light: #4f8dfd;
+      --line: #1f2a44;
+      --warm: #f87171;
+    }
+
     body {
       margin: 0;
-      background: radial-gradient(circle at top left, #111827, #020617 58%, #01040f 100%);
+      background: radial-gradient(circle at top left, var(--bg1), var(--bg2) 58%, var(--bg3) 100%);
       color: #ffffff;
       font-family: Arial, sans-serif;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 28px 22px 56px;
+      padding: 28px 22px 64px;
     }
 
     .topbar {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 52px;
+      margin-bottom: 44px;
     }
 
     .logo {
@@ -51,30 +67,85 @@
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: #60a5fa;
+      color: var(--blue);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
     }
 
     .page-title {
       margin: 0 0 18px;
-      font-size: 46px;
-      line-height: 1.05;
+      font-size: 48px;
+      line-height: 1.04;
       font-weight: 800;
-    }
-
-    .page-text {
-      margin: 0 0 26px;
-      font-size: 19px;
-      line-height: 1.7;
-      color: #cbd5e1;
       max-width: 760px;
     }
 
-    .spec-list {
-      margin: 0 0 34px;
-      padding-left: 20px;
-      color: #e2e8f0;
-      line-height: 1.9;
-      font-size: 16px;
+    .page-text {
+      margin: 0 0 22px;
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--text-soft);
+      max-width: 760px;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.08);
+      border: 1px solid rgba(96,165,250,0.2);
+      color: #dbeafe;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .hero-image-wrap {
+      text-align: center;
+    }
+
+    .hero-caption {
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      margin: 0 0 12px;
+    }
+
+    .hero-image {
+      max-width: 460px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .image-subtext {
+      margin-top: 16px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .secondary-image-wrap {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid #22304a;
     }
 
     .cta-wrap {
@@ -82,37 +153,244 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
-      margin-bottom: 42px;
+      margin-top: 8px;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-block;
-      background: linear-gradient(135deg, #2563eb, #4f8dfd);
-      color: #ffffff;
       padding: 15px 26px;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 17px;
+      font-size: 16px;
+      transition: 0.2s ease;
     }
 
-    .back-link {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-weight: 600;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-strong), var(--blue-light));
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      color: var(--text-soft);
+      border: 1px solid #334155;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .section-text {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-soft);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .mini-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text);
+      line-height: 1.85;
       font-size: 16px;
+    }
+
+    .list li + li {
+      margin-top: 4px;
+    }
+
+    .system-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .flow-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #22304a;
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 130px;
+    }
+
+    .flow-label {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .flow-title {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .flow-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+
+    .cold {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    .warm {
+      color: #fca5a5;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #22304a;
+    }
+
+    th, td {
+      padding: 16px 14px;
+      text-align: left;
+      border-bottom: 1px solid #22304a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    th {
+      color: #dbeafe;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(96,165,250,0.06);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .quote-box {
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(96,165,250,0.2);
+      background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+    }
+
+    .quote-title {
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .quote-text {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 900px;
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
     }
 
     .divider {
       height: 1px;
-      background: #1f2a44;
-      margin: 0 0 34px;
+      background: var(--line);
+      margin: 38px 0 22px;
     }
 
-    .location {
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .location,
+    .footer-link {
       margin: 0;
-      font-size: 16px;
-      color: #94a3b8;
+      font-size: 15px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-2,
+      .grid-3,
+      .system-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .page-title {
+        font-size: 40px;
+      }
+
+      .page-text {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 22px 16px 52px;
+      }
+
+      .page-title {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      th, td {
+        padding: 13px 10px;
+      }
     }
   </style>
 </head>
@@ -127,41 +405,221 @@
 
     <p class="eyebrow">Products</p>
 
-    <h1 class="page-title">CDU Interfaces</h1>
-<div style="display:flex; justify-content:center; margin-bottom:28px;">
-  <div style="background:rgba(255,255,255,0.04); padding:28px; border-radius:16px; border:1px solid #1e293b;">
-    <img src="/images/cdu-main.png"
-         style="max-width:460px; width:100%; height:auto; display:block;">
-  </div>
-</div>
+    <div class="hero">
+      <div>
+        <div class="hero-note">Decoupling, flow control, rack-to-CDU integration</div>
+        <h1 class="page-title">CDU Interfaces for AI Liquid Cooling Systems</h1>
+        <p class="page-text">
+          Interface hardware and integration assemblies that connect liquid-cooled racks to coolant distribution units. CDU interface components support supply and return routing, serviceability, rack integration, and reliable connection between the CDU control layer and the rack cooling loop in high-density AI infrastructure.
+        </p>
 
-<div style="display:flex; justify-content:center; margin-bottom:28px;">
-  <div style="background:rgba(255,255,255,0.03); padding:24px; border-radius:16px; border:1px solid #1e293b;">
-    <img src="/images/cdu-secondary.png"
-         style="max-width:460px; width:100%; height:auto; display:block;">
-  </div>
-</div>
-    <p class="page-text">
-      Interface hardware and supporting assemblies for connecting liquid-cooled racks to coolant distribution units. CDU interface components support reliable supply and return flow, service access, and integration across high-density AI infrastructure environments.
-    </p>
+        <div class="cta-wrap">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=CDU%20Interface%20Project%20Quote" class="btn-primary">Request Project Quote</a>
+          <a href="/index.html" class="btn-secondary">Back to Home</a>
+        </div>
+      </div>
 
-    <ul class="spec-list">
-      <li>Rack-to-CDU connection hardware for liquid cooling systems</li>
-      <li>Supports supply and return line integration</li>
-      <li>Compatible with manifolds, QDCs, valves, and hose assemblies</li>
-      <li>Designed for serviceability and modular deployment layouts</li>
-      <li>Supports high-density GPU and accelerated compute environments</li>
-      <li>Custom interface configurations available for deployment alignment</li>
-    </ul>
+      <div class="hero-card hero-image-wrap">
+        <p class="hero-caption">Representative CDU-related hardware and assemblies</p>
+        <img src="/images/cdu-main.png" alt="CDU interface hardware" class="hero-image">
+        <div class="image-subtext">
+          CDU-side connection hardware for rack coolant distribution, supply and return routing, and liquid cooling system integration.
+        </div>
 
-    <div class="cta-wrap">
-      <a href="mailto:info@pacificaiinfrastructure.com" class="btn-primary">Request Quote</a>
-      <a href="/index.html" class="back-link">Back to Home</a>
+        <div class="secondary-image-wrap">
+          <img src="/images/cdu-secondary.png" alt="Additional CDU interface hardware" class="hero-image">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">What the CDU does in the cooling system</h2>
+        <p class="section-text">
+          The coolant distribution unit is the operational control point of the secondary cooling loop. It isolates rack-side coolant from facility water, transfers heat through a heat exchanger, circulates coolant with pumps, and manages flow and temperature to support stable direct-to-chip liquid cooling performance.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">Where CDU interfaces fit in the liquid cooling loop</h2>
+        <p class="section-text">
+          CDU interfaces sit at the transition between the rack cooling loop and the CDU. These connection points support clean supply and return routing, service access, modular rack deployment, and integration with manifolds, hoses, valves, and quick disconnect assemblies.
+        </p>
+
+        <div class="system-flow">
+          <div class="flow-box">
+            <div class="flow-label">Step 1</div>
+            <h3 class="flow-title">Facility Water</h3>
+            <p class="flow-text">
+              Building-side chilled water or heat rejection infrastructure supplies the primary loop to the CDU.
+            </p>
+          </div>
+
+          <div class="flow-box">
+            <div class="flow-label">Step 2</div>
+            <h3 class="flow-title">CDU</h3>
+            <p class="flow-text">
+              The CDU decouples the primary and secondary loops, controls coolant conditions, and circulates <span class="cold">clean coolant</span> through the rack-side loop.
+            </p>
+          </div>
+
+          <div class="flow-box">
+            <div class="flow-label">Step 3</div>
+            <h3 class="flow-title">CDU Interface Layer</h3>
+            <p class="flow-text">
+              Connection hardware and interface assemblies route supply and return lines between the CDU and rack manifold infrastructure.
+            </p>
+          </div>
+
+          <div class="flow-box">
+            <div class="flow-label">Step 4</div>
+            <h3 class="flow-title">Rack Cooling Loop</h3>
+            <p class="flow-text">
+              Coolant flows through manifolds, hoses, QDCs, and cold plates, then returns <span class="warm">warmed coolant</span> back through the CDU for heat rejection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section grid-3">
+      <div class="card">
+        <h3 class="mini-title">Why CDU interfaces matter</h3>
+        <ul class="list">
+          <li>Support reliable rack-to-CDU coolant routing</li>
+          <li>Enable modular deployment and service access</li>
+          <li>Help maintain clean supply and return paths</li>
+          <li>Support integration with high-density rack infrastructure</li>
+          <li>Reduce mismatch between CDU and rack-side assemblies</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="mini-title">Typical applications</h3>
+        <ul class="list">
+          <li>Rack-to-CDU liquid cooling connections</li>
+          <li>Supply and return line integration</li>
+          <li>In-rack and floor-mounted CDU architectures</li>
+          <li>High-density GPU and accelerated compute racks</li>
+          <li>AI and HPC liquid cooling deployments</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="mini-title">Key design focus</h3>
+        <ul class="list">
+          <li>Flow and temperature control compatibility</li>
+          <li>Mechanical fit with rack and CDU layouts</li>
+          <li>Serviceability and access</li>
+          <li>Integration with manifolds, valves, and QDCs</li>
+          <li>Alignment with deployment architecture</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="card">
+        <h2 class="section-title">Designed for decoupled liquid cooling systems</h2>
+        <p class="section-text">
+          CDU-connected liquid cooling systems rely on a decoupled architecture in which the CDU separates facility water from the rack-side loop. Interface hardware at this boundary must support reliable routing, compatibility with secondary loop components, and clean integration into the wider cooling system.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Built for high-density AI infrastructure</h2>
+        <p class="section-text">
+          As rack densities rise, CDU-side integration becomes more important to maintain stable coolant delivery, scalable deployment, and service access. Pacific AI Infrastructure supports CDU interface supply aligned to high-density AI rack deployments and modern liquid cooling architectures.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">Operational priorities at the CDU layer</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>What matters</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Decoupling</td>
+              <td>Separation of facility water from the IT cooling loop</td>
+              <td>Protects rack-side cooling conditions and allows tighter control of coolant delivery</td>
+            </tr>
+            <tr>
+              <td>Flow control</td>
+              <td>Stable coolant routing through the CDU-to-rack interface</td>
+              <td>Supports thermal consistency across the secondary loop</td>
+            </tr>
+            <tr>
+              <td>Temperature control</td>
+              <td>Clean supply and return integration with monitored loop conditions</td>
+              <td>Helps maintain proper coolant conditions and avoid condensation-related issues</td>
+            </tr>
+            <tr>
+              <td>Serviceability</td>
+              <td>Accessible interfaces for maintenance and modular connection</td>
+              <td>Improves uptime and simplifies field replacement or system expansion</td>
+            </tr>
+            <tr>
+              <td>System integration</td>
+              <td>Compatibility with manifolds, hoses, valves, and QDC assemblies</td>
+              <td>Ensures reliable fit across rack and CDU connection architecture</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="card">
+        <h2 class="section-title">Available CDU interface configurations</h2>
+        <ul class="list">
+          <li>Supply and return side connection assemblies</li>
+          <li>Rack-to-CDU integration hardware</li>
+          <li>Compatibility with QDC, valve, hose, and manifold assemblies</li>
+          <li>Layouts supporting in-rack and floor-mounted CDU deployments</li>
+          <li>Project-specific geometry and routing options</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Target environments</h2>
+        <ul class="list">
+          <li>High-density AI and GPU rack programs</li>
+          <li>In-rack CDU deployments</li>
+          <li>Floor-mounted CDU architectures</li>
+          <li>Enterprise, colocation, and hyperscale liquid cooling projects</li>
+          <li>Custom rack liquid cooling builds</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="quote-box">
+        <h2 class="quote-title">Request CDU interface supply for your deployment</h2>
+        <p class="quote-text">
+          Pacific AI Infrastructure supports CDU-side interface hardware and connection assemblies for liquid-cooled AI deployments. Share your rack architecture, CDU type, deployment timeline, and system layout to discuss configuration fit and supply alignment.
+        </p>
+        <div class="cta-wrap">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=CDU%20Interface%20Deployment%20Inquiry" class="btn-primary">Request Quote</a>
+        </div>
+        <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
+      </div>
     </div>
 
     <div class="divider"></div>
 
-    <p class="location">Honolulu, Hawaii</p>
+    <div class="footer-row">
+      <p class="location">Honolulu, Hawaii</p>
+      <a href="/index.html" class="footer-link">Home</a>
+    </div>
 
   </div>
 </body>
