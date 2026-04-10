@@ -263,16 +263,28 @@
     }
 
     .cold {
-      color: #93c5fd;
-      font-weight: 700;
-    }
+  color: #93c5fd;
+  font-weight: 700;
+}
 
-    .warm {
-      color: #fca5a5;
-      font-weight: 700;
-    }
+.warm {
+  color: #fca5a5;
+  font-weight: 700;
+}
 
-    table {
+.system-flow.unified .flow-box {
+  transition: all 0.2s ease;
+  opacity: 0.55;
+}
+
+.system-flow.unified .flow-box.active {
+  opacity: 1;
+  border: 1px solid #3b82f6;
+  background: rgba(59,130,246,0.08);
+  transform: translateY(-2px);
+}
+
+table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 12px;
