@@ -274,11 +274,23 @@
     }
 
     .warm {
-      color: #fca5a5;
-      font-weight: 700;
-    }
+  color: #fca5a5;
+  font-weight: 700;
+}
 
-    table {
+.system-flow.unified .flow-box {
+  transition: all 0.2s ease;
+  opacity: 0.55;
+}
+
+.system-flow.unified .flow-box.active {
+  opacity: 1;
+  border: 1px solid #3b82f6;
+  background: rgba(59,130,246,0.08);
+  transform: translateY(-2px);
+}
+
+table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 12px;
@@ -448,39 +460,41 @@
           CDU interfaces sit at the transition between the rack cooling loop and the CDU. These connection points support clean supply and return routing, service access, modular rack deployment, and integration with manifolds, hoses, valves, and quick disconnect assemblies.
         </p>
 
-        <div class="system-flow">
-          <div class="flow-box">
-            <div class="flow-label">Step 1</div>
-            <h3 class="flow-title">Facility Water</h3>
-            <p class="flow-text">
-              Building-side chilled water or heat rejection infrastructure supplies the primary loop to the CDU.
-            </p>
-          </div>
+<div class="system-flow unified">
 
-          <div class="flow-box">
-            <div class="flow-label">Step 2</div>
-            <h3 class="flow-title">CDU</h3>
-            <p class="flow-text">
-              The CDU decouples the primary and secondary loops, controls coolant conditions, and circulates <span class="cold">clean coolant</span> through the rack-side loop.
-            </p>
-          </div>
+  <div class="flow-box step-facility">
+    <div class="flow-label">Step 1</div>
+    <h3 class="flow-title">Facility Water</h3>
+    <p class="flow-text">
+      Building-side chilled water or heat rejection infrastructure supplies the primary loop to the CDU.
+    </p>
+  </div>
 
-          <div class="flow-box">
-            <div class="flow-label">Step 3</div>
-            <h3 class="flow-title">CDU Interface Layer</h3>
-            <p class="flow-text">
-              Connection hardware and interface assemblies route supply and return lines between the CDU and rack manifold infrastructure.
-            </p>
-          </div>
+  <div class="flow-box step-cdu active">
+    <div class="flow-label">Step 2</div>
+    <h3 class="flow-title">CDU</h3>
+    <p class="flow-text">
+      The CDU decouples the primary and secondary loops, controls coolant conditions, and circulates <span class="cold">clean coolant</span> through the rack-side loop.
+    </p>
+  </div>
 
-          <div class="flow-box">
-            <div class="flow-label">Step 4</div>
-            <h3 class="flow-title">Rack Cooling Loop</h3>
-            <p class="flow-text">
-              Coolant flows through manifolds, hoses, QDCs, and cold plates, then returns <span class="warm">warmed coolant</span> back through the CDU for heat rejection.
-            </p>
-          </div>
-        </div>
+  <div class="flow-box step-interface">
+    <div class="flow-label">Step 3</div>
+    <h3 class="flow-title">CDU Interface Layer</h3>
+    <p class="flow-text">
+      Connection hardware and interface assemblies route supply and return lines between the CDU and rack manifold infrastructure.
+    </p>
+  </div>
+
+  <div class="flow-box step-rack">
+    <div class="flow-label">Step 4</div>
+    <h3 class="flow-title">Rack Cooling Loop</h3>
+    <p class="flow-text">
+      Coolant flows through manifolds, hoses, QDCs, and cold plates, then returns <span class="warm">warmed coolant</span> back through the CDU for heat rejection.
+    </p>
+  </div>
+
+</div>
       </div>
     </div>
 
