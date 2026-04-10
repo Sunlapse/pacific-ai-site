@@ -2,35 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Manifolds | Pacific AI Infrastructure</title>
+  <title>In-Rack Manifolds | Pacific AI Infrastructure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Rack-level coolant distribution manifolds for liquid-cooled AI infrastructure and high-density compute deployments.">
+  <meta name="description" content="In-rack coolant distribution manifolds for liquid-cooled AI infrastructure and high-density compute deployments.">
 
   <style>
     * { box-sizing: border-box; }
 
+    :root {
+      --bg1: #111827;
+      --bg2: #020617;
+      --bg3: #01040f;
+      --card: rgba(255,255,255,0.04);
+      --card-border: #1e293b;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --text-soft: #cbd5e1;
+      --blue: #60a5fa;
+      --blue-strong: #2563eb;
+      --blue-light: #4f8dfd;
+      --line: #1f2a44;
+      --warm: #f87171;
+    }
+
     body {
       margin: 0;
-      background: radial-gradient(circle at top left, #111827, #020617 58%, #01040f 100%);
+      background: radial-gradient(circle at top left, var(--bg1), var(--bg2) 58%, var(--bg3) 100%);
       color: #ffffff;
       font-family: Arial, sans-serif;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 28px 22px 56px;
+      padding: 28px 22px 64px;
     }
 
     .topbar {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 52px;
+      margin-bottom: 44px;
     }
 
     .logo {
@@ -51,30 +67,79 @@
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: #60a5fa;
+      color: var(--blue);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
     }
 
     .page-title {
       margin: 0 0 18px;
-      font-size: 46px;
-      line-height: 1.05;
+      font-size: 48px;
+      line-height: 1.04;
       font-weight: 800;
-    }
-
-    .page-text {
-      margin: 0 0 26px;
-      font-size: 19px;
-      line-height: 1.7;
-      color: #cbd5e1;
       max-width: 760px;
     }
 
-    .spec-list {
-      margin: 0 0 34px;
-      padding-left: 20px;
-      color: #e2e8f0;
-      line-height: 1.9;
-      font-size: 16px;
+    .page-text {
+      margin: 0 0 22px;
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--text-soft);
+      max-width: 760px;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.08);
+      border: 1px solid rgba(96,165,250,0.2);
+      color: #dbeafe;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .hero-image-wrap {
+      text-align: center;
+    }
+
+    .hero-caption {
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      margin: 0 0 12px;
+    }
+
+    .hero-image {
+      max-width: 520px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .image-subtext {
+      margin-top: 16px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
     }
 
     .cta-wrap {
@@ -82,37 +147,256 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
-      margin-bottom: 42px;
+      margin-top: 8px;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-secondary {
       display: inline-block;
-      background: linear-gradient(135deg, #2563eb, #4f8dfd);
-      color: #ffffff;
       padding: 15px 26px;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 17px;
+      font-size: 16px;
+      transition: 0.2s ease;
     }
 
-    .back-link {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-weight: 600;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-strong), var(--blue-light));
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      color: var(--text-soft);
+      border: 1px solid #334155;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .section-text {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-soft);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .mini-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text);
+      line-height: 1.85;
       font-size: 16px;
+    }
+
+    .list li + li {
+      margin-top: 4px;
+    }
+
+    .system-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .flow-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #22304a;
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 130px;
+    }
+
+    .flow-label {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .flow-title {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .flow-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+
+    .cold {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    .warm {
+      color: #fca5a5;
+      font-weight: 700;
+    }
+
+    .system-flow.unified .flow-box {
+      transition: all 0.2s ease;
+      opacity: 0.55;
+    }
+
+    .system-flow.unified .flow-box.active {
+      opacity: 1;
+      border: 1px solid #3b82f6;
+      background: rgba(59,130,246,0.08);
+      transform: translateY(-2px);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #22304a;
+    }
+
+    th, td {
+      padding: 16px 14px;
+      text-align: left;
+      border-bottom: 1px solid #22304a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    th {
+      color: #dbeafe;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(96,165,250,0.06);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .quote-box {
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(96,165,250,0.2);
+      background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+    }
+
+    .quote-title {
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .quote-text {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 900px;
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
     }
 
     .divider {
       height: 1px;
-      background: #1f2a44;
-      margin: 0 0 34px;
+      background: var(--line);
+      margin: 38px 0 22px;
     }
 
-    .location {
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .location,
+    .footer-link {
       margin: 0;
-      font-size: 16px;
-      color: #94a3b8;
+      font-size: 15px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-2,
+      .grid-3,
+      .system-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .page-title {
+        font-size: 40px;
+      }
+
+      .page-text {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 22px 16px 52px;
+      }
+
+      .page-title {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      th, td {
+        padding: 13px 10px;
+      }
     }
   </style>
 </head>
@@ -127,29 +411,260 @@
 
     <p class="eyebrow">Products</p>
 
-    <h1 class="page-title">Manifolds</h1>
+    <div class="hero">
+      <div>
+        <div class="hero-note">Rack-level coolant distribution, serviceability, high-density AI racks</div>
+        <h1 class="page-title">In-Rack Manifolds for AI Liquid Cooling Systems</h1>
+        <p class="page-text">
+          In-rack manifolds act as the central coolant distribution layer inside liquid-cooled AI racks. They distribute coolant from the CDU to individual servers and collect return flow, enabling consistent cooling, scalable deployment, and serviceable high-density infrastructure.
+        </p>
 
-    <p class="page-text">
-      Rack-level coolant distribution systems designed for liquid-cooled AI infrastructure. Manifolds route supply and return fluid across GPUs, cold plates, and rack components while maintaining flow balance and system efficiency.
-    </p>
+        <div class="cta-wrap">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Manifold%20Project%20Quote" class="btn-primary">Request Project Quote</a>
+          <a href="/index.html" class="btn-secondary">Back to Home</a>
+        </div>
+      </div>
 
-    <ul class="spec-list">
-      <li>Rack-level coolant distribution for AI and HPC environments</li>
-      <li>Dual-loop and triple-loop configurations</li>
-      <li>Designed for integration with cold plates and CDU systems</li>
-      <li>Support for high-density GPU deployments (100kW+ racks)</li>
-      <li>Options for blind-mate and quick disconnect integration</li>
-      <li>Custom configurations available for OEM and system alignment</li>
-    </ul>
+      <div class="hero-card hero-image-wrap">
+        <p class="hero-caption">Representative in-rack manifold assembly</p>
+        <img src="/images/manifold-main.png" alt="In-rack liquid cooling manifold" class="hero-image">
+        <div class="image-subtext">
+          Rack-level coolant distribution hardware for supply and return flow, with multi-port server connection points for high-density liquid cooling architectures.
+        </div>
+      </div>
+    </div>
 
-    <div class="cta-wrap">
-      <a href="mailto:info@pacificaiinfrastructure.com" class="btn-primary">Request Quote</a>
-      <a href="/index.html" class="back-link">Back to Home</a>
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">AI Liquid Cooling System Architecture</h2>
+        <p class="section-text">
+          This page focuses on rack-level coolant distribution. Modern liquid-cooled AI infrastructure is built as a layered system, from facility-level cooling through rack distribution and server-level thermal transfer.
+        </p>
+
+        <div class="system-flow unified">
+          <div class="flow-box step-cdu">
+            <div class="flow-label">Step 1</div>
+            <h3 class="flow-title">CDU</h3>
+            <p class="flow-text">
+              Controls coolant flow and temperature, circulating fluid between facility water and the rack cooling loop.
+            </p>
+          </div>
+
+          <div class="flow-box step-manifold active">
+            <div class="flow-label">Step 2</div>
+            <h3 class="flow-title">In-Rack Manifold</h3>
+            <p class="flow-text">
+              Distributes <span class="cold">cold coolant</span> evenly across servers and collects <span class="warm">return flow</span>.
+            </p>
+          </div>
+
+          <div class="flow-box step-qdc">
+            <div class="flow-label">Step 3</div>
+            <h3 class="flow-title">QDC + Routing</h3>
+            <p class="flow-text">
+              Quick disconnects and hoses connect servers to the manifold, enabling modular deployment and serviceability.
+            </p>
+          </div>
+
+          <div class="flow-box step-coldplate">
+            <div class="flow-label">Step 4</div>
+            <h3 class="flow-title">Cold Plates</h3>
+            <p class="flow-text">
+              Remove heat directly from processors and transfer it into the liquid cooling loop.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">The backbone of rack-level cooling</h2>
+        <p class="section-text">
+          While cold plates remove heat and CDUs control the system, the manifold is what makes rack-level distribution possible. It acts as the central spine of the rack, routing coolant across multiple servers, supporting consistent thermal performance, and creating a common connection point between rack infrastructure and the broader cooling loop.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">Where manifolds sit in the cooling loop</h2>
+        <p class="section-text">
+          In-rack manifolds sit between the CDU and the server-level liquid routing layer. They distribute supply coolant across multiple nodes, centralize return collection, and support modular connection architecture for serviceable, high-density AI racks.
+        </p>
+
+        <div class="system-flow">
+          <div class="flow-box">
+            <div class="flow-label">Step 1</div>
+            <h3 class="flow-title">CDU</h3>
+            <p class="flow-text">
+              Controls flow, temperature, and circulates coolant into the rack loop.
+            </p>
+          </div>
+
+          <div class="flow-box">
+            <div class="flow-label">Step 2</div>
+            <h3 class="flow-title">Manifold</h3>
+            <p class="flow-text">
+              Distributes <span class="cold">cold coolant</span> evenly to each server and collects <span class="warm">return flow</span>.
+            </p>
+          </div>
+
+          <div class="flow-box">
+            <div class="flow-label">Step 3</div>
+            <h3 class="flow-title">QDC + Routing</h3>
+            <p class="flow-text">
+              Quick disconnects and hoses connect individual servers to the manifold.
+            </p>
+          </div>
+
+          <div class="flow-box">
+            <div class="flow-label">Step 4</div>
+            <h3 class="flow-title">Cold Plates</h3>
+            <p class="flow-text">
+              Heat is transferred from processors into the coolant loop.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section grid-3">
+      <div class="card">
+        <h3 class="mini-title">Why manifolds matter</h3>
+        <ul class="list">
+          <li>Ensure even coolant distribution across multiple servers</li>
+          <li>Reduce pressure drop through parallel flow paths</li>
+          <li>Help prevent hotspots in dense racks</li>
+          <li>Support stable performance across high-heat systems</li>
+          <li>Enable scalable rack-level liquid cooling design</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="mini-title">Operational advantages</h3>
+        <ul class="list">
+          <li>Centralize rack connection points</li>
+          <li>Support hot-swappable server designs</li>
+          <li>Work with QDCs for rapid service access</li>
+          <li>Simplify installation and maintenance</li>
+          <li>Improve uptime in 24/7 compute environments</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="mini-title">Design focus</h3>
+        <ul class="list">
+          <li>Consistent flow distribution</li>
+          <li>Mechanical integration into rack layouts</li>
+          <li>Compatibility with CDU, QDC, and cold plate systems</li>
+          <li>Serviceability and accessibility</li>
+          <li>Support for high-density AI deployments</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="card">
+        <h2 class="section-title">Built for high-density rack environments</h2>
+        <p class="section-text">
+          Rack manifolds are engineered to operate inside constrained rack spaces while maintaining reliable coolant delivery to every server. In modern AI and HPC deployments, they enable dense configurations without sacrificing accessibility, serviceability, or thermal consistency.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Designed as a common connection point</h2>
+        <p class="section-text">
+          In-rack manifolds provide the shared interface between CDU-side coolant distribution and server-level liquid cooling hardware. This centralization simplifies rack plumbing, improves deployment alignment, and supports cleaner integration with cold plates, hoses, valves, and quick disconnect systems.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">Technical characteristics</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>What matters</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Flow distribution</td>
+              <td>Parallel coolant routing across multiple ports</td>
+              <td>Ensures even cooling and reduces the risk of rack-level hotspots</td>
+            </tr>
+            <tr>
+              <td>Pressure management</td>
+              <td>Low pressure drop through rack distribution paths</td>
+              <td>Reduces stress on pumps and improves overall cooling efficiency</td>
+            </tr>
+            <tr>
+              <td>Material construction</td>
+              <td>Corrosion-resistant metals such as stainless steel</td>
+              <td>Supports long-term durability in liquid cooling environments</td>
+            </tr>
+            <tr>
+              <td>Serviceability</td>
+              <td>Accessible ports, mounting, and connection points</td>
+              <td>Supports fast installation, maintenance, and system modifications</td>
+            </tr>
+            <tr>
+              <td>Integrated protection</td>
+              <td>Compatibility with air relief, pressure relief, and QDC-based routing</td>
+              <td>Helps protect the cooling system and improve operational reliability</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="card">
+        <h2 class="section-title">Available manifold configurations</h2>
+        <ul class="list">
+          <li>In-rack supply and return manifold assemblies</li>
+          <li>Multi-port coolant distribution layouts</li>
+          <li>Compatibility with QDC and blind-mate server connections</li>
+          <li>Rack-height and custom geometry options</li>
+          <li>Project-specific integration for AI and HPC liquid cooling systems</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Target environments</h2>
+        <ul class="list">
+          <li>High-density AI GPU racks</li>
+          <li>HPC and accelerated compute systems</li>
+          <li>Rack liquid cooling deployments with CDU integration</li>
+          <li>Enterprise, colocation, and hyperscale programs</li>
+          <li>New-build and retrofit liquid cooling architectures</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="quote-box">
+        <h2 class="quote-title">Request manifold supply for your deployment</h2>
+        <p class="quote-text">
+          Pacific AI Infrastructure supports in-rack manifold sourcing for liquid-cooled AI and high-density compute deployments. Share your rack architecture, server count, coolant loop design, and deployment timeline to discuss configuration fit and supply alignment.
+        </p>
+        <div class="cta-wrap">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Manifold%20Deployment%20Inquiry" class="btn-primary">Request Quote</a>
+        </div>
+        <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
+      </div>
     </div>
 
     <div class="divider"></div>
 
-    <p class="location">Honolulu, Hawaii</p>
+    <div class="footer-row">
+      <p class="location">Honolulu, Hawaii</p>
+      <a href="/index.html" class="footer-link">Home</a>
+    </div>
 
   </div>
 </body>
