@@ -363,7 +363,16 @@
       color: var(--muted);
       text-decoration: none;
     }
+/* === MANIFOLD IMAGE FIX === */
 
+.manifold-card {
+  background: transparent !important;
+}
+
+.manifold-image {
+  background: transparent;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
+}
     @media (max-width: 980px) {
       .hero,
       .grid-2,
@@ -425,14 +434,13 @@
         </div>
       </div>
 
-      <div class="hero-card hero-image-wrap">
-        <p class="hero-caption">Representative in-rack manifold assembly</p>
-        <img src="/images/manifold-main.png" alt="In-rack liquid cooling manifold" class="hero-image">
-        <div class="image-subtext">
-          Rack-level coolant distribution hardware for supply and return flow, with multi-port server connection points for high-density liquid cooling architectures.
-        </div>
-      </div>
-    </div>
+     <div class="hero-card hero-image-wrap manifold-card">
+  <p class="hero-caption">Representative in-rack manifold assembly</p>
+  <img src="/images/manifold-main.png" alt="In-rack liquid cooling manifold" class="hero-image manifold-image">
+  <div class="image-subtext">
+    Rack-level coolant distribution hardware for supply and return flow, with multi-port server connection points for high-density liquid cooling architectures.
+  </div>
+</div>
 
     <div class="section">
       <div class="card">
