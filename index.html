@@ -260,10 +260,11 @@
   }
 
   .product-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  opacity: 0.95;
+}
 
   .product-card.text-only {
     padding-top: 30px;
@@ -473,14 +474,18 @@
           <div class="product-link">View category →</div>
         </a>
 
-        <a href="/products/rack-hardware.html" class="product-card text-only">
-          <div class="product-label">Infrastructure</div>
-          <h3 class="product-title">Rack Hardware</h3>
-          <p class="product-description">
-            Supporting rack-level components for deployment, fluid routing, mechanical integration, and high-density system support.
-          </p>
-          <div class="product-link">View category →</div>
-        </a>
+        <a href="/products/rack-hardware.html" class="product-card has-image">
+  <div class="product-image-wrap">
+    <img src="/images/rack-hardware.png" alt="Rack hardware" class="product-image">
+  </div>
+
+  <div class="product-label">Infrastructure</div>
+  <h3 class="product-title">Rack Hardware</h3>
+  <p class="product-description">
+    Supporting rack-level components for deployment, fluid routing, mechanical integration, and high-density system support.
+  </p>
+  <div class="product-link">View category →</div>
+</a>
 
        <a href="/products/deployment-components.html" class="product-card has-image">
   <div class="product-image-wrap">
