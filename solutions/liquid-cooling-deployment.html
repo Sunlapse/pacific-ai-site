@@ -15,6 +15,7 @@
 
     body {
       margin: 0;
+      padding-bottom: 40px;
       background: radial-gradient(circle at top left, #111827, #020617 58%, #01040f 100%);
       color: #ffffff;
       font-family: Arial, sans-serif;
@@ -23,7 +24,7 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 22px 56px;
+      padding: 28px 22px 30px;
     }
 
     .topbar {
@@ -62,19 +63,38 @@
     }
 
     .page-text {
-      margin: 0 0 26px;
+      margin: 0 0 30px;
       font-size: 19px;
       line-height: 1.7;
       color: #cbd5e1;
-      max-width: 780px;
+      max-width: 790px;
+    }
+
+    .content-card {
+      background: rgba(15, 23, 42, 0.34);
+      border: 1px solid rgba(59, 130, 246, 0.10);
+      border-radius: 18px;
+      padding: 26px 24px;
+      margin-bottom: 34px;
+    }
+
+    .card-title {
+      margin: 0 0 16px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
     }
 
     .spec-list {
-      margin: 0 0 34px;
+      margin: 0;
       padding-left: 20px;
       color: #e2e8f0;
       line-height: 1.9;
       font-size: 16px;
+    }
+
+    .spec-list li {
+      margin-bottom: 6px;
     }
 
     .cta-wrap {
@@ -82,7 +102,7 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
-      margin-bottom: 42px;
+      margin-bottom: 10px;
     }
 
     .btn-primary {
@@ -94,6 +114,11 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 17px;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.22);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.96;
     }
 
     .back-link {
@@ -103,16 +128,112 @@
       font-size: 16px;
     }
 
+    .back-link:hover {
+      color: #ffffff;
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
     .divider {
       height: 1px;
       background: #1f2a44;
-      margin: 0 0 34px;
+      margin: 30px 0;
     }
 
     .location {
       margin: 0;
       font-size: 16px;
       color: #94a3b8;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-link {
+      font-size: 15px;
+      color: #94a3b8;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: #cbd5e1;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: #64748b;
+      text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 38px;
+      }
+
+      .page-text {
+        font-size: 17px;
+      }
+
+      .content-card {
+        padding: 22px 18px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        padding: 22px 16px 24px;
+      }
+
+      .topbar {
+        margin-bottom: 38px;
+      }
+
+      .page-title {
+        font-size: 34px;
+      }
+
+      .cta-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .back-link {
+        text-align: center;
+      }
+
+      .footer-row,
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -130,26 +251,46 @@
     <h1 class="page-title">Liquid Cooling Deployment</h1>
 
     <p class="page-text">
-      Support for deploying liquid-cooled AI infrastructure across new rack environments and expansion programs. Pacific AI Infrastructure helps align cooling components, rack-level hardware, and deployment requirements for high-density compute systems.
+      Support for deploying liquid-cooled AI infrastructure across new rack environments and expansion programs. Pacific AI Infrastructure helps align cooling components, rack-level hardware, and deployment requirements for high-density compute systems and scalable liquid cooling rollouts.
     </p>
 
-    <ul class="spec-list">
-      <li>Supports new liquid-cooled rack deployments and infrastructure expansion</li>
-      <li>Aligns cold plates, manifolds, QDCs, CDU interfaces, rack hardware, and deployment components</li>
-      <li>Useful for high-density GPU and accelerated compute environments</li>
-      <li>Supports deployment planning for modular and scalable rack architectures</li>
-      <li>Helps reduce friction around component compatibility and deployment coordination</li>
-      <li>Project-specific supply alignment available based on rack design and cooling approach</li>
-    </ul>
+    <div class="content-card">
+      <h2 class="card-title">Deployment Support</h2>
+
+      <ul class="spec-list">
+        <li>Supports new liquid-cooled rack deployments and infrastructure expansion programs</li>
+        <li>Aligns cold plates, manifolds, QDCs, CDU interfaces, rack hardware, and deployment components</li>
+        <li>Useful for high-density GPU, AI, and accelerated compute environments</li>
+        <li>Supports planning for modular, scalable, and serviceable rack architectures</li>
+        <li>Helps reduce friction around component compatibility, deployment sequencing, and installation coordination</li>
+        <li>Project-specific supply alignment available based on rack design, cooling architecture, and deployment requirements</li>
+      </ul>
+    </div>
 
     <div class="cta-wrap">
-      <a href="mailto:info@pacificaiinfrastructure.com" class="btn-primary">Discuss Project</a>
+      <a href="mailto:info@pacificaiinfrastructure.com?subject=Liquid%20Cooling%20Deployment%20Inquiry" class="btn-primary">Discuss Project</a>
       <a href="/index.html" class="back-link">Back to Home</a>
+    </div>
+
+    <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
+
+    <div class="divider"></div>
+
+    <div class="footer-row">
+      <p class="location">Honolulu, Hawaii</p>
+      <a href="/index.html" class="footer-link">Home</a>
     </div>
 
     <div class="divider"></div>
 
-    <p class="location">Honolulu, Hawaii</p>
+    <div class="footer-bottom">
+      <div>© 2026 Pacific AI Infrastructure</div>
+
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+      </div>
+    </div>
 
   </div>
 </body>
