@@ -15,6 +15,7 @@
 
     body {
       margin: 0;
+      padding-bottom: 40px;
       background: radial-gradient(circle at top left, #111827, #020617 58%, #01040f 100%);
       color: #ffffff;
       font-family: Arial, sans-serif;
@@ -23,7 +24,7 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 22px 56px;
+      padding: 28px 22px 30px;
     }
 
     .topbar {
@@ -62,19 +63,88 @@
     }
 
     .page-text {
-      margin: 0 0 26px;
+      margin: 0 0 28px;
       font-size: 19px;
       line-height: 1.7;
       color: #cbd5e1;
       max-width: 780px;
     }
 
+    .section-card {
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(59, 130, 246, 0.10);
+      border-radius: 18px;
+      padding: 28px 24px;
+      margin: 0 0 30px;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
     .spec-list {
-      margin: 0 0 34px;
+      margin: 0;
       padding-left: 20px;
       color: #e2e8f0;
       line-height: 1.9;
       font-size: 16px;
+    }
+
+    .spec-list li {
+      margin-bottom: 6px;
+    }
+
+    .workflow-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .workflow-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .workflow-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #4f8dfd);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .workflow-content {
+      min-width: 0;
+      padding-top: 2px;
+    }
+
+    .workflow-heading {
+      margin: 0 0 6px;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #ffffff;
+    }
+
+    .workflow-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #cbd5e1;
     }
 
     .cta-wrap {
@@ -82,7 +152,7 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
-      margin-bottom: 42px;
+      margin-bottom: 10px;
     }
 
     .btn-primary {
@@ -103,10 +173,16 @@
       font-size: 16px;
     }
 
+    .contact-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
     .divider {
       height: 1px;
       background: #1f2a44;
-      margin: 0 0 34px;
+      margin: 30px 0;
     }
 
     .location {
@@ -114,25 +190,120 @@
       font-size: 16px;
       color: #94a3b8;
     }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-link {
+      font-size: 15px;
+      color: #94a3b8;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: #cbd5e1;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: #64748b;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 38px;
+      }
+
+      .page-text {
+        font-size: 17px;
+      }
+
+      .section-card {
+        padding: 22px 18px;
+      }
+
+      .workflow-item {
+        grid-template-columns: 40px 1fr;
+        gap: 14px;
+      }
+
+      .workflow-number {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        padding: 22px 16px 24px;
+      }
+
+      .topbar {
+        margin-bottom: 38px;
+      }
+
+      .page-title {
+        font-size: 34px;
+      }
+
+      .cta-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .back-link {
+        text-align: center;
+      }
+
+      .footer-row,
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <div class="topbar">
-      <img src="/logo-primary.png" alt="Pacific AI Infrastructure logo" class="logo">
-      <div class="brand">Pacific AI Infrastructure (PAI)</div>
-    </div>
+  <div class="topbar">
+    <img src="/logo-primary.png" alt="Pacific AI Infrastructure logo" class="logo">
+    <div class="brand">Pacific AI Infrastructure (PAI)</div>
+  </div>
 
-    <p class="eyebrow">Solutions</p>
+  <p class="eyebrow">Solutions</p>
 
-    <h1 class="page-title">Air-to-Liquid Conversion</h1>
+  <h1 class="page-title">Air-to-Liquid Conversion</h1>
 
-    <p class="page-text">
-      Support for transitioning existing air-cooled infrastructure to liquid-cooled rack environments. Pacific AI Infrastructure helps align the cooling architecture, component selection, and deployment requirements needed for phased or full conversion programs.
-    </p>
+  <p class="page-text">
+    Support for transitioning existing air-cooled infrastructure to liquid-cooled rack environments. Pacific AI Infrastructure helps align the cooling architecture, component selection, and deployment requirements needed for phased or full conversion programs.
+  </p>
 
+  <div class="section-card">
+    <h2 class="section-title">What this supports</h2>
     <ul class="spec-list">
       <li>Supports retrofit planning for existing air-cooled environments</li>
       <li>Aligns cold plates, manifolds, QDCs, CDU interfaces, and deployment components</li>
@@ -141,16 +312,71 @@
       <li>Helps reduce bottlenecks related to component compatibility and deployment coordination</li>
       <li>Project-specific supply alignment available based on rack architecture and cooling approach</li>
     </ul>
-
-    <div class="cta-wrap">
-      <a href="mailto:info@pacificaiinfrastructure.com" class="btn-primary">Discuss Project</a>
-      <a href="/index.html" class="back-link">Back to Home</a>
-    </div>
-
-    <div class="divider"></div>
-
-    <p class="location">Honolulu, Hawaii</p>
-
   </div>
+
+  <div class="section-card">
+    <h2 class="section-title">Workflow</h2>
+
+    <div class="workflow-list">
+      <div class="workflow-item">
+        <div class="workflow-number">1</div>
+        <div class="workflow-content">
+          <h3 class="workflow-heading">Assess existing infrastructure</h3>
+          <p class="workflow-text">Review rack constraints, density targets, cooling limitations, and the current deployment environment.</p>
+        </div>
+      </div>
+
+      <div class="workflow-item">
+        <div class="workflow-number">2</div>
+        <div class="workflow-content">
+          <h3 class="workflow-heading">Define cooling architecture</h3>
+          <p class="workflow-text">Align cold plates, manifolds, QDCs, CDU interfaces, and rack-level hardware to the target design approach.</p>
+        </div>
+      </div>
+
+      <div class="workflow-item">
+        <div class="workflow-number">3</div>
+        <div class="workflow-content">
+          <h3 class="workflow-heading">Coordinate supply and deployment</h3>
+          <p class="workflow-text">Match sourced components to project requirements, deployment sequencing, and installation planning.</p>
+        </div>
+      </div>
+
+      <div class="workflow-item">
+        <div class="workflow-number">4</div>
+        <div class="workflow-content">
+          <h3 class="workflow-heading">Support conversion execution</h3>
+          <p class="workflow-text">Help reduce friction during phased upgrades or full liquid cooling transition programs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-wrap">
+    <a href="mailto:info@pacificaiinfrastructure.com?subject=Air-to-Liquid%20Conversion%20Inquiry" class="btn-primary">Discuss Project</a>
+    <a href="/index.html" class="back-link">Back to Home</a>
+  </div>
+
+  <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
+
+  <div class="divider"></div>
+
+  <div class="footer-row">
+    <p class="location">Honolulu, Hawaii</p>
+    <a href="/index.html" class="footer-link">Home</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="footer-bottom">
+    <div>© 2026 Pacific AI Infrastructure</div>
+
+    <div class="footer-bottom-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
