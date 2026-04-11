@@ -10,28 +10,12 @@
 
   <meta name="description" content="Pacific AI Infrastructure supports modular GPU deployment with liquid cooling components, connector alignment, and sourcing support for compact high-performance AI systems.">
 
-  <meta property="og:title" content="Modular GPU Deployment Support | Pacific AI Infrastructure">
-  <meta property="og:description" content="Support for liquid-cooled 2 to 4 GPU systems, NVLink-connected nodes, and compact direct-to-chip architectures.">
-  <meta property="og:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
-  <meta property="og:url" content="https://www.pacificaiinfrastructure.com/solutions/modular-gpu-deployment.html">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Modular GPU Deployment Support | Pacific AI Infrastructure">
-  <meta name="twitter:description" content="Support for liquid-cooled 2 to 4 GPU systems, NVLink-connected nodes, and compact direct-to-chip architectures.">
-  <meta name="twitter:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
+      padding-bottom: 40px;
       background: radial-gradient(circle at top left, #111827, #020617 58%, #01040f 100%);
       color: #ffffff;
       font-family: Arial, sans-serif;
@@ -40,7 +24,7 @@
     .container {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 28px 22px 56px;
+      padding: 28px 22px 30px;
     }
 
     .topbar {
@@ -58,8 +42,6 @@
 
     .brand {
       font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
       color: #64748b;
     }
 
@@ -81,14 +63,11 @@
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: #60a5fa;
-      opacity: 0.9;
     }
 
     .hero-title {
       margin: 0 0 18px;
-      max-width: 760px;
       font-size: 50px;
-      line-height: 1.02;
       font-weight: 800;
     }
 
@@ -102,76 +81,64 @@
 
     .hero-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(220px, 1fr));
-      gap: 12px 18px;
-      margin: 0 0 30px;
-      max-width: 760px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
     }
 
     .hero-list div {
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15,23,42,0.85);
       border: 1px solid #1e293b;
       border-radius: 14px;
-      padding: 14px 16px;
-      color: #e2e8f0;
+      padding: 14px;
       font-size: 15px;
-      line-height: 1.5;
+      color: #e2e8f0;
     }
 
     .cta-wrap {
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
-      align-items: center;
+      flex-wrap: wrap;
       margin-bottom: 36px;
     }
 
     .btn-primary {
-      display: inline-block;
       background: linear-gradient(135deg, #2563eb, #4f8dfd);
-      color: #ffffff;
       padding: 15px 26px;
       border-radius: 12px;
+      color: #fff;
       text-decoration: none;
       font-weight: 700;
-      font-size: 17px;
-      box-shadow: 0 10px 30px rgba(37,99,235,0.35);
     }
 
     .btn-secondary {
-      display: inline-block;
       border: 1px solid #3b82f6;
-      color: #93c5fd;
       padding: 14px 22px;
       border-radius: 12px;
+      color: #93c5fd;
       text-decoration: none;
       font-weight: 700;
-      font-size: 16px;
     }
 
     .divider {
       height: 1px;
       background: #1f2a44;
-      margin: 0 0 34px;
+      margin: 30px 0;
     }
 
     .section {
-      margin-bottom: 56px;
+      margin-bottom: 50px;
     }
 
     .section-title {
-      margin: 0 0 16px;
       font-size: 28px;
-      font-weight: 700;
-      color: #ffffff;
+      margin-bottom: 16px;
     }
 
     .section-text {
-      margin: 0 0 24px;
       font-size: 17px;
-      line-height: 1.75;
       color: #cbd5e1;
-      max-width: 840px;
+      margin-bottom: 24px;
     }
 
     .grid {
@@ -181,135 +148,83 @@
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15,23,42,0.9);
       border: 1px solid #1e293b;
       border-radius: 18px;
       padding: 22px;
-      min-height: 200px;
-    }
-
-    .card-label {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      background: rgba(37, 99, 235, 0.15);
-      color: #93c5fd;
     }
 
     .card-title {
-      margin: 0 0 10px;
-      font-size: 22px;
-      font-weight: 700;
-      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .card-text {
-      margin: 0;
       font-size: 15px;
-      line-height: 1.7;
       color: #cbd5e1;
     }
 
     .two-col {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
 
     .panel {
-      background: rgba(15, 23, 42, 0.88);
+      background: rgba(15,23,42,0.88);
       border: 1px solid #1e293b;
       border-radius: 20px;
       padding: 24px;
     }
 
     .panel h3 {
-      margin: 0 0 14px;
-      font-size: 22px;
-      color: #ffffff;
-    }
-
-    .panel p {
-      margin: 0 0 16px;
-      font-size: 15px;
-      line-height: 1.75;
-      color: #cbd5e1;
+      margin-bottom: 12px;
     }
 
     .panel ul {
-      margin: 0;
       padding-left: 18px;
-      color: #e2e8f0;
       line-height: 1.9;
-      font-size: 15px;
     }
 
     .cta-panel {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(10, 16, 30, 0.98));
+      background: rgba(15,23,42,0.95);
       border: 1px solid #1e3a8a;
       border-radius: 22px;
       padding: 28px;
     }
 
-    .cta-panel h3 {
-      margin: 0 0 12px;
-      font-size: 28px;
-    }
-
-    .cta-panel p {
-      margin: 0 0 20px;
-      font-size: 17px;
-      line-height: 1.75;
-      color: #cbd5e1;
-      max-width: 760px;
-    }
-
     .location {
-      margin: 0;
-      font-size: 16px;
       color: #94a3b8;
     }
 
-    @media (max-width: 950px) {
-      .grid,
-      .two-col,
-      .hero-list {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-title {
-        font-size: 40px;
-      }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
     }
 
-    @media (max-width: 600px) {
-      .hero-title {
-        font-size: 34px;
-      }
+    .footer-link {
+      color: #94a3b8;
+      text-decoration: none;
+    }
 
-      .hero-text {
-        font-size: 18px;
-      }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #64748b;
+    }
 
-      .section-title {
-        font-size: 24px;
-      }
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+    }
 
-      .cta-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .btn-primary,
-      .btn-secondary {
-        width: 100%;
-        text-align: center;
-      }
+    .footer-bottom-links a {
+      color: #64748b;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -318,7 +233,7 @@
   <div class="container">
 
     <div class="topbar">
-      <a href="/"><img src="/logo-primary.png" alt="Pacific AI Infrastructure logo" class="logo"></a>
+      <img src="/logo-primary.png" class="logo">
       <div class="brand">Pacific AI Infrastructure (PAI)</div>
     </div>
 
@@ -331,14 +246,14 @@
     <h1 class="hero-title">Modular GPU Deployment Support</h1>
 
     <p class="hero-text">
-      Pacific AI Infrastructure supports liquid-cooled modular GPU deployments with sourcing alignment for compact high-performance systems, including 2 to 4 GPU nodes, NVLink-connected architectures, and direct-to-chip cooling environments.
+      Pacific AI Infrastructure supports liquid-cooled modular GPU deployments with sourcing alignment for compact high-performance systems.
     </p>
 
     <div class="hero-list">
-      <div>2 to 4 GPU liquid-cooled systems</div>
-      <div>NVLink-connected modular nodes</div>
-      <div>Cold plate and connector alignment</div>
-      <div>CDU interface and cooling path support</div>
+      <div>2 to 4 GPU systems</div>
+      <div>NVLink nodes</div>
+      <div>Cold plate alignment</div>
+      <div>Cooling path support</div>
     </div>
 
     <div class="cta-wrap">
@@ -351,125 +266,27 @@
     <section class="section">
       <h2 class="section-title">Where This Fits</h2>
       <p class="section-text">
-        Not every deployment is built around full rack-scale GPU systems. Many teams are building around smaller, faster-moving configurations that still require high thermal performance, reliable liquid cooling, and aligned component sourcing. These deployments may support AI inference, fine-tuning, research workloads, internal clusters, or phased infrastructure expansion.
+        Modular GPU deployments support fast-moving AI environments that require high performance without full rack-scale builds.
       </p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="card-label">AI Infrastructure</div>
-          <h3 class="card-title">Compact High-Performance Nodes</h3>
-          <p class="card-text">
-            Support for dense liquid-cooled GPU systems where performance, interconnect, and deployment speed matter more than full rack-scale density.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Deployment Model</div>
-          <h3 class="card-title">Faster to Deploy</h3>
-          <p class="card-text">
-            Modular node configurations can simplify deployment planning, reduce system footprint, and support more flexible rollout strategies across different environments.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Cooling Focus</div>
-          <h3 class="card-title">Direct-to-Chip Ready</h3>
-          <p class="card-text">
-            These systems still require aligned thermal pathways, compact liquid routing, reliable connectors, and integration planning across core cooling components.
-          </p>
-        </div>
-      </div>
     </section>
 
     <div class="divider"></div>
 
-    <section class="section">
-      <h2 class="section-title">Support Scope</h2>
-
-      <div class="two-col">
-        <div class="panel">
-          <h3>Component Categories</h3>
-          <p>
-            Pacific AI Infrastructure supports sourcing alignment across the critical components often required in modular GPU liquid cooling environments.
-          </p>
-          <ul>
-            <li>GPU and CPU cold plates</li>
-            <li>Quick disconnects and fluid connectors</li>
-            <li>Compact manifold and liquid routing assemblies</li>
-            <li>CDU interface support hardware</li>
-            <li>Supporting rack and deployment hardware</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <h3>Deployment Priorities</h3>
-          <p>
-            Modular GPU systems may differ in size from rack-scale NVL72-class environments, but they still demand reliable thermal infrastructure and coordinated component selection.
-          </p>
-          <ul>
-            <li>Compact form factor support</li>
-            <li>High-density thermal management</li>
-            <li>Connector and routing compatibility</li>
-            <li>Phased deployment planning</li>
-            <li>Qualified manufacturing partner sourcing</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div class="footer-row">
+      <p class="location">Honolulu, Hawaii</p>
+      <a href="/index.html" class="footer-link">Home</a>
+    </div>
 
     <div class="divider"></div>
 
-    <section class="section">
-      <h2 class="section-title">Typical Use Cases</h2>
-      <p class="section-text">
-        This solution is designed for teams building modular AI infrastructure where liquid cooling performance and deployment flexibility must be balanced together.
-      </p>
+    <div class="footer-bottom">
+      <div>© 2026 Pacific AI Infrastructure</div>
 
-      <div class="grid">
-        <div class="card">
-          <div class="card-label">Inference</div>
-          <h3 class="card-title">Enterprise AI Systems</h3>
-          <p class="card-text">
-            Support for smaller liquid-cooled GPU clusters used for inference, fine-tuning, internal model deployment, and performance-focused enterprise environments.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Research</div>
-          <h3 class="card-title">HPC and Technical Computing</h3>
-          <p class="card-text">
-            Support for research, simulation, and compute-intensive workloads requiring strong memory performance, dense packaging, and reliable thermal management.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Growth</div>
-          <h3 class="card-title">Phased AI Buildouts</h3>
-          <p class="card-text">
-            Support for teams expanding incrementally from smaller modular systems toward broader liquid-cooled infrastructure footprints over time.
-          </p>
-        </div>
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="section">
-      <div class="cta-panel">
-        <h3>Align cooling components for modular GPU deployment</h3>
-        <p>
-          If you are deploying liquid-cooled 2 to 4 GPU systems and need support with component sourcing, cooling-path alignment, or qualified manufacturing access, Pacific AI Infrastructure can help support the deployment process.
-        </p>
-        <div class="cta-wrap" style="margin-bottom:0;">
-          <a href="mailto:info@pacificaiinfrastructure.com" class="btn-primary">Contact PAI</a>
-          <a href="mailto:info@pacificaiinfrastructure.com" class="btn-secondary">info@pacificaiinfrastructure.com</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <p class="location">Honolulu, Hawaii</p>
+    </div>
 
   </div>
 </body>
