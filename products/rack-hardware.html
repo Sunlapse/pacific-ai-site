@@ -163,6 +163,615 @@
       </div>
     </div>
 
+    <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cold Plates | Pacific AI Infrastructure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+
+  <meta name="description" content="Direct-to-chip cold plate solutions for AI GPUs, CPUs, and high-density liquid-cooled compute environments.">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --bg1: #111827;
+      --bg2: #020617;
+      --bg3: #01040f;
+      --card: rgba(255,255,255,0.04);
+      --card-border: #1e293b;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --text-soft: #cbd5e1;
+      --blue: #60a5fa;
+      --blue-strong: #2563eb;
+      --blue-light: #4f8dfd;
+      --line: #1f2a44;
+      --warm: #f87171;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, var(--bg1), var(--bg2) 58%, var(--bg3) 100%);
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 22px 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 44px;
+    }
+
+    .logo {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: 500;
+      color: #64748b;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .page-title {
+      margin: 0 0 18px;
+      font-size: 48px;
+      line-height: 1.04;
+      font-weight: 800;
+      max-width: 760px;
+    }
+
+    .page-text {
+      margin: 0 0 22px;
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--text-soft);
+      max-width: 760px;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.08);
+      border: 1px solid rgba(96,165,250,0.2);
+      color: #dbeafe;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .hero-image-wrap {
+      text-align: center;
+    }
+
+    .hero-caption {
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      margin: 0 0 12px;
+    }
+
+    .hero-image {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .image-subtext {
+      margin-top: 16px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .cta-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 15px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-strong), var(--blue-light));
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      color: var(--text-soft);
+      border: 1px solid #334155;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .section-text {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-soft);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .mini-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text);
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .list li + li {
+      margin-top: 4px;
+    }
+
+    .system-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .flow-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #22304a;
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 130px;
+    }
+
+    .flow-label {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .flow-title {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .flow-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+
+    .cold {
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+.warm {
+  color: #fca5a5;
+  font-weight: 700;
+}
+
+.system-flow.unified .flow-box {
+  transition: all 0.2s ease;
+  opacity: 0.55;
+}
+
+.system-flow.unified .flow-box.active {
+  opacity: 1;
+  border: 1px solid #3b82f6;
+  background: rgba(59,130,246,0.08);
+  transform: translateY(-2px);
+}
+
+table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #22304a;
+    }
+
+    th, td {
+      padding: 16px 14px;
+      text-align: left;
+      border-bottom: 1px solid #22304a;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    th {
+      color: #dbeafe;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(96,165,250,0.06);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .quote-box {
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(96,165,250,0.2);
+      background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+    }
+
+    .quote-title {
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .quote-text {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 900px;
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 38px 0 22px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .location,
+    .footer-link {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-2,
+      .grid-3,
+      .system-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .page-title {
+        font-size: 40px;
+      }
+
+      .page-text {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 22px 16px 52px;
+      }
+
+      .page-title {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      th, td {
+        padding: 13px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <img src="/logo-primary.png" alt="Pacific AI Infrastructure logo" class="logo">
+      <div class="brand">Pacific AI Infrastructure (PAI)</div>
+    </div>
+
+    <p class="eyebrow">Products</p>
+
+    <div class="hero">
+      <div>
+        <div class="hero-note">Direct-to-chip thermal transfer, AI GPUs, high-density compute</div>
+        <h1 class="page-title">Cold Plates for AI Liquid Cooling Systems</h1>
+        <p class="page-text">
+          Direct-to-chip thermal interfaces designed to remove heat at the source in liquid-cooled AI and high-density compute environments. Cold plates sit at the core of the cooling loop, enabling GPU and CPU platforms to operate within demanding thermal envelopes across modern AI infrastructure deployments.
+        </p>
+
+        <div class="cta-wrap">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Cold%20Plate%20Project%20Quote" class="btn-primary">Request Project Quote</a>
+          <a href="/index.html" class="btn-secondary">Back to Home</a>
+        </div>
+      </div>
+
+      <div class="hero-card hero-image-wrap">
+        <p class="hero-caption">Representative direct-to-chip cooling hardware</p>
+        <img src="/images/cold-plate.png" alt="Cold plate for liquid cooling applications" class="hero-image">
+        <div class="image-subtext">
+          Cold plate solutions for GPU, CPU, and custom liquid-cooled compute platforms.
+        </div>
+      </div>
+    </div>
+
+<div class="section">
+  <div class="card">
+    <h2 class="section-title">Cold plate position within the liquid cooling loop</h2>
+    <p class="section-text">
+      In single-phase direct-to-chip liquid cooling systems, coolant is circulated from the CDU through rack manifolds and server-side liquid routing before reaching the cold plate mounted on the processor. At the cold plate, heat is transferred from the chip into the coolant, which then returns through the loop for heat rejection.
+    </p>
+
+<div class="system-flow unified">
+
+  <div class="flow-box step-cdu">
+    <div class="flow-label">Step 1</div>
+    <h3 class="flow-title">CDU</h3>
+    <p class="flow-text">
+      The cooling distribution unit circulates coolant and interfaces the rack loop with facility-side cooling infrastructure.
+    </p>
+  </div>
+
+  <div class="flow-box step-manifold">
+    <div class="flow-label">Step 2</div>
+    <h3 class="flow-title">Rack Manifold</h3>
+    <p class="flow-text">
+      The manifold distributes <span class="cold">cold coolant</span> to multiple compute nodes and collects <span class="warm">warm return</span> fluid across the rack.
+    </p>
+  </div>
+
+  <div class="flow-box step-qdc">
+    <div class="flow-label">Step 3</div>
+    <h3 class="flow-title">Server Liquid Routing</h3>
+    <p class="flow-text">
+      Hoses, fittings, and internal liquid routing assemblies carry coolant from the rack manifold into each server or processor assembly.
+    </p>
+  </div>
+
+  <div class="flow-box step-coldplate active">
+    <div class="flow-label">Step 4</div>
+    <h3 class="flow-title">Cold Plates</h3>
+    <p class="flow-text">
+      The cold plate removes heat directly from the processor package, transferring thermal energy into the coolant before it returns through the loop for rejection.
+    </p>
+  </div>
+
+</div>
+  </div>
+</div>
+
+    <div class="section grid-3">
+      <div class="card">
+        <h3 class="mini-title">Why cold plates matter</h3>
+        <ul class="list">
+          <li>Remove heat directly at the chip level</li>
+          <li>Support higher power density compute</li>
+          <li>Enable direct-to-chip liquid cooling architectures</li>
+          <li>Help maintain thermal stability in AI systems</li>
+          <li>Improve scalability in dense rack environments</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="mini-title">Typical applications</h3>
+        <ul class="list">
+          <li>AI GPU server platforms</li>
+          <li>CPU-intensive HPC systems</li>
+          <li>High-density liquid-cooled racks</li>
+          <li>OEM compute system integrations</li>
+          <li>Retrofit and new-build liquid cooling deployments</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="mini-title">Key design focus</h3>
+        <ul class="list">
+          <li>Thermal transfer efficiency</li>
+          <li>Reliable liquid flow path design</li>
+          <li>Mechanical fit within server platforms</li>
+          <li>Integration with manifold and QDC assemblies</li>
+          <li>Alignment with deployment requirements</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="card">
+        <h2 class="section-title">Designed for direct-to-chip performance</h2>
+        <p class="section-text">
+          In modern AI infrastructure, the cold plate is the point where thermal performance becomes real. While CDUs, manifolds, and connectors move coolant through the system, the cold plate is the component that actually removes heat from the processor package.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Built for modern AI infrastructure</h2>
+        <p class="section-text">
+          Pacific AI Infrastructure supports cold plate sourcing for liquid-cooled deployments requiring GPU, CPU, and custom compute thermal interfaces. We align component supply with broader rack-level cooling architecture, including connectors, manifolds, and distribution hardware.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h2 class="section-title">Technical focus areas</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>What matters</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Thermal transfer</td>
+              <td>Efficient movement of heat from the chip into the coolant loop</td>
+              <td>Directly affects system cooling capability and sustained compute performance</td>
+            </tr>
+            <tr>
+              <td>Material selection</td>
+              <td>Copper or plated metal construction with reliable fluid path integrity</td>
+              <td>Supports heat transfer performance and long-term durability</td>
+            </tr>
+            <tr>
+              <td>Internal flow path</td>
+              <td>Engineered channel structure for coolant distribution</td>
+              <td>Improves heat capture and loop efficiency across the cold plate surface</td>
+            </tr>
+            <tr>
+              <td>Mechanical fit</td>
+              <td>Alignment to GPU, CPU, or custom server platform mounting requirements</td>
+              <td>Ensures deployment compatibility and easier system integration</td>
+            </tr>
+            <tr>
+              <td>System integration</td>
+              <td>Compatibility with hoses, manifolds, fittings, and quick disconnects</td>
+              <td>Supports full liquid cooling stack deployment without isolated component mismatch</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="card">
+        <h2 class="section-title">Available configurations</h2>
+        <ul class="list">
+          <li>GPU cold plates</li>
+          <li>CPU cold plates</li>
+          <li>Custom OEM thermal interface designs</li>
+          <li>Direct-to-chip liquid cooling assemblies</li>
+          <li>Program-specific geometry and connection options</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Target environments</h2>
+        <ul class="list">
+          <li>AI GPU racks and clusters</li>
+          <li>High-performance computing environments</li>
+          <li>Liquid-cooled enterprise and colocation deployments</li>
+          <li>High-density rack programs</li>
+          <li>Custom compute infrastructure builds</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="quote-box">
+        <h2 class="quote-title">Request cold plate supply for your deployment</h2>
+        <p class="quote-text">
+          Pacific AI Infrastructure supports cold plate sourcing for liquid-cooled AI and high-density compute programs. Share your platform type, deployment volume, rack count, and project timeline to discuss configuration fit and supply alignment.
+        </p>
+        <div class="cta-wrap">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Cold%20Plate%20Deployment%20Inquiry" class="btn-primary">Request Quote</a>
+        </div>
+        <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
+      </div>
+    </div>
+
     <div class="divider"></div>
 
     <div class="footer-row">
