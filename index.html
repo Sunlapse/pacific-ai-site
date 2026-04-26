@@ -27,6 +27,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    body.menu-open {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
     }
@@ -34,7 +38,7 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
       height: 52px;
       background: rgba(251,251,253,0.88);
       backdrop-filter: saturate(180%) blur(20px);
@@ -52,6 +56,8 @@
       justify-content: space-between;
       gap: 22px;
       font-size: 13px;
+      position: relative;
+      z-index: 102;
     }
 
     .nav-brand {
@@ -86,26 +92,45 @@
 
     .mobile-menu {
       display: none;
-      width: 28px;
-      height: 20px;
+      width: 34px;
+      height: 34px;
       position: relative;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
     }
 
     .mobile-menu span {
       position: absolute;
-      left: 0;
+      left: 3px;
       width: 28px;
       height: 2px;
       background: #1d1d1f;
       border-radius: 2px;
+      transition: transform 0.22s ease, top 0.22s ease, bottom 0.22s ease;
     }
 
     .mobile-menu span:first-child {
-      top: 5px;
+      top: 11px;
     }
 
     .mobile-menu span:last-child {
-      bottom: 5px;
+      bottom: 11px;
+    }
+
+    .mobile-menu.is-open span:first-child {
+      top: 16px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu.is-open span:last-child {
+      bottom: 16px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
     }
 
     .hero {
@@ -568,17 +593,21 @@
     }
 
     @media (max-width: 900px) {
+      .nav {
+        height: 64px;
+      }
+
+      .nav-inner {
+        height: 64px;
+        padding: 0 24px;
+      }
+
       .nav-links {
         display: none;
       }
 
       .mobile-menu {
         display: block;
-      }
-
-      .nav,
-      .nav-inner {
-        height: 64px;
       }
 
       .nav-logo {
@@ -588,6 +617,52 @@
 
       .nav-brand {
         font-size: 18px;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 101;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 24px 40px;
+        background: rgba(251,251,253,0.98);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-top: 1px solid rgba(0,0,0,0.06);
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.24s ease, opacity 0.24s ease;
+      }
+
+      .mobile-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 58px;
+        color: #1d1d1f;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+      }
+
+      .mobile-nav a::after {
+        content: "›";
+        color: #86868b;
+        font-size: 30px;
+        line-height: 1;
       }
 
       .hero {
@@ -728,6 +803,13 @@
       .solution-visual {
         height: 190px;
       }
+
+      .solution-icon {
+        width: 96px;
+        height: 96px;
+        border-radius: 27px;
+        font-size: 38px;
+      }
     }
   </style>
 </head>
@@ -735,22 +817,33 @@
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-brand">
+      <a href="/index.html" class="nav-brand">
         <img src="/favicon.png" alt="PAI logo" class="nav-logo">
         <span>PAI</span>
       </a>
 
       <div class="nav-links">
-        <a href="#deployment-types">Deployment</a>
-        <a href="#products">Products</a>
-        <a href="#solutions">Solutions</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#solutions">Solutions</a>
+        <a href="/privacy.html">Privacy</a>
         <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
-      <div class="mobile-menu" aria-hidden="true">
+      <button class="mobile-menu" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" type="button">
         <span></span>
         <span></span>
-      </div>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/index.html#products">Products</a>
+      <a href="/index.html#solutions">Solutions</a>
+      <a href="/products/cold-plates.html">Cold Plates</a>
+      <a href="/products/manifolds.html">Manifolds</a>
+      <a href="/products/qdc.html">Quick Disconnects</a>
+      <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
   </nav>
 
@@ -813,12 +906,12 @@
       </section>
 
       <section class="section-heading" id="products">
-  <p class="section-kicker">Products</p>
-  <h2>Infrastructure components for AI deployment.</h2>
-  <p>
-    Cooling, rack, and deployment hardware sourced through qualified manufacturing partners.
-  </p>
-</section>
+        <p class="section-kicker">Products</p>
+        <h2>Infrastructure components for AI deployment.</h2>
+        <p>
+          Cooling, rack, and deployment hardware sourced through qualified manufacturing partners.
+        </p>
+      </section>
 
       <section class="split-grid">
         <a href="/products/cold-plates.html" class="tile soft-blue">
@@ -885,12 +978,12 @@
       </section>
 
       <section class="section-heading" id="solutions">
-  <p class="section-kicker">Solutions</p>
-  <h2>Deployment support for high-density AI systems.</h2>
-  <p>
-    Practical support paths for liquid-cooled, hybrid-cooled, and modular GPU infrastructure projects.
-  </p>
-</section>
+        <p class="section-kicker">Solutions</p>
+        <h2>Deployment support for high-density AI systems.</h2>
+        <p>
+          Practical support paths for liquid-cooled, hybrid-cooled, and modular GPU infrastructure projects.
+        </p>
+      </section>
 
       <section class="split-grid">
         <a href="/solutions/air-to-liquid-conversion.html" class="tile solution-tile">
@@ -962,5 +1055,46 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileNav = document.getElementById("mobileNav");
+
+    function closeMobileMenu() {
+      mobileMenuButton.classList.remove("is-open");
+      mobileNav.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+      mobileMenuButton.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMobileMenu() {
+      mobileMenuButton.classList.add("is-open");
+      mobileNav.classList.add("is-open");
+      document.body.classList.add("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "true");
+      mobileMenuButton.setAttribute("aria-label", "Close menu");
+    }
+
+    mobileMenuButton.addEventListener("click", function () {
+      const isOpen = mobileNav.classList.contains("is-open");
+
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        closeMobileMenu();
+      }
+    });
+  </script>
 </body>
 </html>
