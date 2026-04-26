@@ -333,21 +333,18 @@
       letter-spacing: -0.025em;
     }
 
-    .wide-image-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      max-width: 1020px;
-      margin: 55px auto 0;
-      align-items: end;
-    }
+  .wide-image-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 32px;
+  margin-top: 60px;
+}
 
-    .wide-image-row img {
-      width: 100%;
-      max-height: 230px;
-      object-fit: contain;
-      filter: drop-shadow(0 24px 36px rgba(0,0,0,0.17));
-    }
+.wide-image-row img {
+  height: 180px;
+  object-fit: contain;
+}
 
     .info-band {
       max-width: 1500px;
