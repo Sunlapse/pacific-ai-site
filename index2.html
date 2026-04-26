@@ -76,85 +76,79 @@
     .nav-links a:hover { opacity: 1; }
 
     .hero {
-      position: relative;
-      min-height: 720px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: left;
-      padding: 86px 22px 78px;
-      background:
-        radial-gradient(circle at 72% 42%, rgba(37,99,235,0.14), transparent 34%),
-        linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 68%;
-      height: 100%;
-      background: linear-gradient(to right, #f5f5f7 52%, rgba(245,245,247,0));
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .hero-content {
   position: relative;
-  z-index: 4;
-  width: 100%;
-  max-width: 620px;
-  margin-left: 6vw;   
-  transform: none;    
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 80px 22px;
+  background:
+    radial-gradient(circle at 78% 30%, rgba(37,99,235,0.13), transparent 30%),
+    linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
+  overflow: hidden;
 }
 
-    .eyebrow {
-      margin: 0 0 12px;
-      font-size: 19px;
-      line-height: 1.25;
-      font-weight: 600;
-      color: #6e6e73;
-    }
+.hero::after {
+  display: none;
+}
 
-    .hero-title {
-      position: relative;
-      z-index: 5;
-      margin: 0;
-      font-size: clamp(50px, 7vw, 86px);
-      line-height: 0.96;
-      letter-spacing: -0.06em;
-      font-weight: 800;
-    }
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
 
-    .hero-subtitle {
-      margin: 18px 0 0;
-      max-width: 620px;
-      font-size: clamp(25px, 3vw, 36px);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      font-weight: 600;
-    }
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #6e6e73;
+}
 
-    .hero-text {
-      margin: 18px 0 0;
-      max-width: 590px;
-      font-size: 19px;
-      line-height: 1.45;
-      color: #6e6e73;
-    }
+.hero-title {
+  position: relative;
+  z-index: 5;
+  margin: 0;
+  max-width: 680px;
+  font-size: clamp(50px, 7vw, 86px);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+}
 
-   .hero-image {
+.hero-subtitle {
+  margin: 18px 0 0;
+  max-width: 620px;
+  font-size: clamp(25px, 3vw, 36px);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.hero-text {
+  margin: 18px 0 0;
+  max-width: 590px;
+  font-size: 19px;
+  line-height: 1.45;
+  color: #6e6e73;
+}
+
+.hero-image {
   position: absolute;
-  right: 6vw;           
-  bottom: 0;
-  height: 62%;          
-  max-height: 520px;
-  object-fit: contain;
-  z-index: 1;
+  right: 7vw;
+  top: 145px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 32px;
+  z-index: 4;
   opacity: 0.95;
-  filter: drop-shadow(0 30px 55px rgba(0,0,0,0.14));
+  box-shadow: 0 28px 70px rgba(0,0,0,0.14);
 }
 
     .cta-row {
@@ -377,12 +371,12 @@
 
 @media (max-width: 1180px) {
   .hero-content {
-    transform: none;
     margin-left: 5vw;
   }
 
   .hero-image {
-    right: 4vw;
+    right: 5vw;
+    top: 120px;
   }
 }
 
@@ -391,30 +385,23 @@
 
   .hero {
     min-height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 60px 22px 0;
-  }
-
-  .hero::after {
-    display: none;
+    padding: 60px 20px 40px;
   }
 
   .hero-content {
     max-width: 100%;
     margin-left: 0;
-    transform: none;
   }
 
+  /* 👇 KEY CHANGE: keep it SMALL, don't drop it below */
   .hero-image {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 280px;
-    height: auto;
-    max-height: none;
-    margin: 34px auto 0;
-    opacity: 0.92;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    width: 110px;
+    height: 110px;
+    margin: 0;
+    opacity: 0.95;
   }
 
   .split-grid { grid-template-columns: 1fr; }
@@ -423,13 +410,14 @@
 }
 
 @media (max-width: 560px) {
-  .hero-title { font-size: 46px; }
-  .hero-subtitle { font-size: 24px; }
+  .hero-title { font-size: 44px; }
+  .hero-subtitle { font-size: 22px; }
 
   .hero-image {
-    width: 250px;
-    margin: 28px auto 0;
-    opacity: 0.9;
+    width: 90px;
+    height: 90px;
+    top: 70px;
+    right: 16px;
   }
 
   .button {
