@@ -22,7 +22,12 @@
       margin: 0;
       background: #f5f5f7;
       color: #1d1d1f;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
     }
 
     a {
@@ -33,16 +38,22 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 9999;
       height: 54px;
+      background: #fbfbfd;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      overflow: visible;
+    }
+
+    .nav-inner {
+      height: 54px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 7vw;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 7vw;
-      background: rgba(251, 251, 253, 0.82);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      gap: 22px;
     }
 
     .brand-link {
@@ -52,6 +63,7 @@
       font-size: 14px;
       font-weight: 700;
       color: #1d1d1f;
+      white-space: nowrap;
     }
 
     .brand-link img {
@@ -76,6 +88,49 @@
     .nav-links a:hover {
       opacity: 1;
       color: #0071e3;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 34px;
+      height: 30px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      position: absolute;
+      left: 3px;
+      width: 28px;
+      height: 2.5px;
+      background: #1d1d1f;
+      border-radius: 999px;
+      transition: transform 0.22s ease, top 0.22s ease, bottom 0.22s ease;
+    }
+
+    .mobile-menu span:first-child {
+      top: 9px;
+    }
+
+    .mobile-menu span:last-child {
+      bottom: 9px;
+    }
+
+    .mobile-menu.is-open span:first-child {
+      top: 14px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu.is-open span:last-child {
+      bottom: 13px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
     }
 
     .hero {
@@ -195,11 +250,78 @@
 
     @media (max-width: 900px) {
       .nav {
+        height: 64px;
+        background: #fbfbfd;
+      }
+
+      .nav-inner {
+        height: 64px;
         padding: 0 22px;
       }
 
+      .brand-link {
+        font-size: 18px;
+      }
+
+      .brand-link img {
+        width: 30px;
+        height: 30px;
+      }
+
       .nav-links {
-        gap: 18px;
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .mobile-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 24px 30px;
+        background: #fbfbfd;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+        transform: translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.24s ease, opacity 0.24s ease;
+      }
+
+      .mobile-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 58px;
+        color: #1d1d1f;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+      }
+
+      .mobile-nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .mobile-nav a::after {
+        content: "›";
+        color: #86868b;
+        font-size: 30px;
+        line-height: 1;
       }
 
       .hero {
@@ -213,23 +335,6 @@
     }
 
     @media (max-width: 560px) {
-      .nav {
-        height: 58px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .brand-link img {
-        width: 26px;
-        height: 26px;
-      }
-
-      .brand-link {
-        font-size: 15px;
-      }
-
       .hero {
         padding: 62px 22px 46px;
         text-align: left;
@@ -284,16 +389,31 @@
 <body>
 
   <nav class="nav">
-    <a href="/index.html" class="brand-link">
-      <img src="/favicon.png" alt="Pacific AI Infrastructure logo">
-      <span>PAI</span>
-    </a>
+    <div class="nav-inner">
+      <a href="/index.html" class="brand-link">
+        <img src="/favicon.png" alt="Pacific AI Infrastructure logo">
+        <span>PAI</span>
+      </a>
 
-    <div class="nav-links">
+      <div class="nav-links">
+        <a href="/index.html#deployment-types">Deployment</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#solutions">Solutions</a>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+      </div>
+
+      <button class="mobile-menu" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
       <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
-      <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
   </nav>
 
@@ -359,6 +479,47 @@
       </div>
     </footer>
   </main>
+
+  <script>
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileNav = document.getElementById("mobileNav");
+
+    function closeMobileMenu() {
+      mobileMenuButton.classList.remove("is-open");
+      mobileNav.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+      mobileMenuButton.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMobileMenu() {
+      mobileMenuButton.classList.add("is-open");
+      mobileNav.classList.add("is-open");
+      document.body.classList.add("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "true");
+      mobileMenuButton.setAttribute("aria-label", "Close menu");
+    }
+
+    mobileMenuButton.addEventListener("click", function () {
+      const isOpen = mobileNav.classList.contains("is-open");
+
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        closeMobileMenu();
+      }
+    });
+  </script>
 
 </body>
 </html>
