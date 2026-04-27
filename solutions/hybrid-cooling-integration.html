@@ -35,8 +35,12 @@
       margin: 0;
       background: #f5f5f7;
       color: #1d1d1f;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
     }
 
     a {
@@ -48,125 +52,99 @@
       position: sticky;
       top: 0;
       z-index: 9999;
-      height: 64px;
-      background: rgba(251, 251, 253, 0.94);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      height: 52px;
+      background: #fbfbfd;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      overflow: visible;
     }
 
     .nav-inner {
       max-width: 1180px;
-      height: 64px;
+      height: 52px;
       margin: 0 auto;
-      padding: 0 22px;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 22px;
+      font-size: 13px;
     }
 
-    .brand-link {
+    .nav-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
       color: #1d1d1f;
     }
 
-    .brand-link img {
+    .nav-logo {
       width: 22px;
       height: 22px;
       object-fit: contain;
       display: block;
     }
 
-    .brand-text {
-      font-size: 24px;
-      line-height: 1;
-    }
-
-    .desktop-links {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #424245;
+      gap: 30px;
     }
 
-    .desktop-links a:hover {
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.82;
+      color: #1d1d1f;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
       color: #0071e3;
-    }
-
-    .menu-button {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      position: relative;
-      padding: 0;
-    }
-
-    .menu-button span {
-      position: absolute;
-      left: 9px;
-      right: 9px;
-      height: 2px;
-      background: #1d1d1f;
-      border-radius: 999px;
-      transition: 0.2s ease;
-    }
-
-    .menu-button span:first-child {
-      top: 17px;
-    }
-
-    .menu-button span:last-child {
-      top: 26px;
-    }
-
-    .menu-button.active span:first-child {
-      transform: rotate(45deg);
-      top: 22px;
-    }
-
-    .menu-button.active span:last-child {
-      transform: rotate(-45deg);
-      top: 22px;
     }
 
     .mobile-menu {
       display: none;
-      position: fixed;
-      top: 64px;
-      left: 0;
-      right: 0;
-      z-index: 9998;
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.14);
-      padding: 18px 22px 24px;
+      width: 34px;
+      height: 30px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
     }
 
-    .mobile-menu.open {
-      display: block;
+    .mobile-menu span {
+      position: absolute;
+      left: 3px;
+      width: 28px;
+      height: 2.5px;
+      background: #1d1d1f;
+      border-radius: 999px;
+      transition: transform 0.22s ease, top 0.22s ease, bottom 0.22s ease;
     }
 
-    .mobile-menu a {
-      display: block;
-      color: #1d1d1f;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    .mobile-menu span:first-child {
+      top: 9px;
     }
 
-    .mobile-menu a:last-child {
-      border-bottom: 0;
+    .mobile-menu span:last-child {
+      bottom: 9px;
+    }
+
+    .mobile-menu.is-open span:first-child {
+      top: 14px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu.is-open span:last-child {
+      bottom: 13px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
     }
 
     .hero {
@@ -190,7 +168,7 @@
     .breadcrumb {
       margin: 0 0 24px;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
       color: #6e6e73;
     }
 
@@ -540,13 +518,81 @@
       color: #0071e3;
     }
 
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 900px) {
-      .desktop-links {
+      .nav,
+      .nav-inner {
+        height: 64px;
+      }
+
+      .nav-logo {
+        width: 30px;
+        height: 30px;
+      }
+
+      .nav-brand {
+        font-size: 18px;
+      }
+
+      .nav-links {
         display: none;
       }
 
-      .menu-button {
+      .mobile-menu {
         display: block;
+      }
+
+      .mobile-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 24px 30px;
+        background: #fbfbfd;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+        transform: translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.24s ease, opacity 0.24s ease;
+      }
+
+      .mobile-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 58px;
+        color: #1d1d1f;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+      }
+
+      .mobile-nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .mobile-nav a::after {
+        content: "›";
+        color: #86868b;
+        font-size: 30px;
+        line-height: 1;
       }
 
       .hero-inner {
@@ -569,26 +615,8 @@
     }
 
     @media (max-width: 560px) {
-      .nav {
-        height: 60px;
-      }
-
       .nav-inner {
-        height: 60px;
         padding: 0 18px;
-      }
-
-      .brand-link img {
-        width: 22px;
-        height: 22px;
-      }
-
-      .brand-text {
-        font-size: 23px;
-      }
-
-      .mobile-menu {
-        top: 60px;
       }
 
       .hero-inner {
@@ -677,31 +705,32 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a class="brand-link" href="/index.html" aria-label="Pacific AI Infrastructure home">
-      <img src="/favicon.png" alt="Pacific AI Infrastructure logo">
-      <span class="brand-text">PAI</span>
+    <a href="/index.html" class="nav-brand" aria-label="Pacific AI Infrastructure home">
+      <img src="/favicon.png" alt="PAI logo" class="nav-logo">
+      <span>PAI</span>
     </a>
 
-    <div class="desktop-links">
-      <a href="/index.html">Home</a>
+    <div class="nav-links">
+      <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
     </div>
 
-    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+    <button class="mobile-menu" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" type="button">
       <span></span>
       <span></span>
     </button>
   </div>
-</nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/index.html">Home</a>
-  <a href="/index.html#products">Products</a>
-  <a href="/index.html#solutions">Solutions</a>
-  <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
-</div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/index.html#deployment-types">Deployment</a>
+    <a href="/index.html#products">Products</a>
+    <a href="/index.html#solutions">Solutions</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
+  </div>
+</nav>
 
 <header class="hero">
   <div class="hero-inner">
@@ -831,22 +860,22 @@
 </footer>
 
 <script>
-  const menuButton = document.getElementById("menuButton");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileMenuButton = document.getElementById("mobileMenuButton");
+  const mobileNav = document.getElementById("mobileNav");
 
-  menuButton.addEventListener("click", function () {
-    const isOpen = mobileMenu.classList.toggle("open");
-    menuButton.classList.toggle("active", isOpen);
-    menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  mobileMenuButton.addEventListener("click", function () {
+    const isOpen = mobileNav.classList.toggle("is-open");
+    mobileMenuButton.classList.toggle("is-open", isOpen);
+    mobileMenuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("menu-open", isOpen);
   });
 
-  const mobileLinks = mobileMenu.querySelectorAll("a");
-
-  mobileLinks.forEach(function (link) {
+  mobileNav.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
-      mobileMenu.classList.remove("open");
-      menuButton.classList.remove("active");
-      menuButton.setAttribute("aria-expanded", "false");
+      mobileNav.classList.remove("is-open");
+      mobileMenuButton.classList.remove("is-open");
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
     });
   });
 </script>
