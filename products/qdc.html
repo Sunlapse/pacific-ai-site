@@ -2,523 +2,1103 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Quick Disconnect Couplings (QDC) | Pacific AI Infrastructure</title>
+  <title>Quick Disconnect Couplings | Pacific AI Infrastructure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Leak-free quick disconnect couplings for AI liquid cooling systems. High-reliability QDC solutions for CDU, manifold, rack, server, and cold plate integration.">
+  <meta name="description" content="Quick disconnect couplings for AI liquid cooling systems, rack manifolds, CDU interfaces, server connections, and cold plate integration.">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    :root {
-      --bg1: #111827;
-      --bg2: #020617;
-      --bg3: #01040f;
-      --card: rgba(255,255,255,0.04);
-      --card-border: #1e293b;
-      --muted: #94a3b8;
-      --text: #e2e8f0;
-      --text-soft: #cbd5e1;
-      --blue: #60a5fa;
-      --blue-strong: #2563eb;
-      --blue-light: #4f8dfd;
-      --line: #1f2a44;
-      --warm: #f87171;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      background: radial-gradient(circle at top left, var(--bg1), var(--bg2) 58%, var(--bg3) 100%);
-      color: #fff;
-      font-family: Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      height: 52px;
+      background: #fbfbfd;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      overflow: visible;
+    }
+
+    .nav-inner {
       max-width: 1180px;
+      height: 52px;
       margin: 0 auto;
-      padding: 28px 22px 64px;
-    }
-
-    .topbar {
+      padding: 0 24px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 44px;
+      justify-content: space-between;
+      gap: 22px;
+      font-size: 13px;
     }
 
-    .logo {
-      width: 52px;
-      height: 52px;
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-logo {
+      width: 22px;
+      height: 22px;
       object-fit: contain;
     }
 
-    .brand {
-      font-size: 15px;
-      font-weight: 500;
-      color: #64748b;
-    }
-
-    .eyebrow {
-      margin: 0 0 10px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--blue);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
+    .nav-links {
+      display: flex;
       align-items: center;
-      margin-bottom: 28px;
+      gap: 30px;
     }
 
-    .page-title {
-      margin: 0 0 18px;
-      font-size: 48px;
-      line-height: 1.04;
-      font-weight: 800;
-      max-width: 760px;
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.82;
     }
 
-    .page-text {
-      margin: 0 0 22px;
-      font-size: 19px;
-      line-height: 1.7;
-      color: var(--text-soft);
-      max-width: 760px;
+    .nav-links a:hover {
+      opacity: 1;
+      color: #0071e3;
     }
 
-    .hero-note {
+    .mobile-menu {
+      display: none;
+      width: 34px;
+      height: 30px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      position: absolute;
+      left: 3px;
+      width: 28px;
+      height: 2.5px;
+      background: #1d1d1f;
+      border-radius: 999px;
+      transition: transform 0.22s ease, top 0.22s ease, bottom 0.22s ease;
+    }
+
+    .mobile-menu span:first-child {
+      top: 9px;
+    }
+
+    .mobile-menu span:last-child {
+      bottom: 9px;
+    }
+
+    .mobile-menu.is-open span:first-child {
+      top: 14px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu.is-open span:last-child {
+      bottom: 13px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .product-hero {
+      background:
+        radial-gradient(circle at 78% 20%, rgba(0,113,227,0.24), transparent 34%),
+        radial-gradient(circle at 14% 82%, rgba(14,165,233,0.16), transparent 30%),
+        linear-gradient(135deg, #020617 0%, #07111f 48%, #030712 100%);
+      color: #fff;
+      padding: 76px 22px 40px;
+      overflow: hidden;
+    }
+
+    .product-hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .product-kicker {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 14px;
+      margin: 0 0 22px;
+      color: #8bdcff;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .product-kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
-      background: rgba(96,165,250,0.08);
-      border: 1px solid rgba(96,165,250,0.2);
-      color: #dbeafe;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 24px;
+      background: #00e5ff;
+      box-shadow: 0 0 20px rgba(0,229,255,0.85);
     }
 
-    .hero-card,
-    .card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 22px;
+    .product-title {
+      margin: 0;
+      max-width: 740px;
+      font-size: clamp(46px, 6vw, 78px);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 850;
     }
 
-    .hero-image-wrap {
-      text-align: center;
+    .product-title span {
+      color: #8bdcff;
     }
 
-    .hero-caption {
-      text-align: center;
-      font-size: 13px;
-      color: #64748b;
-      margin: 0 0 12px;
+    .product-text {
+      margin: 24px 0 0;
+      max-width: 700px;
+      color: rgba(255,255,255,0.76);
+      font-size: 21px;
+      line-height: 1.42;
+      font-weight: 500;
     }
 
-    .hero-image {
-      max-width: 520px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .image-subtext {
-      margin-top: 16px;
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .cta-wrap {
+    .cta-row {
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
       align-items: center;
-      margin-top: 8px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      display: inline-block;
-      padding: 15px 26px;
-      border-radius: 12px;
-      text-decoration: none;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-size: 17px;
       font-weight: 700;
-      font-size: 16px;
-      transition: 0.2s ease;
+      text-decoration: none;
+      transition: transform 0.18s ease, background 0.18s ease;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--blue-strong), var(--blue-light));
-      color: #fff;
-    }
-
-    .btn-primary:hover {
+    .button:hover {
       transform: translateY(-1px);
     }
 
-    .btn-secondary {
-      color: var(--text-soft);
-      border: 1px solid #334155;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .section {
-      margin-top: 34px;
-    }
-
-    .section-title {
-      margin: 0 0 14px;
-      font-size: 28px;
-      line-height: 1.2;
-      font-weight: 800;
-    }
-
-    .section-text {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.75;
-      color: var(--text-soft);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .mini-title {
-      margin: 0 0 12px;
-      font-size: 18px;
-      font-weight: 700;
+    .button.primary {
+      background: #0071e3;
       color: #fff;
     }
 
-    .list {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--text);
-      line-height: 1.85;
-      font-size: 16px;
+    .button.secondary {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.08);
     }
 
-    .list li + li {
-      margin-top: 4px;
+    .product-visual-card {
+      position: relative;
+      min-height: 470px;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.05)),
+        rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 36px 90px rgba(0,0,0,0.34);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .product-image-wrap {
+      position: relative;
+      z-index: 2;
+      height: 315px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+    }
+
+    .product-image-wrap img {
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      filter: drop-shadow(0 28px 36px rgba(0,0,0,0.35));
+    }
+
+    .spec-strip {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      background: rgba(2,6,23,0.44);
+    }
+
+    .spec {
+      padding: 18px 16px;
+      border-right: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .spec:last-child {
+      border-right: none;
+    }
+
+    .spec strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .spec span {
+      display: block;
+      color: rgba(255,255,255,0.62);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .section-wrap {
+      width: 100%;
+      padding: 12px;
+    }
+
+    .section-heading {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 58px 28px 34px;
+      text-align: center;
+      background: #fff;
+      border-radius: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: #0071e3;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(40px, 5.5vw, 66px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .section-heading p {
+      margin: 14px auto 0;
+      max-width: 820px;
+      font-size: 21px;
+      line-height: 1.35;
+      color: #6e6e73;
+    }
+
+    .wide {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      min-height: 560px;
+      padding: 62px 28px 0;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 95%, rgba(37,99,235,0.22), transparent 38%),
+        #fbfbfd;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+
+    .wide-title {
+      margin: 0;
+      font-size: clamp(42px, 5.8vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .wide-copy {
+      margin: 14px auto 0;
+      max-width: 800px;
+      font-size: 25px;
+      line-height: 1.2;
+      color: #424245;
+    }
+
+    .wide-image {
+      margin: 46px auto 0;
+      width: min(92%, 760px);
+      height: 260px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .wide-image img {
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 36px rgba(0,0,0,0.18));
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 1500px;
+      margin: 0 auto 12px;
+    }
+
+    .tile {
+      min-height: 520px;
+      padding: 54px 28px 34px;
+      text-align: center;
+      background: #fbfbfd;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-decoration: none;
+      border-radius: 28px;
+    }
+
+    .tile.soft-blue {
+      background: linear-gradient(180deg, #eaf6ff 0%, #fbfbfd 62%);
+    }
+
+    .tile.soft-gray {
+      background: #f5f5f7;
+    }
+
+    .tile-label {
+      margin: 0 0 7px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #6e6e73;
+      letter-spacing: 0.02em;
+    }
+
+    .tile-title {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 850;
+    }
+
+    .tile-copy {
+      margin: 14px auto 0;
+      max-width: 560px;
+      font-size: 21px;
+      line-height: 1.25;
+      color: #1d1d1f;
+    }
+
+    .tile-small-copy {
+      margin: 18px auto 0;
+      max-width: 600px;
+      color: #6e6e73;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .tile-image {
+      margin-top: auto;
+      width: 100%;
+      height: 230px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+
+    .tile-image img {
+      max-width: 82%;
+      max-height: 215px;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 32px rgba(0,0,0,0.18));
+    }
+
+    .flow-section {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 58px 28px;
+      background: #fff;
+      border-radius: 28px;
+    }
+
+    .flow-header {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .flow-header h2 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 850;
+    }
+
+    .flow-header p {
+      margin: 14px auto 0;
+      max-width: 820px;
+      color: #6e6e73;
+      font-size: 20px;
+      line-height: 1.4;
     }
 
     .system-flow {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
+      gap: 12px;
     }
 
     .flow-box {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid #22304a;
-      border-radius: 16px;
-      padding: 18px;
-      min-height: 130px;
+      min-height: 230px;
+      padding: 24px;
+      background: #f5f5f7;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 26px;
+      transition: 0.2s ease;
+      opacity: 0.75;
+    }
+
+    .flow-box.active {
+      opacity: 1;
+      background: linear-gradient(180deg, #eaf6ff 0%, #fbfbfd 100%);
+      border: 1px solid rgba(0,113,227,0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 24px 50px rgba(0,113,227,0.10);
     }
 
     .flow-label {
-      font-size: 13px;
-      letter-spacing: 1px;
+      margin: 0 0 12px;
+      color: #0071e3;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--blue);
-      font-weight: 700;
-      margin-bottom: 10px;
     }
 
     .flow-title {
-      margin: 0 0 8px;
-      font-size: 19px;
-      font-weight: 700;
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-weight: 850;
     }
 
     .flow-text {
       margin: 0;
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--text-soft);
+      color: #6e6e73;
+      font-size: 16px;
+      line-height: 1.45;
     }
 
     .cold {
-      color: #93c5fd;
-      font-weight: 700;
+      color: #0071e3;
+      font-weight: 800;
     }
 
     .warm {
-      color: #fca5a5;
-      font-weight: 700;
+      color: #ef4444;
+      font-weight: 800;
+    }
+
+    .info-band {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 54px 28px;
+      background: #fff;
+      text-align: center;
+      border-radius: 28px;
+    }
+
+    .info-band h2 {
+      margin: 0 auto 14px;
+      max-width: 900px;
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .info-band p {
+      margin: 0 auto;
+      max-width: 820px;
+      color: #6e6e73;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .info-band .cta-row,
+    .wide .cta-row {
+      justify-content: center;
+    }
+
+    .info-band .button.primary,
+    .wide .button.primary {
+      background: #0071e3;
+      color: #fff;
+    }
+
+    .info-band .button.secondary,
+    .wide .button.secondary {
+      color: #0071e3;
+      border-color: #0071e3;
+      background: transparent;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 12px;
+      margin-top: 26px;
       overflow: hidden;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid #22304a;
+      border-radius: 22px;
+      background: #fbfbfd;
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
     th, td {
-      padding: 16px 14px;
+      padding: 18px 16px;
       text-align: left;
-      border-bottom: 1px solid #22304a;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.5;
+      vertical-align: top;
     }
 
     th {
-      color: #dbeafe;
-      font-size: 13px;
+      color: #1d1d1f;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      background: rgba(96,165,250,0.06);
+      letter-spacing: 0.14em;
+      background: #f5f5f7;
     }
 
     tr:last-child td {
       border-bottom: none;
     }
 
-    .quote-box {
-      margin-top: 28px;
-      padding: 22px;
-      border-radius: 18px;
-      border: 1px solid rgba(96,165,250,0.2);
-      background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+    .footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 22px 42px;
+      color: #6e6e73;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
-    .quote-title {
-      margin: 0 0 10px;
-      font-size: 22px;
-      font-weight: 800;
+    .footer-top {
+      border-bottom: 1px solid #d2d2d7;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
     }
 
-    .quote-text {
-      margin: 0 0 18px;
-      color: var(--text-soft);
-      font-size: 16px;
-      line-height: 1.75;
-      max-width: 900px;
-    }
-
-    .contact-note {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 38px 0 22px;
-    }
-
-    .footer-row {
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
       align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .location,
-    .footer-link {
-      margin: 0;
-      font-size: 15px;
-      color: var(--muted);
+    .footer a {
+      color: #424245;
       text-decoration: none;
     }
 
     @media (max-width: 980px) {
-      .hero,
-      .grid-2,
-      .grid-3,
-      .system-flow {
+      .product-hero-inner {
         grid-template-columns: 1fr;
       }
 
-      .page-title {
-        font-size: 40px;
+      .product-visual-card {
+        min-height: 420px;
       }
 
-      .page-text {
+      .system-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav,
+      .nav-inner {
+        height: 64px;
+      }
+
+      .nav-logo {
+        width: 30px;
+        height: 30px;
+      }
+
+      .nav-brand {
         font-size: 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .mobile-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 24px 30px;
+        background: #fbfbfd;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+        transform: translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.24s ease, opacity 0.24s ease;
+      }
+
+      .mobile-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 58px;
+        color: #1d1d1f;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+      }
+
+      .mobile-nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .mobile-nav a::after {
+        content: "›";
+        color: #86868b;
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .product-hero {
+        padding: 58px 22px 26px;
+      }
+
+      .product-hero-inner {
+        gap: 28px;
+      }
+
+      .product-title {
+        font-size: 48px;
+      }
+
+      .product-text {
+        font-size: 19px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tile {
+        min-height: 500px;
       }
     }
 
     @media (max-width: 640px) {
-      .container {
-        padding: 22px 16px 52px;
+      .section-wrap {
+        padding: 8px;
       }
 
-      .page-title {
-        font-size: 34px;
+      .product-title {
+        font-size: 42px;
       }
 
-      .section-title {
-        font-size: 24px;
+      .product-text {
+        font-size: 18px;
+      }
+
+      .product-visual-card {
+        min-height: 390px;
+        border-radius: 28px;
+      }
+
+      .product-image-wrap {
+        height: 250px;
+        padding: 24px;
+      }
+
+      .product-image-wrap img {
+        max-height: 200px;
+      }
+
+      .spec-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .spec {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+      }
+
+      .spec:last-child {
+        border-bottom: none;
+      }
+
+      .section-heading {
+        padding: 42px 20px 26px;
+      }
+
+      .section-heading h2 {
+        font-size: 40px;
+      }
+
+      .section-heading p {
+        font-size: 18px;
+      }
+
+      .wide {
+        min-height: 520px;
+        padding: 48px 20px 0;
+      }
+
+      .wide-title {
+        font-size: 40px;
+      }
+
+      .wide-copy {
+        font-size: 21px;
+      }
+
+      .wide-image {
+        height: 230px;
+      }
+
+      .wide-image img {
+        max-height: 205px;
+      }
+
+      .tile {
+        min-height: 470px;
+        padding: 42px 20px 28px;
+      }
+
+      .tile-copy {
+        font-size: 19px;
+      }
+
+      .tile-image {
+        height: 205px;
+      }
+
+      .tile-image img {
+        max-height: 195px;
+      }
+
+      .flow-section {
+        padding: 42px 20px;
+      }
+
+      .system-flow {
+        grid-template-columns: 1fr;
       }
 
       th, td {
-        padding: 13px 10px;
+        display: block;
+        width: 100%;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        padding: 14px 16px;
+      }
+
+      tr {
+        display: block;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+      }
+
+      tr:last-child {
+        border-bottom: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-brand">
+        <img src="/favicon.png" alt="PAI logo" class="nav-logo">
+        <span>PAI</span>
+      </a>
 
-    <div class="topbar">
-      <img src="/logo-primary.png" alt="Pacific AI Infrastructure logo" class="logo">
-      <div class="brand">Pacific AI Infrastructure (PAI)</div>
-    </div>
-
-    <p class="eyebrow">Products</p>
-
-    <div class="hero">
-      <div>
-        <div class="hero-note">AI liquid cooling infrastructure, rack deployment, serviceability</div>
-        <h1 class="page-title">Quick Disconnect Couplings for AI Liquid Cooling Systems</h1>
-        <p class="page-text">
-          Leak-free, high-reliability quick disconnect couplings designed for liquid-cooled AI infrastructure. QDCs are used across CDU, manifold, server, and cold plate connection points to enable secure fluid routing, modular deployment, and fast maintenance in high-density cooling systems.
-        </p>
-
-        <div class="cta-wrap">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Project%20Quote" class="btn-primary">Request Project Quote</a>
-          <a href="/index.html" class="btn-secondary">Back to Home</a>
-        </div>
+      <div class="nav-links">
+        <a href="/index.html#deployment-types">Deployment</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#solutions">Solutions</a>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
-      <div class="hero-card hero-image-wrap">
-        <p class="hero-caption">Representative connector types and configurations</p>
-        <img src="/images/qdc-set.png" alt="Quick disconnect coupling product set" class="hero-image">
-        <div class="image-subtext">
-          Includes dry-break couplings, threaded connectors, valve-integrated fittings, and quick-release designs for liquid-cooled infrastructure.
-        </div>
-      </div>
+      <button class="mobile-menu" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+      </button>
     </div>
 
-    <div class="section">
-      <div class="card">
-        <h2 class="section-title">Where QDCs are used across the liquid cooling system</h2>
-        <p class="section-text">
-          Quick disconnect couplings are not limited to a single point in the cooling loop. In direct-to-chip liquid cooling architectures, QDCs are deployed across multiple interface layers to enable secure fluid connections, modular system design, and fast serviceability without draining the loop.
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/index.html#deployment-types">Deployment</a>
+      <a href="/index.html#products">Products</a>
+      <a href="/index.html#solutions">Solutions</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <p class="product-kicker">Product · Leak-free fluid connections</p>
+
+          <h1 class="product-title">
+            Quick Disconnect Couplings <span>for AI liquid cooling systems.</span>
+          </h1>
+
+          <p class="product-text">
+            QDCs support secure fluid routing across CDUs, rack manifolds, servers, and cold plate assemblies. They allow liquid-cooled infrastructure to be installed, serviced, isolated, and scaled without draining the full cooling loop.
+          </p>
+
+          <div class="cta-row">
+            <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Project%20Quote" class="button primary">Request project quote</a>
+            <a href="/index.html#products" class="button secondary">Back to products</a>
+          </div>
+        </div>
+
+        <div class="product-visual-card">
+          <div class="product-image-wrap">
+            <img src="/images/qdc-set.png" alt="Quick disconnect coupling product set">
+          </div>
+
+          <div class="spec-strip">
+            <div class="spec">
+              <strong>Dry-Break</strong>
+              <span>Low-spill connector design for service access.</span>
+            </div>
+
+            <div class="spec">
+              <strong>Rack-Level</strong>
+              <span>Used across CDU, manifold, and server connections.</span>
+            </div>
+
+            <div class="spec">
+              <strong>Serviceable</strong>
+              <span>Supports modular replacement and deployment work.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-wrap">
+
+      <section class="section-heading">
+        <p class="section-kicker">Quick Disconnect Couplings</p>
+        <h2>Small components. Critical connection points.</h2>
+        <p>
+          QDCs are used throughout liquid-cooled AI infrastructure to reduce fluid loss, support fast service workflows, and create reliable connection points between the cooling system and compute hardware.
         </p>
+      </section>
+
+      <section class="wide">
+        <h2 class="wide-title">Built for liquid-cooled rack serviceability.</h2>
+        <p class="wide-copy">
+          QDCs allow racks, servers, and cooling hardware to be connected or isolated without disrupting the entire system.
+        </p>
+
+        <div class="cta-row">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Deployment%20Inquiry" class="button primary">Discuss QDC supply</a>
+          <a href="/products/manifolds.html" class="button secondary">View manifolds</a>
+        </div>
+
+        <div class="wide-image">
+          <img src="/images/qdc-set.png" alt="QDC product set for liquid cooling systems">
+        </div>
+      </section>
+
+      <section class="flow-section">
+        <div class="flow-header">
+          <h2>Where QDCs fit.</h2>
+          <p>
+            Quick disconnect couplings are not limited to one point in the loop. They appear across CDU, manifold, server, and cold plate connection layers.
+          </p>
+        </div>
 
         <div class="system-flow">
-          <div class="flow-box">
-            <div class="flow-label">Interface 1</div>
+          <div class="flow-box active">
+            <p class="flow-label">Interface 1</p>
             <h3 class="flow-title">CDU to Rack Manifold</h3>
             <p class="flow-text">
-              QDCs are often used between the cooling distribution unit and rack manifolds, allowing racks to be connected or isolated without disrupting facility-side cooling infrastructure.
+              QDCs can connect the cooling distribution unit to rack manifolds, helping racks connect or isolate from the cooling loop.
             </p>
           </div>
 
-          <div class="flow-box">
-            <div class="flow-label">Interface 2</div>
-            <h3 class="flow-title">Rack Manifold Distribution</h3>
+          <div class="flow-box active">
+            <p class="flow-label">Interface 2</p>
+            <h3 class="flow-title">Rack Manifold</h3>
             <p class="flow-text">
-              Within the rack, manifolds distribute <span class="cold">cold coolant</span> and collect <span class="warm">warm return</span> fluid. QDCs enable modular connections to each compute node.
+              Manifolds distribute <span class="cold">cold coolant</span> and collect <span class="warm">warm return</span> fluid across server positions.
             </p>
           </div>
 
-          <div class="flow-box">
-            <div class="flow-label">Interface 3</div>
-            <h3 class="flow-title">Server &amp; Node Connections</h3>
+          <div class="flow-box active">
+            <p class="flow-label">Interface 3</p>
+            <h3 class="flow-title">Server Connections</h3>
             <p class="flow-text">
-              QDCs are used to connect individual server trays or GPU nodes, allowing systems to be installed, removed, or serviced without breaking the entire cooling loop.
+              QDCs connect server trays or GPU nodes so systems can be installed, removed, or serviced more efficiently.
             </p>
           </div>
 
-          <div class="flow-box">
-            <div class="flow-label">Interface 4</div>
-            <h3 class="flow-title">Cold Plate Loop Integration</h3>
+          <div class="flow-box active">
+            <p class="flow-label">Interface 4</p>
+            <h3 class="flow-title">Cold Plate Routing</h3>
             <p class="flow-text">
-              In some designs, QDCs are positioned near cold plate interfaces or internal hose assemblies to support platform-specific routing and maintenance flexibility.
+              Some designs use compact QDCs near cold plate or hose assemblies to support platform-specific routing.
             </p>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="section grid-3">
-      <div class="card">
-        <h3 class="mini-title">Why QDCs matter</h3>
-        <ul class="list">
-          <li>Minimize fluid loss during service</li>
-          <li>Reduce leak risk at connection points</li>
-          <li>Support modular rack deployment</li>
-          <li>Improve field service speed</li>
-          <li>Help maintain reliable flow paths</li>
-        </ul>
-      </div>
+      <section class="split-grid">
+        <div class="tile soft-blue">
+          <p class="tile-label">Why QDCs Matter</p>
+          <h2 class="tile-title">Service without draining the loop.</h2>
+          <p class="tile-copy">
+            QDCs help minimize fluid loss during maintenance and reduce leak risk at connection points.
+          </p>
+          <p class="tile-small-copy">
+            They support modular rack deployment, faster service access, and cleaner liquid cooling integration.
+          </p>
+          <div class="tile-image">
+            <img src="/images/qdc-set.png" alt="Quick disconnect couplings for rack liquid cooling">
+          </div>
+        </div>
 
-      <div class="card">
-        <h3 class="mini-title">Typical applications</h3>
-        <ul class="list">
-          <li>GPU cold plate connections</li>
-          <li>Rack manifold distribution</li>
-          <li>CDU interface connections</li>
-          <li>High-density AI compute racks</li>
-          <li>Retrofit and new-build liquid cooling systems</li>
-        </ul>
-      </div>
+        <div class="tile">
+          <p class="tile-label">Typical Applications</p>
+          <h2 class="tile-title">CDU, manifold, server, and cold plate interfaces.</h2>
+          <p class="tile-copy">
+            QDCs are commonly used for rack manifold distribution, CDU interface connections, GPU cold plate connections, and liquid cooling retrofit deployments.
+          </p>
+          <p class="tile-small-copy">
+            PAI supports sourcing across standard and project-specific connector requirements.
+          </p>
+          <div class="tile-image">
+            <img src="/images/qdc.png" alt="QDC connector for liquid cooling systems">
+          </div>
+        </div>
+      </section>
 
-      <div class="card">
-        <h3 class="mini-title">Key features</h3>
-        <ul class="list">
-          <li>Dry-break, low-spill design</li>
-          <li>High-flow liquid cooling support</li>
-          <li>Multiple sizes and configurations</li>
-          <li>Service-friendly installation</li>
-          <li>Designed for repeated connection cycles</li>
-        </ul>
-      </div>
-    </div>
+      <section class="split-grid">
+        <div class="tile soft-gray">
+          <p class="tile-label">Connector Features</p>
+          <h2 class="tile-title">Low-spill, high-reliability connections.</h2>
+          <p class="tile-copy">
+            QDC configurations may include dry-break designs, high-flow geometry, valve-integrated fittings, male and female coupler sets, threaded styles, and panel-mount options.
+          </p>
+          <p class="tile-small-copy">
+            Selection depends on flow requirement, pressure drop, space constraints, service cycles, and system compatibility.
+          </p>
+        </div>
 
-    <div class="section grid-2">
-      <div class="card">
-        <h2 class="section-title">Designed for AI rack environments</h2>
-        <p class="section-text">
-          AI racks demand more from every fluid connection point. As rack power density rises, connectors must support reliable coolant flow, compact rack layouts, repeated servicing, and consistent performance across large deployments.
-        </p>
-      </div>
+        <div class="tile soft-blue">
+          <p class="tile-label">Deployment Fit</p>
+          <h2 class="tile-title">Designed around rack constraints.</h2>
+          <p class="tile-copy">
+            AI racks require connector choices that fit dense physical layouts while maintaining reliable flow paths and service access.
+          </p>
+          <p class="tile-small-copy">
+            PAI helps align QDC selection with CDU, manifold, hose, and cold plate architecture.
+          </p>
+        </div>
+      </section>
 
-      <div class="card">
-        <h2 class="section-title">Built for deployment flexibility</h2>
-        <p class="section-text">
-          Pacific AI Infrastructure supports QDC supply for liquid-cooled systems across rack, manifold, and CDU integration points. We work with standard and project-specific connector requirements for deployment planning, scaling, and logistics.
-        </p>
-      </div>
-    </div>
+      <section class="flow-section">
+        <div class="flow-header">
+          <h2>Technical focus areas.</h2>
+          <p>
+            QDC selection affects leak control, flow performance, pressure drop, serviceability, and fit across the rack cooling loop.
+          </p>
+        </div>
 
-    <div class="section">
-      <div class="card">
-        <h2 class="section-title">Technical focus areas</h2>
         <table>
           <thead>
             <tr>
@@ -531,7 +1111,7 @@
             <tr>
               <td>Leak control</td>
               <td>Dry-break and low-spill connection design</td>
-              <td>Reduces fluid loss and protects surrounding hardware during service</td>
+              <td>Reduces fluid loss and helps protect surrounding hardware during service</td>
             </tr>
             <tr>
               <td>Flow performance</td>
@@ -555,104 +1135,140 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
+      </section>
 
-    <div class="section grid-2">
-      <div class="card">
-        <h2 class="section-title">Available connector configurations</h2>
-       <ul class="list">
-  <li>QDC solutions across multiple flow and size classes</li>
-  <li>Available in UQD, MQD, and related connector formats</li>
-  <li>Threaded and panel-mount styles</li>
-  <li>Valve-integrated configurations</li>
-  <li>Male and female coupler sets</li>
-  <li>Project-specific sizing and layout options</li>
-</ul>
-      </div>
-
-      <div class="card">
-        <h2 class="section-title">Ideal use cases</h2>
-        <ul class="list">
-          <li>H100, H200, GB200, and other high-density GPU racks</li>
-          <li>Rack manifold supply and return lines</li>
-          <li>CDU-to-rack coolant distribution connections</li>
-          <li>OEM liquid cooling assemblies</li>
-          <li>AI infrastructure retrofit deployments</li>
-        </ul>
-      </div>
-    </div>
-<div class="section">
-  <div class="card">
-    <h2 class="section-title">Connector types by application</h2>
-    <p class="section-text">
-      Quick disconnect coupling is the system-level category. Within that category, different connector series are typically selected based on flow requirement, physical space, serviceability, and the specific connection point within the cooling architecture.
-    </p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Connection point</th>
-          <th>Typical QDC type</th>
-          <th>What usually matters</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>CDU to rack manifold</td>
-          <td>Higher-flow QDC, often UQD series</td>
-          <td>Larger flow capacity, low restriction, reliable rack isolation</td>
-        </tr>
-        <tr>
-          <td>Rack manifold to server</td>
-          <td>Mid-size QDC, often UQD or similar formats</td>
-          <td>Balanced flow, compact fit, repeatable service connections</td>
-        </tr>
-        <tr>
-          <td>Server or node-level liquid routing</td>
-          <td>Compact QDC, often MQD or similar formats</td>
-          <td>Dense spacing, ease of maintenance, modular replacement</td>
-        </tr>
-        <tr>
-          <td>Cold plate loop integration</td>
-          <td>Application-specific compact QDC or fitting configuration</td>
-          <td>Platform fit, routing flexibility, service access</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-    <div class="section">
-      <div class="quote-box">
-        <h2 class="quote-title">Request QDC supply for your deployment</h2>
-        <p class="quote-text">
-          Pacific AI Infrastructure supports liquid cooling connector sourcing for AI infrastructure projects requiring reliable rack-level fluid connections. Share your rack count, GPU platform, target timeline, and deployment location to discuss fit, configuration, and volume.
-        </p>
-        <div class="cta-wrap">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Deployment%20Inquiry" class="btn-primary">Request Quote</a>
+      <section class="flow-section">
+        <div class="flow-header">
+          <h2>Connector types by application.</h2>
+          <p>
+            Quick disconnect coupling is the system-level category. Different connector series are selected based on flow requirement, physical space, serviceability, and the connection point.
+          </p>
         </div>
-        <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Connection point</th>
+              <th>Typical QDC type</th>
+              <th>What usually matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CDU to rack manifold</td>
+              <td>Higher-flow QDC, often UQD series</td>
+              <td>Larger flow capacity, low restriction, reliable rack isolation</td>
+            </tr>
+            <tr>
+              <td>Rack manifold to server</td>
+              <td>Mid-size QDC, often UQD or similar formats</td>
+              <td>Balanced flow, compact fit, repeatable service connections</td>
+            </tr>
+            <tr>
+              <td>Server or node-level liquid routing</td>
+              <td>Compact QDC, often MQD or similar formats</td>
+              <td>Dense spacing, ease of maintenance, modular replacement</td>
+            </tr>
+            <tr>
+              <td>Cold plate loop integration</td>
+              <td>Application-specific compact QDC or fitting configuration</td>
+              <td>Platform fit, routing flexibility, service access</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="split-grid">
+        <div class="tile">
+          <p class="tile-label">Available Configurations</p>
+          <h2 class="tile-title">QDC formats for rack liquid cooling.</h2>
+          <p class="tile-copy">
+            QDC solutions across multiple flow and size classes, including UQD, MQD, threaded, panel-mount, valve-integrated, and male/female coupler sets.
+          </p>
+          <p class="tile-small-copy">
+            Project-specific sizing and layout options are available depending on rack architecture and deployment requirements.
+          </p>
+        </div>
+
+        <div class="tile soft-gray">
+          <p class="tile-label">Ideal Use Cases</p>
+          <h2 class="tile-title">AI and HPC liquid cooling systems.</h2>
+          <p class="tile-copy">
+            H100, H200, GB200, and other high-density GPU racks, CDU-to-rack connections, manifold supply and return lines, OEM liquid cooling assemblies, and retrofit deployments.
+          </p>
+        </div>
+      </section>
+
+      <section class="info-band">
+        <h2>Request QDC supply for your deployment.</h2>
+        <p>
+          Pacific AI Infrastructure supports QDC sourcing for AI infrastructure projects requiring reliable rack-level fluid connections. Share your rack count, GPU platform, target timeline, and deployment location to discuss fit, configuration, and volume.
+        </p>
+
+        <div class="cta-row">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Deployment%20Inquiry" class="button primary">Request quote</a>
+          <a href="/index.html#products" class="button secondary">Back to products</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      Supporting QDC sourcing, rack manifold connections, CDU interfaces, server connections, and liquid cooling deployment hardware for AI infrastructure. Honolulu, Hawaii.
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Pacific AI Infrastructure</div>
+
+      <div>
+        <a href="/privacy.html">Privacy Policy</a>
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
     </div>
+  </footer>
 
-    <div class="divider"></div>
+  <script>
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileNav = document.getElementById("mobileNav");
 
-    <div class="footer-row">
-      <p class="location">Honolulu, Hawaii</p>
-      <a href="/index.html" class="footer-link">Home</a>
-    </div>
+    function closeMobileMenu() {
+      mobileMenuButton.classList.remove("is-open");
+      mobileNav.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+      mobileMenuButton.setAttribute("aria-label", "Open menu");
+    }
 
-    <div class="divider"></div>
+    function openMobileMenu() {
+      mobileMenuButton.classList.add("is-open");
+      mobileNav.classList.add("is-open");
+      document.body.classList.add("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "true");
+      mobileMenuButton.setAttribute("aria-label", "Close menu");
+    }
 
-<div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:#64748b;">
-  <div>© 2026 Pacific AI Infrastructure</div>
+    mobileMenuButton.addEventListener("click", function () {
+      const isOpen = mobileNav.classList.contains("is-open");
 
-  <div style="display:flex; gap:16px;">
-    <a href="/privacy.html" style="color:#64748b; text-decoration:none;">Privacy Policy</a>
-    <a href="mailto:info@pacificaiinfrastructure.com" style="color:#64748b; text-decoration:none;">Contact</a>
-  </div>
-</div>
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
 
-</div> 
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        closeMobileMenu();
+      }
+    });
+  </script>
 </body>
 </html>
