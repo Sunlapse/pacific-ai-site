@@ -49,18 +49,18 @@
       position: sticky;
       top: 0;
       z-index: 9999;
-      height: 58px;
+      height: 64px;
       background: rgba(251,251,253,0.94);
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
     .nav-inner {
       max-width: 1180px;
+      height: 64px;
       margin: 0 auto;
       padding: 0 22px;
-      height: 58px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -72,7 +72,7 @@
       gap: 12px;
       text-decoration: none;
       font-weight: 800;
-      font-size: 20px;
+      letter-spacing: -0.02em;
       color: #1d1d1f;
     }
 
@@ -80,7 +80,13 @@
       width: 22px;
       height: 22px;
       object-fit: contain;
-      border-radius: 50%;
+      display: block;
+      border-radius: 0;
+    }
+
+    .brand-text {
+      font-size: 24px;
+      line-height: 1;
     }
 
     .nav-links {
@@ -157,10 +163,11 @@
 
     .mobile-menu {
       display: none;
-      position: absolute;
-      top: 58px;
+      position: fixed;
+      top: 64px;
       left: 0;
       right: 0;
+      z-index: 9998;
       background: rgba(255,255,255,0.98);
       border-bottom: 1px solid rgba(0,0,0,0.08);
       box-shadow: 0 18px 45px rgba(0,0,0,0.14);
@@ -528,8 +535,27 @@
     }
 
     @media (max-width: 620px) {
+      .nav {
+        height: 60px;
+      }
+
       .nav-inner {
+        height: 60px;
         padding: 0 18px;
+      }
+
+      .brand-link img {
+        width: 22px;
+        height: 22px;
+        border-radius: 0;
+      }
+
+      .brand-text {
+        font-size: 23px;
+      }
+
+      .mobile-menu {
+        top: 60px;
       }
 
       .page-wrap {
@@ -628,7 +654,7 @@
   <div class="nav-inner">
     <a href="/" class="brand-link">
       <img src="/favicon.png" alt="Pacific AI Infrastructure logo">
-      <span>PAI</span>
+      <span class="brand-text">PAI</span>
     </a>
 
     <div class="nav-links">
@@ -647,6 +673,7 @@
   </div>
 
   <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
     <a href="/#products">Products</a>
     <a href="/#solutions">Solutions</a>
     <a href="/privacy.html">Privacy Policy</a>
