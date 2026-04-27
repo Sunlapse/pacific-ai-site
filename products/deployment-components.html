@@ -11,427 +11,1084 @@
   <meta name="description" content="Deployment components for liquid-cooled AI infrastructure. Hose assemblies, QDCs, fittings, valves, and integration hardware for rack and CDU deployment.">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    :root {
-      --bg1: #111827;
-      --bg2: #020617;
-      --bg3: #01040f;
-      --card: rgba(255,255,255,0.04);
-      --card-border: #1e293b;
-      --muted: #94a3b8;
-      --text: #e2e8f0;
-      --text-soft: #cbd5e1;
-      --blue: #60a5fa;
-      --blue-strong: #2563eb;
-      --blue-light: #4f8dfd;
-      --line: #1f2a44;
-      --warm: #f87171;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      background: radial-gradient(circle at top left, var(--bg1), var(--bg2) 58%, var(--bg3) 100%);
-      color: #ffffff;
-      font-family: Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      height: 52px;
+      background: #fbfbfd;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      overflow: visible;
+    }
+
+    .nav-inner {
       max-width: 1180px;
+      height: 52px;
       margin: 0 auto;
-      padding: 28px 22px 64px;
-    }
-
-    .topbar {
+      padding: 0 24px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 44px;
+      justify-content: space-between;
+      gap: 22px;
+      font-size: 13px;
     }
 
-    .logo {
-      width: 52px;
-      height: 52px;
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-logo {
+      width: 22px;
+      height: 22px;
       object-fit: contain;
     }
 
-    .brand {
-      font-size: 15px;
-      font-weight: 500;
-      color: #64748b;
-    }
-
-    .eyebrow {
-      margin: 0 0 10px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--blue);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
+    .nav-links {
+      display: flex;
       align-items: center;
-      margin-bottom: 28px;
+      gap: 30px;
     }
 
-    .page-title {
-      margin: 0 0 18px;
-      font-size: 48px;
-      line-height: 1.04;
-      font-weight: 800;
-      max-width: 760px;
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.82;
     }
 
-    .page-text {
-      margin: 0 0 22px;
-      font-size: 19px;
-      line-height: 1.7;
-      color: var(--text-soft);
-      max-width: 760px;
+    .nav-links a:hover {
+      opacity: 1;
+      color: #0071e3;
     }
 
-    .hero-note {
+    .mobile-menu {
+      display: none;
+      width: 34px;
+      height: 30px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      position: absolute;
+      left: 3px;
+      width: 28px;
+      height: 2.5px;
+      background: #1d1d1f;
+      border-radius: 999px;
+      transition: transform 0.22s ease, top 0.22s ease, bottom 0.22s ease;
+    }
+
+    .mobile-menu span:first-child {
+      top: 9px;
+    }
+
+    .mobile-menu span:last-child {
+      bottom: 9px;
+    }
+
+    .mobile-menu.is-open span:first-child {
+      top: 14px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu.is-open span:last-child {
+      bottom: 13px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .product-hero {
+      background:
+        radial-gradient(circle at 78% 20%, rgba(0,113,227,0.26), transparent 34%),
+        radial-gradient(circle at 14% 82%, rgba(14,165,233,0.18), transparent 30%),
+        linear-gradient(135deg, #020617 0%, #07111f 48%, #030712 100%);
+      color: #fff;
+      padding: 76px 22px 40px;
+      overflow: hidden;
+    }
+
+    .product-hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .product-kicker {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 14px;
+      margin: 0 0 22px;
+      color: #8bdcff;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .product-kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
-      background: rgba(96,165,250,0.08);
-      border: 1px solid rgba(96,165,250,0.2);
-      color: #dbeafe;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 24px;
+      background: #00e5ff;
+      box-shadow: 0 0 20px rgba(0,229,255,0.85);
     }
 
-    .hero-card,
-    .card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 22px;
+    .product-title {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(46px, 6vw, 78px);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 850;
     }
 
-    .hero-image-wrap {
-      text-align: center;
+    .product-title span {
+      color: #8bdcff;
     }
 
-    .hero-caption {
-      text-align: center;
-      font-size: 13px;
-      color: #64748b;
-      margin: 0 0 12px;
+    .product-text {
+      margin: 24px 0 0;
+      max-width: 700px;
+      color: rgba(255,255,255,0.76);
+      font-size: 21px;
+      line-height: 1.42;
+      font-weight: 500;
     }
 
-    .hero-image {
-      max-width: 420px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
-    }
-.hero-image.small {
-  max-width: 320px;
-  opacity: 0.95;
-}
-    .image-subtext {
-      margin-top: 16px;
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .cta-wrap {
+    .cta-row {
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
       align-items: center;
-      margin-top: 8px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      display: inline-block;
-      padding: 15px 26px;
-      border-radius: 12px;
-      text-decoration: none;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-size: 17px;
       font-weight: 700;
-      font-size: 16px;
-      transition: 0.2s ease;
+      text-decoration: none;
+      transition: transform 0.18s ease, background 0.18s ease;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--blue-strong), var(--blue-light));
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
+    .button:hover {
       transform: translateY(-1px);
     }
 
-    .btn-secondary {
-      color: var(--text-soft);
-      border: 1px solid #334155;
-      background: rgba(255,255,255,0.02);
+    .button.primary {
+      background: #0071e3;
+      color: #fff;
     }
 
-    .section {
-      margin-top: 34px;
+    .button.secondary {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.08);
     }
 
-    .section-title {
-      margin: 0 0 14px;
-      font-size: 28px;
-      line-height: 1.2;
+    .product-visual-card {
+      position: relative;
+      min-height: 470px;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.05)),
+        rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 36px 90px rgba(0,0,0,0.34);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .product-image-wrap {
+      position: relative;
+      z-index: 2;
+      height: 315px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+    }
+
+    .product-image-wrap img {
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      filter: drop-shadow(0 28px 36px rgba(0,0,0,0.35));
+    }
+
+    .spec-strip {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      background: rgba(2,6,23,0.44);
+    }
+
+    .spec {
+      padding: 18px 16px;
+      border-right: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .spec:last-child {
+      border-right: none;
+    }
+
+    .spec strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .spec span {
+      display: block;
+      color: rgba(255,255,255,0.62);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .section-wrap {
+      width: 100%;
+      padding: 12px;
+    }
+
+    .section-heading {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 58px 28px 34px;
+      text-align: center;
+      background: #fff;
+      border-radius: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: #0071e3;
+      font-size: 13px;
       font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
-    .section-text {
+    .section-heading h2 {
       margin: 0;
-      font-size: 17px;
-      line-height: 1.75;
-      color: var(--text-soft);
+      font-size: clamp(40px, 5.5vw, 66px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 850;
     }
 
-    .grid-2 {
+    .section-heading p {
+      margin: 14px auto 0;
+      max-width: 780px;
+      font-size: 21px;
+      line-height: 1.35;
+      color: #6e6e73;
+    }
+
+    .wide {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      min-height: 560px;
+      padding: 62px 28px 0;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 95%, rgba(37,99,235,0.22), transparent 38%),
+        #fbfbfd;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+
+    .wide-title {
+      margin: 0;
+      font-size: clamp(42px, 5.8vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .wide-copy {
+      margin: 14px auto 0;
+      max-width: 780px;
+      font-size: 25px;
+      line-height: 1.2;
+      color: #424245;
+    }
+
+    .wide-image {
+      margin: 46px auto 0;
+      width: min(92%, 760px);
+      height: 260px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .wide-image img {
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 36px rgba(0,0,0,0.18));
+    }
+
+    .split-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
+      gap: 12px;
+      max-width: 1500px;
+      margin: 0 auto 12px;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+    .tile {
+      min-height: 520px;
+      padding: 54px 28px 34px;
+      text-align: center;
+      background: #fbfbfd;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-decoration: none;
+      border-radius: 28px;
     }
 
-    .mini-title {
-      margin: 0 0 12px;
-      font-size: 18px;
-      font-weight: 700;
-      color: #ffffff;
+    .tile.soft-blue {
+      background: linear-gradient(180deg, #eaf6ff 0%, #fbfbfd 62%);
     }
 
-    .list {
+    .tile.soft-gray {
+      background: #f5f5f7;
+    }
+
+    .tile-label {
+      margin: 0 0 7px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #6e6e73;
+      letter-spacing: 0.02em;
+    }
+
+    .tile-title {
       margin: 0;
-      padding-left: 20px;
-      color: var(--text);
-      line-height: 1.85;
-      font-size: 16px;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 850;
     }
 
-    .list li + li {
-      margin-top: 4px;
+    .tile-copy {
+      margin: 14px auto 0;
+      max-width: 560px;
+      font-size: 21px;
+      line-height: 1.25;
+      color: #1d1d1f;
+    }
+
+    .tile-small-copy {
+      margin: 18px auto 0;
+      max-width: 600px;
+      color: #6e6e73;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .tile-image {
+      margin-top: auto;
+      width: 100%;
+      height: 230px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+
+    .tile-image img {
+      max-width: 82%;
+      max-height: 215px;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 32px rgba(0,0,0,0.18));
+    }
+
+    .flow-section {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 58px 28px;
+      background: #fff;
+      border-radius: 28px;
+    }
+
+    .flow-header {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .flow-header h2 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 850;
+    }
+
+    .flow-header p {
+      margin: 14px auto 0;
+      max-width: 820px;
+      color: #6e6e73;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .system-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .flow-box {
+      min-height: 210px;
+      padding: 24px;
+      background: #f5f5f7;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 26px;
+      transition: 0.2s ease;
+      opacity: 0.75;
+    }
+
+    .flow-box.active {
+      opacity: 1;
+      background: linear-gradient(180deg, #eaf6ff 0%, #fbfbfd 100%);
+      border: 1px solid rgba(0,113,227,0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 24px 50px rgba(0,113,227,0.10);
+    }
+
+    .flow-label {
+      margin: 0 0 12px;
+      color: #0071e3;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .flow-title {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-weight: 850;
+    }
+
+    .flow-text {
+      margin: 0;
+      color: #6e6e73;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .info-band {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 54px 28px;
+      background: #fff;
+      text-align: center;
+      border-radius: 28px;
+    }
+
+    .info-band h2 {
+      margin: 0 auto 14px;
+      max-width: 900px;
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .info-band p {
+      margin: 0 auto;
+      max-width: 820px;
+      color: #6e6e73;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .info-band .cta-row,
+    .wide .cta-row {
+      justify-content: center;
+    }
+
+    .info-band .button.primary,
+    .wide .button.primary {
+      background: #0071e3;
+      color: #fff;
+    }
+
+    .info-band .button.secondary,
+    .wide .button.secondary {
+      color: #0071e3;
+      border-color: #0071e3;
+      background: transparent;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 12px;
+      margin-top: 26px;
       overflow: hidden;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid #22304a;
+      border-radius: 22px;
+      background: #fbfbfd;
+      border: 1px solid rgba(0,0,0,0.06);
     }
 
     th, td {
-      padding: 16px 14px;
+      padding: 18px 16px;
       text-align: left;
-      border-bottom: 1px solid #22304a;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.5;
+      vertical-align: top;
     }
 
     th {
-      color: #dbeafe;
-      font-size: 13px;
+      color: #1d1d1f;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      background: rgba(96,165,250,0.06);
+      letter-spacing: 0.14em;
+      background: #f5f5f7;
     }
 
     tr:last-child td {
       border-bottom: none;
     }
 
-    .quote-box {
-      margin-top: 28px;
-      padding: 22px;
-      border-radius: 18px;
-      border: 1px solid rgba(96,165,250,0.2);
-      background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+    .footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 22px 42px;
+      color: #6e6e73;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
-    .quote-title {
-      margin: 0 0 10px;
-      font-size: 22px;
-      font-weight: 800;
+    .footer-top {
+      border-bottom: 1px solid #d2d2d7;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
     }
 
-    .quote-text {
-      margin: 0 0 18px;
-      color: var(--text-soft);
-      font-size: 16px;
-      line-height: 1.75;
-      max-width: 900px;
-    }
-
-    .contact-note {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 38px 0 22px;
-    }
-
-    .footer-row {
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
       align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .location,
-    .footer-link {
-      margin: 0;
-      font-size: 15px;
-      color: var(--muted);
+    .footer a {
+      color: #424245;
       text-decoration: none;
     }
 
     @media (max-width: 980px) {
-      .hero,
-      .grid-2,
-      .grid-3 {
+      .product-hero-inner {
         grid-template-columns: 1fr;
       }
 
-      .page-title {
-        font-size: 40px;
+      .product-visual-card {
+        min-height: 420px;
       }
 
-      .page-text {
+      .system-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav,
+      .nav-inner {
+        height: 64px;
+      }
+
+      .nav-logo {
+        width: 30px;
+        height: 30px;
+      }
+
+      .nav-brand {
         font-size: 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .mobile-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        padding: 18px 24px 30px;
+        background: #fbfbfd;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+        transform: translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.24s ease, opacity 0.24s ease;
+      }
+
+      .mobile-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 58px;
+        color: #1d1d1f;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+      }
+
+      .mobile-nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .mobile-nav a::after {
+        content: "›";
+        color: #86868b;
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .product-hero {
+        padding: 58px 22px 26px;
+      }
+
+      .product-hero-inner {
+        gap: 28px;
+      }
+
+      .product-title {
+        font-size: 48px;
+      }
+
+      .product-text {
+        font-size: 19px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tile {
+        min-height: 500px;
       }
     }
 
     @media (max-width: 640px) {
-      .container {
-        padding: 22px 16px 52px;
+      .section-wrap {
+        padding: 8px;
       }
 
-      .page-title {
-        font-size: 34px;
+      .product-title {
+        font-size: 42px;
       }
 
-      .section-title {
-        font-size: 24px;
+      .product-text {
+        font-size: 18px;
+      }
+
+      .product-visual-card {
+        min-height: 390px;
+        border-radius: 28px;
+      }
+
+      .product-image-wrap {
+        height: 250px;
+        padding: 24px;
+      }
+
+      .product-image-wrap img {
+        max-height: 200px;
+      }
+
+      .spec-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .spec {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+      }
+
+      .spec:last-child {
+        border-bottom: none;
+      }
+
+      .section-heading {
+        padding: 42px 20px 26px;
+      }
+
+      .section-heading h2 {
+        font-size: 40px;
+      }
+
+      .section-heading p {
+        font-size: 18px;
+      }
+
+      .wide {
+        min-height: 520px;
+        padding: 48px 20px 0;
+      }
+
+      .wide-title {
+        font-size: 40px;
+      }
+
+      .wide-copy {
+        font-size: 21px;
+      }
+
+      .wide-image {
+        height: 230px;
+      }
+
+      .wide-image img {
+        max-height: 205px;
+      }
+
+      .tile {
+        min-height: 470px;
+        padding: 42px 20px 28px;
+      }
+
+      .tile-copy {
+        font-size: 19px;
+      }
+
+      .tile-image {
+        height: 205px;
+      }
+
+      .tile-image img {
+        max-height: 195px;
+      }
+
+      .flow-section {
+        padding: 42px 20px;
+      }
+
+      .system-flow {
+        grid-template-columns: 1fr;
       }
 
       th, td {
-        padding: 13px 10px;
+        display: block;
+        width: 100%;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        padding: 14px 16px;
+      }
+
+      tr {
+        display: block;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+      }
+
+      tr:last-child {
+        border-bottom: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-brand">
+        <img src="/favicon.png" alt="PAI logo" class="nav-logo">
+        <span>PAI</span>
+      </a>
 
-    <div class="topbar">
-      <img src="/logo-primary.png" alt="Pacific AI Infrastructure logo" class="logo">
-      <div class="brand">Pacific AI Infrastructure (PAI)</div>
+      <div class="nav-links">
+        <a href="/index.html#deployment-types">Deployment</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#solutions">Solutions</a>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+      </div>
+
+      <button class="mobile-menu" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+      </button>
     </div>
 
-    <p class="eyebrow">Products</p>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/index.html#deployment-types">Deployment</a>
+      <a href="/index.html#products">Products</a>
+      <a href="/index.html#solutions">Solutions</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
+    </div>
+  </nav>
 
-    <div class="hero">
-      <div>
-        <div class="hero-note">Field installation, hose assemblies, rack integration</div>
-        <h1 class="page-title">Deployment Components for AI Liquid Cooling Systems</h1>
-        <p class="page-text">
-          Deployment components are the field-ready assemblies and supporting hardware used to install, connect, route, service, and expand liquid-cooled AI infrastructure. These components support rack-to-CDU integration, in-rack routing, modular service access, and project-specific installation requirements across high-density compute environments.
-        </p>
+  <main>
+    <section class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <p class="product-kicker">Product · Field deployment hardware</p>
 
-        <div class="cta-wrap">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Project%20Quote" class="btn-primary">Request Project Quote</a>
-          <a href="/index.html" class="btn-secondary">Back to Home</a>
+          <h1 class="product-title">
+            Deployment Components <span>for liquid-cooled AI systems.</span>
+          </h1>
+
+          <p class="product-text">
+            Field-ready hose assemblies, connectors, fittings, valves, routing hardware, and supporting integration components used to install, connect, service, and expand liquid-cooled AI infrastructure.
+          </p>
+
+          <div class="cta-row">
+            <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Project%20Quote" class="button primary">Request project quote</a>
+            <a href="/index.html#products" class="button secondary">Back to products</a>
+          </div>
+        </div>
+
+        <div class="product-visual-card">
+          <div class="product-image-wrap">
+            <img src="/images/deployment-components.png" alt="Liquid cooling deployment components and hose assemblies">
+          </div>
+
+          <div class="spec-strip">
+            <div class="spec">
+              <strong>Field Install</strong>
+              <span>Hose assemblies, fittings, valves, and routing hardware.</span>
+            </div>
+
+            <div class="spec">
+              <strong>Rack Integration</strong>
+              <span>Supports rack-to-CDU and in-rack liquid routing.</span>
+            </div>
+
+            <div class="spec">
+              <strong>Service Access</strong>
+              <span>Built for modular replacement, expansion, and maintenance.</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-card hero-image-wrap">
-        <p class="hero-caption">Representative deployment components and hose assemblies</p>
-        <img src="/images/deployment-components.png" alt="Liquid cooling deployment components" class="hero-image small">
-        <div class="image-subtext">
-          Includes hose assemblies, connector hardware, quick disconnects, and supporting integration components used for liquid cooling deployment.
+    <div class="section-wrap">
+
+      <section class="section-heading">
+        <p class="section-kicker">Deployment Components</p>
+        <h2>The hardware that turns liquid cooling design into field deployment.</h2>
+        <p>
+          Deployment components bridge the gap between cooling architecture and real installation. They help connect racks, route coolant, support service access, and reduce integration friction during project rollout.
+        </p>
+      </section>
+
+      <section class="wide">
+        <h2 class="wide-title">Built for practical rack deployment.</h2>
+        <p class="wide-copy">
+          Liquid cooling projects depend on more than core hardware. Hose assemblies, fittings, valves, QDCs, and routing components determine how cleanly the system installs and scales.
+        </p>
+
+        <div class="cta-row">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Inquiry" class="button primary">Discuss deployment supply</a>
+          <a href="/products/qdc.html" class="button secondary">View QDCs</a>
         </div>
-      </div>
-    </div>
 
-    <div class="section grid-3">
-      <div class="card">
-        <h3 class="mini-title">What deployment components include</h3>
-        <ul class="list">
-          <li>Hose assemblies</li>
-          <li>Quick disconnect couplings</li>
-          <li>Valves and fittings</li>
-          <li>Rack-to-CDU connection hardware</li>
-          <li>Routing and support components</li>
-        </ul>
-      </div>
+        <div class="wide-image">
+          <img src="/images/deployment-components.png" alt="Deployment components for liquid cooling systems">
+        </div>
+      </section>
 
-      <div class="card">
-        <h3 class="mini-title">Why they matter</h3>
-        <ul class="list">
-          <li>Enable faster field installation</li>
-          <li>Support modular serviceability</li>
-          <li>Reduce integration friction during deployment</li>
-          <li>Improve replacement and expansion readiness</li>
-          <li>Help align system fit across suppliers</li>
-        </ul>
-      </div>
+      <section class="flow-section">
+        <div class="flow-header">
+          <h2>Where deployment components fit.</h2>
+          <p>
+            Deployment components support the physical connections between the CDU, rack manifold, server routing, and cold plate assemblies. They make the system installable, serviceable, and repeatable across racks.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3 class="mini-title">Typical use cases</h3>
-        <ul class="list">
-          <li>New liquid cooling builds</li>
-          <li>Retrofit rack conversion</li>
-          <li>Hybrid deployment programs</li>
-          <li>Phased rack rollout</li>
-          <li>Service and replacement planning</li>
-        </ul>
-      </div>
-    </div>
+        <div class="system-flow">
+          <div class="flow-box">
+            <p class="flow-label">Step 1</p>
+            <h3 class="flow-title">CDU</h3>
+            <p class="flow-text">
+              The cooling distribution unit provides coolant circulation and connects rack-side liquid cooling to facility-side systems.
+            </p>
+          </div>
 
-    <div class="section grid-2">
-      <div class="card">
-        <h2 class="section-title">Built for real-world deployment</h2>
-        <p class="section-text">
-          Deployment components bridge the gap between liquid cooling design and on-site installation. They are the assemblies that make system deployment practical, helping route coolant cleanly, support modular connections, and reduce installation complexity in dense rack environments.
-        </p>
-      </div>
+          <div class="flow-box">
+            <p class="flow-label">Step 2</p>
+            <h3 class="flow-title">Rack Manifold</h3>
+            <p class="flow-text">
+              The manifold distributes coolant across rack positions and collects return flow from multiple compute nodes.
+            </p>
+          </div>
 
-      <div class="card">
-        <h2 class="section-title">Aligned to rack and CDU integration</h2>
-        <p class="section-text">
-          Pacific AI Infrastructure supports deployment component supply for rack-level and CDU-connected cooling systems. We help align hose, connector, valve, and fitting hardware to the broader liquid cooling architecture so field deployment is cleaner, faster, and easier to scale.
-        </p>
-      </div>
-    </div>
+          <div class="flow-box active">
+            <p class="flow-label">Step 3</p>
+            <h3 class="flow-title">Deployment Hardware</h3>
+            <p class="flow-text">
+              Hoses, QDCs, valves, fittings, brackets, and routing components connect the physical liquid cooling system in the field.
+            </p>
+          </div>
 
-    <div class="section">
-      <div class="card">
-        <h2 class="section-title">Deployment priorities</h2>
+          <div class="flow-box">
+            <p class="flow-label">Step 4</p>
+            <h3 class="flow-title">Cold Plates</h3>
+            <p class="flow-text">
+              Cold plates remove heat directly from GPU and CPU packages before coolant returns through the rack loop.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="split-grid">
+        <div class="tile soft-blue">
+          <p class="tile-label">What It Includes</p>
+          <h2 class="tile-title">Hoses, fittings, valves, and QDCs.</h2>
+          <p class="tile-copy">
+            Deployment components include the practical hardware used to route coolant, connect racks, isolate service points, and support phased installation.
+          </p>
+          <p class="tile-small-copy">
+            Common items include hose assemblies, quick disconnects, valves, fittings, routing hardware, brackets, adapters, and connection kits.
+          </p>
+          <div class="tile-image">
+            <img src="/images/deployment-components.png" alt="Deployment hardware for liquid cooling systems">
+          </div>
+        </div>
+
+        <div class="tile">
+          <p class="tile-label">Why It Matters</p>
+          <h2 class="tile-title">Clean installs reduce field friction.</h2>
+          <p class="tile-copy">
+            The right deployment hardware can reduce installation complexity, improve serviceability, and help keep rack-level liquid cooling programs consistent.
+          </p>
+          <p class="tile-small-copy">
+            Small parts become critical when racks must be installed, serviced, expanded, or replaced under tight timelines.
+          </p>
+          <div class="tile-image">
+            <img src="/images/qdc.png" alt="Quick disconnect couplings for liquid cooling systems">
+          </div>
+        </div>
+      </section>
+
+      <section class="split-grid">
+        <div class="tile soft-gray">
+          <p class="tile-label">Installation Support</p>
+          <h2 class="tile-title">Rack-to-CDU connection readiness.</h2>
+          <p class="tile-copy">
+            Deployment components help connect CDU outputs, rack manifolds, in-rack routing, and server-side liquid cooling assemblies.
+          </p>
+          <p class="tile-small-copy">
+            This is especially important for retrofit programs, hybrid air-to-liquid deployments, and phased AI rack rollouts.
+          </p>
+        </div>
+
+        <div class="tile soft-blue">
+          <p class="tile-label">Program Fit</p>
+          <h2 class="tile-title">Project-specific kits and assemblies.</h2>
+          <p class="tile-copy">
+            Deployment hardware can be configured around rack layout, coolant routing, CDU position, manifold geometry, service access, and installation sequence.
+          </p>
+          <p class="tile-small-copy">
+            PAI supports component coordination across supplier categories so the deployment kit matches the actual field environment.
+          </p>
+        </div>
+      </section>
+
+      <section class="flow-section">
+        <div class="flow-header">
+          <h2>Deployment priorities.</h2>
+          <p>
+            These components are not decorative accessories. They control how the system is installed, maintained, expanded, and kept operational in a dense rack environment.
+          </p>
+        </div>
+
         <table>
           <thead>
             <tr>
@@ -448,18 +1105,18 @@
             </tr>
             <tr>
               <td>System fit</td>
-              <td>Alignment with rack, manifold, and CDU geometry</td>
+              <td>Alignment with rack, manifold, CDU, and server geometry</td>
               <td>Improves integration and reduces field modification needs</td>
             </tr>
             <tr>
               <td>Serviceability</td>
               <td>Accessible modular connections and replaceable hardware</td>
-              <td>Supports maintenance, upgrades, and phased expansion</td>
+              <td>Supports maintenance, upgrades, phased expansion, and replacement planning</td>
             </tr>
             <tr>
               <td>Routing quality</td>
               <td>Clean hose routing and reliable connection hardware</td>
-              <td>Helps maintain operational reliability in dense rack environments</td>
+              <td>Helps maintain reliability in dense rack environments</td>
             </tr>
             <tr>
               <td>Program flexibility</td>
@@ -468,40 +1125,96 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
+      </section>
 
-    <div class="section">
-      <div class="quote-box">
-        <h2 class="quote-title">Request deployment component supply</h2>
-        <p class="quote-text">
+      <section class="split-grid">
+        <div class="tile">
+          <p class="tile-label">Available Components</p>
+          <h2 class="tile-title">Deployment-ready supply.</h2>
+          <p class="tile-copy">
+            Hose assemblies, quick disconnect couplings, adapters, fittings, valves, brackets, mounting hardware, routing accessories, and rack-level integration kits.
+          </p>
+        </div>
+
+        <div class="tile soft-gray">
+          <p class="tile-label">Target Environments</p>
+          <h2 class="tile-title">AI rack deployment programs.</h2>
+          <p class="tile-copy">
+            New liquid cooling builds, retrofit rack conversion, hybrid cooling deployment, high-density AI clusters, CDU-connected racks, and modular GPU deployments.
+          </p>
+        </div>
+      </section>
+
+      <section class="info-band">
+        <h2>Request deployment component supply.</h2>
+        <p>
           Pacific AI Infrastructure supports deployment-ready liquid cooling component supply for AI infrastructure projects. Share your rack design, deployment timeline, cooling architecture, and installation scope to discuss fit, assembly requirements, and supply alignment.
         </p>
-        <div class="cta-wrap">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Inquiry" class="btn-primary">Request Quote</a>
+
+        <div class="cta-row">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Inquiry" class="button primary">Request quote</a>
+          <a href="/index.html#products" class="button secondary">Back to products</a>
         </div>
-        <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
-      </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      Supporting deployment component sourcing, hose assemblies, QDCs, fittings, valves, and rack-level liquid cooling installation hardware for AI infrastructure. Honolulu, Hawaii.
     </div>
 
-  <div class="divider"></div>
-
-    <div class="footer-row">
-      <p class="location">Honolulu, Hawaii</p>
-      <a href="/index.html" class="footer-link">Home</a>
-    </div>
-
-    <div class="divider"></div>
-
-    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:#64748b;">
+    <div class="footer-bottom">
       <div>© 2026 Pacific AI Infrastructure</div>
 
-      <div style="display:flex; gap:16px;">
-        <a href="/privacy.html" style="color:#64748b; text-decoration:none;">Privacy Policy</a>
-        <a href="mailto:info@pacificaiinfrastructure.com" style="color:#64748b; text-decoration:none;">Contact</a>
+      <div>
+        <a href="/privacy.html">Privacy Policy</a>
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
     </div>
+  </footer>
 
-  </div>
+  <script>
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileNav = document.getElementById("mobileNav");
+
+    function closeMobileMenu() {
+      mobileMenuButton.classList.remove("is-open");
+      mobileNav.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "false");
+      mobileMenuButton.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMobileMenu() {
+      mobileMenuButton.classList.add("is-open");
+      mobileNav.classList.add("is-open");
+      document.body.classList.add("menu-open");
+      mobileMenuButton.setAttribute("aria-expanded", "true");
+      mobileMenuButton.setAttribute("aria-label", "Close menu");
+    }
+
+    mobileMenuButton.addEventListener("click", function () {
+      const isOpen = mobileNav.classList.contains("is-open");
+
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        closeMobileMenu();
+      }
+    });
+  </script>
 </body>
 </html>
