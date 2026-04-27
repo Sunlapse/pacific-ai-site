@@ -23,395 +23,1235 @@
   <meta name="twitter:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      padding-bottom: 40px;
-      background: radial-gradient(circle at top left, #111827, #020617 58%, #01040f 100%);
-      color: #ffffff;
-      font-family: Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1100px;
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      height: 52px;
+      background: #fbfbfd;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      overflow: visible;
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      height: 52px;
       margin: 0 auto;
-      padding: 28px 22px 30px;
-    }
-
-    .topbar {
+      padding: 0 24px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 30px;
+      justify-content: space-between;
+      gap: 22px;
+      font-size: 13px;
     }
 
-    .logo {
-      width: 52px;
-      height: 52px;
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-logo {
+      width: 22px;
+      height: 22px;
       object-fit: contain;
     }
 
-    .brand {
-      font-size: 15px;
-      color: #64748b;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.82;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: #0071e3;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 34px;
+      height: 30px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      position: absolute;
+      left: 3px;
+      width: 28px;
+      height: 2.5px;
+      background: #1d1d1f;
+      border-radius: 999px;
+      transition: transform 0.22s ease, top 0.22s ease, bottom 0.22s ease;
+    }
+
+    .mobile-menu span:first-child {
+      top: 9px;
+    }
+
+    .mobile-menu span:last-child {
+      bottom: 9px;
+    }
+
+    .mobile-menu.is-open span:first-child {
+      top: 14px;
+      transform: rotate(45deg);
+    }
+
+    .mobile-menu.is-open span:last-child {
+      bottom: 13px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 18% 18%, rgba(0,113,227,0.13), transparent 34%),
+        radial-gradient(circle at 82% 12%, rgba(0,229,255,0.16), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+      padding: 74px 22px 34px;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
     }
 
     .breadcrumb {
-      margin: 0 0 18px;
+      margin: 0 0 24px;
       font-size: 14px;
-      color: #94a3b8;
+      color: #6e6e73;
     }
 
     .breadcrumb a {
-      color: #93c5fd;
+      color: #0071e3;
       text-decoration: none;
     }
 
-    .eyebrow {
-      margin: 0 0 10px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
+    .solution-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(0,113,227,0.08);
+      color: #0071e3;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #60a5fa;
     }
 
-    .page-title {
-      margin: 0 0 18px;
-      font-size: 46px;
-      font-weight: 800;
-      line-height: 1.05;
+    .solution-pill::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #0071e3;
+      box-shadow: 0 0 18px rgba(0,113,227,0.55);
     }
 
-    .page-text {
-      margin: 0 0 28px;
-      font-size: 19px;
-      line-height: 1.7;
-      color: #cbd5e1;
-      max-width: 780px;
-    }
-
-    .section-card {
-      background: rgba(15, 23, 42, 0.45);
-      border: 1px solid rgba(59, 130, 246, 0.10);
-      border-radius: 18px;
-      padding: 28px 24px;
-      margin: 0 0 30px;
-    }
-
-    .section-title {
-      margin: 0 0 18px;
-      font-size: 24px;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .spec-list {
+    .hero h1 {
       margin: 0;
-      padding-left: 20px;
-      color: #e2e8f0;
-      line-height: 1.9;
-      font-size: 16px;
+      max-width: 780px;
+      font-size: clamp(46px, 6vw, 76px);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 850;
     }
 
-    .spec-list li {
-      margin-bottom: 6px;
+    .hero h1 span {
+      color: #0071e3;
     }
 
-    .workflow-list {
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 720px;
+      color: #424245;
+      font-size: 21px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .cta-row {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 4px;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
     }
 
-    .workflow-item {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-
-    .workflow-number {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #2563eb, #4f8dfd);
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: 800;
-      display: flex;
+    .button {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .workflow-content {
-      min-width: 0;
-      padding-top: 2px;
-    }
-
-    .workflow-heading {
-      margin: 0 0 6px;
+      min-height: 52px;
+      padding: 14px 26px;
+      border-radius: 999px;
       font-size: 17px;
       font-weight: 700;
-      line-height: 1.35;
-      color: #ffffff;
-    }
-
-    .workflow-text {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #cbd5e1;
-    }
-
-    .cta-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(135deg, #2563eb, #4f8dfd);
-      color: #ffffff;
-      padding: 15px 26px;
-      border-radius: 12px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 17px;
+      transition: transform 0.18s ease, background 0.18s ease;
     }
 
-    .btn-secondary {
-      display: inline-block;
-      border: 1px solid #3b82f6;
-      color: #93c5fd;
-      padding: 14px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: #0071e3;
+      color: #fff;
+    }
+
+    .button.secondary {
+      color: #0071e3;
+      border: 1px solid #0071e3;
       background: transparent;
     }
 
-    .btn-secondary:hover {
-      background: rgba(59,130,246,0.08);
+    .conversion-panel {
+      background:
+        radial-gradient(circle at 30% 10%, rgba(0,113,227,0.18), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #eef7ff 100%);
+      border: 1px solid rgba(0,113,227,0.16);
+      box-shadow: 0 28px 70px rgba(0,0,0,0.10);
+      border-radius: 34px;
+      padding: 28px;
+      min-height: 460px;
     }
 
-    .contact-note {
-      margin-top: 12px;
-      font-size: 14px;
-      color: #94a3b8;
+    .panel-label {
+      margin: 0 0 22px;
+      color: #6e6e73;
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    .divider {
-      height: 1px;
-      background: #1f2a44;
-      margin: 30px 0;
-    }
-
-    .location {
-      margin: 0;
-      font-size: 16px;
-      color: #94a3b8;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
+    .conversion-line {
+      display: grid;
+      grid-template-columns: 1fr 72px 1fr;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
+      gap: 14px;
+      margin-bottom: 24px;
     }
 
-    .footer-link {
+    .conversion-box {
+      min-height: 142px;
+      padding: 22px 18px;
+      border-radius: 26px;
+      background: #fbfbfd;
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .conversion-box.dark {
+      background: #0f172a;
+      color: #fff;
+      border-color: rgba(15,23,42,0.2);
+    }
+
+    .conversion-title {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 850;
+    }
+
+    .conversion-sub {
+      margin: 10px 0 0;
+      color: #6e6e73;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .conversion-box.dark .conversion-sub {
+      color: rgba(255,255,255,0.66);
+    }
+
+    .arrow-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 850;
+      box-shadow: 0 18px 40px rgba(0,113,227,0.25);
+    }
+
+    .mini-steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,113,227,0.10);
+    }
+
+    .mini-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0071e3;
+      color: #fff;
+      font-weight: 850;
+    }
+
+    .mini-step h3 {
+      margin: 0 0 4px;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    .mini-step p {
+      margin: 0;
+      color: #6e6e73;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .section-wrap {
+      width: 100%;
+      padding: 12px;
+    }
+
+    .section-heading {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 58px 28px 34px;
+      text-align: center;
+      background: #fff;
+      border-radius: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: #0071e3;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(40px, 5.5vw, 66px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .section-heading p {
+      margin: 14px auto 0;
+      max-width: 850px;
+      font-size: 21px;
+      line-height: 1.35;
+      color: #6e6e73;
+    }
+
+    .wide {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      min-height: 470px;
+      padding: 62px 28px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(37,99,235,0.16), transparent 40%),
+        #fbfbfd;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+
+    .wide-title {
+      margin: 0;
+      font-size: clamp(42px, 5.8vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+    }
+
+    .wide-copy {
+      margin: 14px auto 0;
+      max-width: 860px;
+      font-size: 25px;
+      line-height: 1.2;
+      color: #424245;
+    }
+
+    .wide .cta-row {
+      justify-content: center;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 1500px;
+      margin: 0 auto 12px;
+    }
+
+    .tile {
+      min-height: 430px;
+      padding: 54px 28px 34px;
+      text-align: center;
+      background: #fbfbfd;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-decoration: none;
+      border-radius: 28px;
+    }
+
+    .tile.soft-blue {
+      background: linear-gradient(180deg, #eaf6ff 0%, #fbfbfd 62%);
+    }
+
+    .tile.soft-slate {
+      background:
+        radial-gradient(circle at 50% 105%, rgba(56,189,248,0.18), transparent 42%),
+        linear-gradient(180deg, #f8fbff 0%, #f5f5f7 100%);
+    }
+
+    .tile-label {
+      margin: 0 0 7px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #6e6e73;
+      letter-spacing: 0.02em;
+    }
+
+    .tile-title {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 850;
+    }
+
+    .tile-copy {
+      margin: 14px auto 0;
+      max-width: 620px;
+      font-size: 21px;
+      line-height: 1.25;
+      color: #1d1d1f;
+    }
+
+    .tile-small-copy {
+      margin: 18px auto 0;
+      max-width: 620px;
+      color: #6e6e73;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .process-section {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 58px 28px;
+      background: #fff;
+      border-radius: 28px;
+    }
+
+    .process-header {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .process-header h2 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 850;
+    }
+
+    .process-header p {
+      margin: 14px auto 0;
+      max-width: 860px;
+      color: #6e6e73;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .process-box {
+      min-height: 245px;
+      padding: 24px;
+      background: #f5f5f7;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 26px;
+      transition: 0.2s ease;
+    }
+
+    .process-box.active {
+      background: linear-gradient(180deg, #eaf6ff 0%, #fbfbfd 100%);
+      border: 1px solid rgba(0,113,227,0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 24px 50px rgba(0,113,227,0.10);
+    }
+
+    .process-label {
+      margin: 0 0 12px;
+      color: #0071e3;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .process-title {
+      margin: 0 0 10px;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-weight: 850;
+    }
+
+    .process-text {
+      margin: 0;
+      color: #6e6e73;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 26px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #fbfbfd;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    th, td {
+      padding: 18px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       font-size: 15px;
-      color: #94a3b8;
+      line-height: 1.5;
+      vertical-align: top;
+    }
+
+    th {
+      color: #1d1d1f;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: #f5f5f7;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td a {
+      color: #0071e3;
+      font-weight: 700;
       text-decoration: none;
     }
 
-    .footer-link:hover {
-      color: #cbd5e1;
+    .info-band {
+      max-width: 1500px;
+      margin: 0 auto 12px;
+      padding: 54px 28px;
+      background: #fff;
+      text-align: center;
+      border-radius: 28px;
+    }
+
+    .info-band h2 {
+      margin: 0 auto 14px;
+      max-width: 920px;
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .info-band p {
+      margin: 0 auto;
+      max-width: 860px;
+      color: #6e6e73;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .info-band .cta-row {
+      justify-content: center;
+    }
+
+    .footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 22px 42px;
+      color: #6e6e73;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .footer-top {
+      border-bottom: 1px solid #d2d2d7;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
     }
 
     .footer-bottom {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 13px;
-      color: #64748b;
-    }
-
-    .footer-bottom-links {
-      display: flex;
+      align-items: center;
       gap: 16px;
       flex-wrap: wrap;
     }
 
-    .footer-bottom-links a {
-      color: #64748b;
+    .footer a {
+      color: #424245;
       text-decoration: none;
     }
 
-    @media (max-width: 768px) {
-      .page-title {
-        font-size: 38px;
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
       }
 
-      .page-text {
-        font-size: 17px;
-      }
-
-      .section-card {
-        padding: 22px 18px;
-      }
-
-      .workflow-item {
-        grid-template-columns: 40px 1fr;
-        gap: 14px;
-      }
-
-      .workflow-number {
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 560px) {
-      .container {
-        padding: 22px 16px 24px;
+    @media (max-width: 900px) {
+      .nav,
+      .nav-inner {
+        height: 64px;
       }
 
-      .topbar {
-        margin-bottom: 38px;
+      .nav-logo {
+        width: 30px;
+        height: 30px;
       }
 
-      .page-title {
-        font-size: 34px;
+      .nav-brand {
+        font-size: 18px;
       }
 
-      .cta-wrap {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .mobile-nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
+        padding: 18px 24px 30px;
+        background: #fbfbfd;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+        transform: translateY(-18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.24s ease, opacity 0.24s ease;
       }
 
-      .btn-primary,
-      .btn-secondary {
-        text-align: center;
+      .mobile-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
       }
 
-      .footer-row,
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
+      .mobile-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 58px;
+        color: #1d1d1f;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+      }
+
+      .mobile-nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .mobile-nav a::after {
+        content: "›";
+        color: #86868b;
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .hero {
+        padding: 52px 22px 24px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero-copy {
+        font-size: 19px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .conversion-line {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow-circle {
+        margin: 0 auto;
+        transform: rotate(90deg);
+      }
+
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tile {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section-wrap {
+        padding: 8px;
+      }
+
+      .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .breadcrumb {
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-copy {
+        font-size: 18px;
+      }
+
+      .conversion-panel {
+        border-radius: 28px;
+        padding: 20px;
+      }
+
+      .conversion-title {
+        font-size: 24px;
+      }
+
+      .mini-step {
+        grid-template-columns: 40px 1fr;
+        padding: 14px;
+      }
+
+      .mini-number {
+        width: 40px;
+        height: 40px;
+      }
+
+      .section-heading {
+        padding: 42px 20px 26px;
+      }
+
+      .section-heading h2 {
+        font-size: 40px;
+      }
+
+      .section-heading p {
+        font-size: 18px;
+      }
+
+      .wide {
+        min-height: auto;
+        padding: 48px 20px;
+      }
+
+      .wide-title {
+        font-size: 40px;
+      }
+
+      .wide-copy {
+        font-size: 21px;
+      }
+
+      .tile {
+        min-height: auto;
+        padding: 42px 20px 34px;
+      }
+
+      .tile-copy {
+        font-size: 19px;
+      }
+
+      .process-section {
+        padding: 42px 20px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      th, td {
+        display: block;
+        width: 100%;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        padding: 14px 16px;
+      }
+
+      tr {
+        display: block;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+      }
+
+      tr:last-child {
+        border-bottom: none;
       }
     }
   </style>
 </head>
 
 <body>
-<div class="container">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-brand">
+        <img src="/favicon.png" alt="PAI logo" class="nav-logo">
+        <span>PAI</span>
+      </a>
 
-  <div class="topbar">
-    <img src="/logo-primary.png" alt="Pacific AI Infrastructure logo" class="logo">
-    <div class="brand">Pacific AI Infrastructure (PAI)</div>
-  </div>
-
-  <p class="breadcrumb">
-    <a href="/">Home</a> / <a href="/#solutions">Solutions</a> / Air-to-Liquid Conversion
-  </p>
-
-  <p class="eyebrow">Solutions</p>
-
-  <h1 class="page-title">Air-to-Liquid Conversion</h1>
-
-  <p class="page-text">
-    Support for transitioning existing air-cooled infrastructure to liquid-cooled rack environments. Pacific AI Infrastructure helps align the cooling architecture, component selection, and deployment requirements needed for phased or full conversion programs.
-  </p>
-
-  <div class="section-card">
-    <h2 class="section-title">What this supports</h2>
-    <ul class="spec-list">
-      <li>Supports retrofit planning for existing air-cooled environments</li>
-      <li>Aligns cold plates, manifolds, QDCs, CDU interfaces, and deployment components</li>
-      <li>Useful for higher-density GPU and accelerated compute rollouts</li>
-      <li>Supports phased upgrades as well as broader liquid cooling transitions</li>
-      <li>Helps reduce bottlenecks related to component compatibility and deployment coordination</li>
-      <li>Project-specific supply alignment available based on rack architecture and cooling approach</li>
-    </ul>
-  </div>
-
-  <div class="section-card">
-    <h2 class="section-title">Workflow</h2>
-
-    <div class="workflow-list">
-      <div class="workflow-item">
-        <div class="workflow-number">1</div>
-        <div class="workflow-content">
-          <h3 class="workflow-heading">Assess existing infrastructure</h3>
-          <p class="workflow-text">Review rack constraints, density targets, cooling limitations, and the current deployment environment.</p>
-        </div>
+      <div class="nav-links">
+        <a href="/index.html#deployment-types">Deployment</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#solutions">Solutions</a>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
-      <div class="workflow-item">
-        <div class="workflow-number">2</div>
-        <div class="workflow-content">
-          <h3 class="workflow-heading">Define cooling architecture</h3>
-          <p class="workflow-text">Align cold plates, manifolds, QDCs, CDU interfaces, and rack-level hardware to the target design approach.</p>
-        </div>
-      </div>
-
-      <div class="workflow-item">
-        <div class="workflow-number">3</div>
-        <div class="workflow-content">
-          <h3 class="workflow-heading">Coordinate supply and deployment</h3>
-          <p class="workflow-text">Match sourced components to project requirements, deployment sequencing, and installation planning.</p>
-        </div>
-      </div>
-
-      <div class="workflow-item">
-        <div class="workflow-number">4</div>
-        <div class="workflow-content">
-          <h3 class="workflow-heading">Support conversion execution</h3>
-          <p class="workflow-text">Help reduce friction during phased upgrades or full liquid cooling transition programs.</p>
-        </div>
-      </div>
+      <button class="mobile-menu" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </div>
 
-  <div class="cta-wrap">
-    <a href="mailto:info@pacificaiinfrastructure.com?subject=Air-to-Liquid%20Conversion%20Inquiry" class="btn-primary">Discuss Project</a>
-    <a href="/#solutions" class="btn-secondary">Back to Solutions</a>
-  </div>
-
-  <div class="contact-note">For project inquiries: info@pacificaiinfrastructure.com</div>
-
-  <div class="divider"></div>
-
-  <div class="footer-row">
-    <p class="location">Honolulu, Hawaii</p>
-    <a href="/index.html" class="footer-link">Home</a>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="footer-bottom">
-    <div>© 2026 Pacific AI Infrastructure</div>
-
-    <div class="footer-bottom-links">
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/index.html#deployment-types">Deployment</a>
+      <a href="/index.html#products">Products</a>
+      <a href="/index.html#solutions">Solutions</a>
       <a href="/privacy.html">Privacy Policy</a>
-      <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+      <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
-  </div>
+  </nav>
 
-</div>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="breadcrumb">
+            <a href="/index.html">Home</a> / <a href="/index.html#solutions">Solutions</a> / Air-to-Liquid Conversion
+          </p>
+
+          <div class="solution-pill">Solution Pathway</div>
+
+          <h1>
+            Convert existing racks <span>for liquid-cooled AI infrastructure.</span>
+          </h1>
+
+          <p class="hero-copy">
+            PAI supports phased conversion from traditional air-cooled environments to liquid-cooled rack infrastructure by aligning cooling architecture, component sourcing, rack hardware, and deployment timelines.
+          </p>
+
+          <div class="cta-row">
+            <a href="mailto:info@pacificaiinfrastructure.com?subject=Air-to-Liquid%20Conversion%20Inquiry" class="button primary">Discuss conversion project</a>
+            <a href="/index.html#solutions" class="button secondary">Back to solutions</a>
+          </div>
+        </div>
+
+        <div class="conversion-panel">
+          <p class="panel-label">Conversion Model</p>
+
+          <div class="conversion-line">
+            <div class="conversion-box">
+              <h2 class="conversion-title">Air-Cooled</h2>
+              <p class="conversion-sub">Existing racks, facility limits, density constraints, and upgrade planning.</p>
+            </div>
+
+            <div class="arrow-circle">→</div>
+
+            <div class="conversion-box dark">
+              <h2 class="conversion-title">Liquid-Cooled</h2>
+              <p class="conversion-sub">Cold plates, manifolds, QDCs, CDU interfaces, rack hardware, and deployment support.</p>
+            </div>
+          </div>
+
+          <div class="mini-steps">
+            <div class="mini-step">
+              <div class="mini-number">1</div>
+              <div>
+                <h3>Assess the rack environment</h3>
+                <p>Review density goals, space limits, service access, and current cooling constraints.</p>
+              </div>
+            </div>
+
+            <div class="mini-step">
+              <div class="mini-number">2</div>
+              <div>
+                <h3>Define the cooling path</h3>
+                <p>Map the target liquid cooling architecture across rack, CDU, manifold, QDC, and cold plate requirements.</p>
+              </div>
+            </div>
+
+            <div class="mini-step">
+              <div class="mini-number">3</div>
+              <div>
+                <h3>Coordinate components</h3>
+                <p>Align compatible hardware, supplier lead times, and project deployment sequence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-wrap">
+
+      <section class="section-heading">
+        <p class="section-kicker">Air-to-Liquid Conversion</p>
+        <h2>Moving from air cooling to liquid cooling takes more than parts.</h2>
+        <p>
+          The transition requires component compatibility, rack-level planning, supplier coordination, installation sequencing, and a clear understanding of how liquid cooling fits into the existing environment.
+        </p>
+      </section>
+
+      <section class="wide">
+        <h2 class="wide-title">Built for phased infrastructure upgrades.</h2>
+        <p class="wide-copy">
+          Air-to-liquid conversion helps existing facilities support higher-density GPU and accelerated compute deployments without treating every project like a full rebuild.
+        </p>
+
+        <div class="cta-row">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Air-to-Liquid%20Conversion%20Inquiry" class="button primary">Discuss your project</a>
+          <a href="/products/cdu-interfaces.html" class="button secondary">View CDU interfaces</a>
+        </div>
+      </section>
+
+      <section class="process-section">
+        <div class="process-header">
+          <h2>Conversion workflow.</h2>
+          <p>
+            PAI helps connect the practical steps between the existing rack environment and the target liquid-cooled deployment.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-box active">
+            <p class="process-label">Step 1</p>
+            <h3 class="process-title">Assess</h3>
+            <p class="process-text">
+              Review rack constraints, density targets, cooling limitations, available space, and current infrastructure conditions.
+            </p>
+          </div>
+
+          <div class="process-box active">
+            <p class="process-label">Step 2</p>
+            <h3 class="process-title">Define</h3>
+            <p class="process-text">
+              Identify the target cooling architecture across cold plates, manifolds, QDCs, CDU interfaces, and rack hardware.
+            </p>
+          </div>
+
+          <div class="process-box active">
+            <p class="process-label">Step 3</p>
+            <h3 class="process-title">Source</h3>
+            <p class="process-text">
+              Match components to rack architecture, GPU platform requirements, project timeline, and supplier availability.
+            </p>
+          </div>
+
+          <div class="process-box active">
+            <p class="process-label">Step 4</p>
+            <h3 class="process-title">Deploy</h3>
+            <p class="process-text">
+              Support phased conversion execution and reduce coordination friction between components and installation needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="split-grid">
+        <div class="tile soft-blue">
+          <p class="tile-label">What This Supports</p>
+          <h2 class="tile-title">Retrofit planning for existing environments.</h2>
+          <p class="tile-copy">
+            Air-to-liquid conversion is useful when an existing facility needs to support higher rack density, GPU acceleration, or phased liquid cooling adoption.
+          </p>
+          <p class="tile-small-copy">
+            This can include rack-level planning, coolant distribution strategy, component matching, and coordination with deployment timelines.
+          </p>
+        </div>
+
+        <div class="tile soft-slate">
+          <p class="tile-label">Component Alignment</p>
+          <h2 class="tile-title">Cold plates, manifolds, QDCs, CDU interfaces, and rack hardware.</h2>
+          <p class="tile-copy">
+            The conversion path depends on how the full cooling chain fits together, not just one individual component.
+          </p>
+          <p class="tile-small-copy">
+            PAI helps align product categories so the selected hardware supports the intended rack architecture and cooling approach.
+          </p>
+        </div>
+      </section>
+
+      <section class="split-grid">
+        <div class="tile">
+          <p class="tile-label">Best Fit</p>
+          <h2 class="tile-title">For phased liquid cooling adoption.</h2>
+          <p class="tile-copy">
+            Ideal for teams upgrading from air-cooled racks toward liquid-cooled AI infrastructure while managing budget, timing, facility constraints, and deployment risk.
+          </p>
+        </div>
+
+        <div class="tile soft-blue">
+          <p class="tile-label">Deployment Reality</p>
+          <h2 class="tile-title">Conversion needs coordination across vendors.</h2>
+          <p class="tile-copy">
+            Air-to-liquid projects often involve multiple component vendors, platform requirements, rack-level hardware, and installation dependencies.
+          </p>
+          <p class="tile-small-copy">
+            PAI operates as a sourcing and coordination partner to help reduce mismatches and timeline issues.
+          </p>
+        </div>
+      </section>
+
+      <section class="process-section">
+        <div class="process-header">
+          <h2>What PAI helps align.</h2>
+          <p>
+            Conversion projects require technical and supply-chain coordination across the cooling loop and the physical rack environment.
+          </p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Area</th>
+              <th>What needs to be aligned</th>
+              <th>Why it matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rack environment</td>
+              <td>Rack density, available space, mechanical constraints, and service access</td>
+              <td>Determines how liquid cooling hardware can physically fit into the existing environment</td>
+            </tr>
+            <tr>
+              <td>Cooling architecture</td>
+              <td>Cold plates, manifolds, QDCs, CDU interfaces, hose routing, and coolant distribution</td>
+              <td>Prevents component mismatch across the liquid cooling chain</td>
+            </tr>
+            <tr>
+              <td>Component sourcing</td>
+              <td>Vendor capability, lead times, compatibility, and project-specific availability</td>
+              <td>Reduces delays caused by missing or incompatible infrastructure components</td>
+            </tr>
+            <tr>
+              <td>Deployment sequencing</td>
+              <td>Phased upgrade timing, installation needs, delivery order, and operational disruption</td>
+              <td>Supports cleaner execution when converting live or staged environments</td>
+            </tr>
+            <tr>
+              <td>Scaling path</td>
+              <td>Repeatable layouts, multi-rack expansion, and future GPU platform support</td>
+              <td>Helps the conversion become a scalable infrastructure model, not a one-off retrofit</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="process-section">
+        <div class="process-header">
+          <h2>Related product categories.</h2>
+          <p>
+            Air-to-liquid conversion usually touches multiple product categories across the rack and cooling loop.
+          </p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Product category</th>
+              <th>Role in conversion</th>
+              <th>View page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cold Plates</td>
+              <td>Moves heat away from GPU, CPU, and accelerator components through direct-to-chip liquid cooling</td>
+              <td><a href="/products/cold-plates.html">Cold Plates</a></td>
+            </tr>
+            <tr>
+              <td>Manifolds</td>
+              <td>Distributes coolant through rack-level supply and return paths</td>
+              <td><a href="/products/manifolds.html">Manifolds</a></td>
+            </tr>
+            <tr>
+              <td>QDCs</td>
+              <td>Supports serviceable connections between rack, server, and cooling loop components</td>
+              <td><a href="/products/qdc.html">QDCs</a></td>
+            </tr>
+            <tr>
+              <td>CDU Interfaces</td>
+              <td>Helps connect the facility or rack cooling system to the liquid cooling loop</td>
+              <td><a href="/products/cdu-interfaces.html">CDU Interfaces</a></td>
+            </tr>
+            <tr>
+              <td>Rack Hardware</td>
+              <td>Supports mounting, hose routing, manifold positioning, and service access</td>
+              <td><a href="/products/rack-hardware.html">Rack Hardware</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="info-band">
+        <h2>Discuss an air-to-liquid conversion project.</h2>
+        <p>
+          Pacific AI Infrastructure supports sourcing and coordination for teams moving from air-cooled infrastructure toward liquid-cooled AI deployments. Share your current rack environment, target GPU platform, cooling approach, and deployment timeline.
+        </p>
+
+        <div class="cta-row">
+          <a href="mailto:info@pacificaiinfrastructure.com?subject=Air-to-Liquid%20Conversion%20Inquiry" class="button primary">Discuss project</a>
+          <a href="/index.html#solutions" class="button secondary">Back to solutions</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      Pacific AI Infrastructure supplies liquid cooling components, rack-level systems, and deployment hardware for high-density AI infrastructure.
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Pacific AI Infrastructure</div>
+      <div>
+        <a href="/privacy.html">Privacy Policy</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById("mobileMenuButton");
+    const mobileNav = document.getElementById("mobileNav");
+
+    mobileMenuButton.addEventListener("click", function () {
+      const isOpen = mobileNav.classList.toggle("is-open");
+      mobileMenuButton.classList.toggle("is-open", isOpen);
+      mobileMenuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.classList.toggle("menu-open", isOpen);
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mobileNav.classList.remove("is-open");
+        mobileMenuButton.classList.remove("is-open");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  </script>
 </body>
 </html>
