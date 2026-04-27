@@ -23,13 +23,8 @@
   <meta name="twitter:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -41,16 +36,14 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .nav {
       position: sticky;
       top: 0;
       z-index: 9999;
-      height: 64px;
-      background: rgba(251,251,253,0.94);
+      height: 52px;
+      background: rgba(251,251,253,0.88);
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -58,9 +51,9 @@
 
     .nav-inner {
       max-width: 1180px;
-      height: 64px;
+      height: 52px;
       margin: 0 auto;
-      padding: 0 22px;
+      padding: 0 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -69,42 +62,36 @@
     .brand-link {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       text-decoration: none;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-weight: 700;
       color: #1d1d1f;
     }
 
     .brand-link img {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       object-fit: contain;
       display: block;
-      border-radius: 0;
     }
 
     .brand-text {
-      font-size: 24px;
+      font-size: 14px;
       line-height: 1;
+      letter-spacing: -0.01em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #3f3f46;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 400;
+      color: #1d1d1f;
     }
 
-    .nav-links a {
-      text-decoration: none;
-    }
-
-    .nav-links a:hover {
-      color: #0071e3;
-    }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: #0071e3; }
 
     .menu-button {
       display: none;
@@ -135,26 +122,16 @@
       transition: 0.2s ease;
     }
 
-    .menu-icon span:nth-child(1) {
-      top: 0;
-    }
-
-    .menu-icon span:nth-child(2) {
-      top: 7px;
-    }
-
-    .menu-icon span:nth-child(3) {
-      top: 14px;
-    }
+    .menu-icon span:nth-child(1) { top: 0; }
+    .menu-icon span:nth-child(2) { top: 7px; }
+    .menu-icon span:nth-child(3) { top: 14px; }
 
     .nav.open .menu-icon span:nth-child(1) {
       top: 7px;
       transform: rotate(45deg);
     }
 
-    .nav.open .menu-icon span:nth-child(2) {
-      opacity: 0;
-    }
+    .nav.open .menu-icon span:nth-child(2) { opacity: 0; }
 
     .nav.open .menu-icon span:nth-child(3) {
       top: 7px;
@@ -164,7 +141,7 @@
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 64px;
+      top: 52px;
       left: 0;
       right: 0;
       z-index: 9998;
@@ -184,18 +161,13 @@
       border-bottom: 1px solid rgba(0,0,0,0.07);
     }
 
-    .mobile-menu a:last-child {
-      border-bottom: 0;
-    }
-
-    .nav.open .mobile-menu {
-      display: block;
-    }
+    .mobile-menu a:last-child { border-bottom: 0; }
+    .nav.open .mobile-menu { display: block; }
 
     .page-wrap {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 26px 22px 70px;
+      padding: 74px 12px 70px;
     }
 
     .breadcrumb {
@@ -250,13 +222,8 @@
       color: #1d1d1f;
     }
 
-    .blue {
-      color: #0071e3;
-    }
-
-    .green {
-      color: #22c55e;
-    }
+    .blue { color: #0071e3; }
+    .green { color: #22c55e; }
 
     .hero-copy {
       margin: 28px 0 0;
@@ -317,15 +284,18 @@
       text-transform: uppercase;
     }
 
+    /* FIX: keeps both model boxes equal width and prevents the dark box from looking squeezed */
     .deployment-model {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr);
+      grid-template-columns: minmax(170px, 1fr) 58px minmax(170px, 1fr);
       gap: 16px;
       align-items: stretch;
       margin-bottom: 24px;
     }
 
     .model-box {
+      width: 100%;
+      min-width: 0;
       min-height: 190px;
       border-radius: 24px;
       display: flex;
@@ -347,7 +317,7 @@
 
     .model-title {
       margin: 0 0 10px;
-      font-size: 28px;
+      font-size: clamp(24px, 2.2vw, 28px);
       line-height: 1;
       letter-spacing: -0.045em;
       font-weight: 900;
@@ -355,16 +325,14 @@
 
     .model-text {
       margin: 0;
-      max-width: 180px;
+      max-width: 190px;
       color: #5f6368;
-      font-size: 15px;
-      line-height: 1.4;
+      font-size: 14px;
+      line-height: 1.38;
       font-weight: 600;
     }
 
-    .model-box.dark .model-text {
-      color: #d1d5db;
-    }
+    .model-box.dark .model-text { color: #d1d5db; }
 
     .arrow-wrap {
       display: flex;
@@ -387,10 +355,7 @@
       flex-shrink: 0;
     }
 
-    .path-list {
-      display: grid;
-      gap: 14px;
-    }
+    .path-list { display: grid; gap: 14px; }
 
     .path-item {
       display: grid;
@@ -455,9 +420,7 @@
       font-size: 18px;
     }
 
-    .spec-list li {
-      margin-bottom: 8px;
-    }
+    .spec-list li { margin-bottom: 8px; }
 
     .cta-band {
       margin-top: 34px;
@@ -500,76 +463,55 @@
       font-size: 13px;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
 
     .footer a {
       color: #6e6e73;
       text-decoration: none;
     }
 
-    .footer a:hover {
-      color: #0071e3;
+    .footer a:hover { color: #0071e3; }
+
+    @media (max-width: 1060px) {
+      .deployment-model {
+        grid-template-columns: minmax(150px, 1fr) 52px minmax(150px, 1fr);
+        gap: 14px;
+      }
+
+      .model-box {
+        min-height: 178px;
+        padding: 20px 14px;
+      }
+
+      .arrow {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+      }
     }
 
     @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-
-      .menu-button {
-        display: flex;
-      }
+      .nav-links { display: none; }
+      .menu-button { display: flex; }
 
       .hero {
         grid-template-columns: 1fr;
         gap: 34px;
       }
 
-      .solution-panel {
-        max-width: 640px;
-      }
+      .solution-panel { max-width: 640px; }
     }
 
     @media (max-width: 620px) {
-      .nav {
-        height: 60px;
-      }
+      .nav { height: 52px; }
+      .nav-inner { height: 52px; padding: 0 16px; }
+      .brand-link img { width: 20px; height: 20px; }
+      .brand-text { font-size: 14px; }
+      .mobile-menu { top: 52px; }
 
-      .nav-inner {
-        height: 60px;
-        padding: 0 18px;
-      }
-
-      .brand-link img {
-        width: 22px;
-        height: 22px;
-        border-radius: 0;
-      }
-
-      .brand-text {
-        font-size: 23px;
-      }
-
-      .mobile-menu {
-        top: 60px;
-      }
-
-      .page-wrap {
-        padding: 20px 16px 46px;
-      }
-
-      .breadcrumb {
-        font-size: 13px;
-        margin-bottom: 18px;
-      }
-
-      .hero {
-        padding-top: 4px;
-      }
+      .page-wrap { padding: 72px 12px 46px; }
+      .breadcrumb { font-size: 13px; margin-bottom: 18px; }
+      .hero { padding-top: 4px; }
 
       .eyebrow {
         font-size: 11px;
@@ -582,17 +524,9 @@
         letter-spacing: -0.065em;
       }
 
-      .hero-copy {
-        font-size: 20px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
+      .hero-copy { font-size: 20px; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
 
       .solution-panel {
         border-radius: 26px;
@@ -609,13 +543,8 @@
         padding: 24px 20px;
       }
 
-      .model-title {
-        font-size: 30px;
-      }
-
-      .model-text {
-        max-width: 260px;
-      }
+      .model-title { font-size: 30px; }
+      .model-text { max-width: 260px; }
 
       .arrow {
         width: 56px;
@@ -633,17 +562,9 @@
         border-radius: 24px;
       }
 
-      .content-section h2 {
-        font-size: 34px;
-      }
-
-      .spec-list {
-        font-size: 16px;
-      }
-
-      .footer {
-        flex-direction: column;
-      }
+      .content-section h2 { font-size: 34px; }
+      .spec-list { font-size: 16px; }
+      .footer { flex-direction: column; }
     }
   </style>
 </head>
@@ -658,6 +579,7 @@
     </a>
 
     <div class="nav-links">
+      <a href="/#deployment">Deployment</a>
       <a href="/#products">Products</a>
       <a href="/#solutions">Solutions</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
@@ -674,6 +596,7 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="/">Home</a>
+    <a href="/#deployment">Deployment</a>
     <a href="/#products">Products</a>
     <a href="/#solutions">Solutions</a>
     <a href="/privacy.html">Privacy Policy</a>
