@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="In-rack coolant distribution manifolds for liquid-cooled AI infrastructure and high-density compute deployments.">
+  <meta name="description" content="In-rack coolant distribution manifolds for liquid-cooled GPU, HPC, colocation, modular data center, and other high heat-load deployments.">
 
   <style>
     * {
@@ -86,6 +86,27 @@
     .nav-links a:hover {
       opacity: 1;
       color: #0071e3;
+    }
+
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #fff;
+      opacity: 1;
     }
 
     .mobile-menu {
@@ -709,6 +730,10 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.24s ease, opacity 0.24s ease;
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .mobile-nav.is-open {
@@ -721,10 +746,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 58px;
+        min-height: 52px;
         color: #1d1d1f;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 750;
         letter-spacing: -0.03em;
         border-bottom: 1px solid rgba(0,0,0,0.12);
@@ -906,7 +931,7 @@
         <a href="/index.html#supplier-access">Supplier Access</a>
         <a href="/index.html#products">Products</a>
         <a href="/index.html#solutions">Solutions</a>
-        <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
         <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
@@ -919,6 +944,7 @@
     <div class="mobile-nav" id="mobileNav">
       <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#supplier-access">Supplier Access</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
       <a href="/products/cold-plates.html">Cold Plates</a>
@@ -926,7 +952,7 @@
       <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
       <a href="/products/deployment-components.html">Deployment Components</a>
       <a href="/products/rack-hardware.html">Rack Hardware</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
   </nav>
@@ -938,15 +964,15 @@
           <p class="product-kicker">Product · Rack-level coolant distribution</p>
 
           <h1 class="product-title">
-            In-Rack Manifolds <span>for AI liquid cooling systems.</span>
+            In-Rack Manifolds <span>for high-density liquid cooling systems.</span>
           </h1>
 
           <p class="product-text">
-            In-rack manifolds act as the central coolant distribution layer inside liquid-cooled AI racks. They distribute coolant from the CDU to individual servers and collect return flow for scalable, serviceable high-density infrastructure.
+            In-rack manifolds act as the central coolant distribution layer inside liquid-cooled high-density racks. They distribute coolant from the CDU to individual servers and collect return flow for scalable, serviceable infrastructure across GPU, HPC, colocation, and other heat-load deployments.
           </p>
 
           <div class="cta-row">
-            <a href="mailto:info@pacificaiinfrastructure.com?subject=Manifold%20Project%20Quote" class="button primary">Request project quote</a>
+            <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
             <a href="/index.html#products" class="button secondary">Back to products</a>
           </div>
         </div>
@@ -987,13 +1013,13 @@
       </section>
 
       <section class="wide">
-        <h2 class="wide-title">Built for dense AI rack environments.</h2>
+        <h2 class="wide-title">Built for dense rack environments.</h2>
         <p class="wide-copy">
           Manifolds distribute cold coolant across multiple server nodes and collect return flow for recirculation, helping high-density racks stay organized, serviceable, and repeatable.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Manifold%20Deployment%20Inquiry" class="button primary">Discuss manifold supply</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
           <a href="/products/qdc.html" class="button secondary">View QDCs</a>
         </div>
 
@@ -1006,7 +1032,7 @@
         <div class="flow-header">
           <h2>Where manifolds fit.</h2>
           <p>
-            Modern liquid-cooled AI infrastructure is built as a layered system, from facility-side cooling to rack distribution and server-level thermal transfer.
+            Modern liquid-cooled high-density infrastructure is built as a layered system, from facility-side cooling to rack distribution and server-level thermal transfer.
           </p>
         </div>
 
@@ -1159,9 +1185,9 @@
 
         <div class="tile soft-gray">
           <p class="tile-label">Target Environments</p>
-          <h2 class="tile-title">High-density AI and HPC racks.</h2>
+          <h2 class="tile-title">High-density GPU, HPC, and colocation racks.</h2>
           <p class="tile-copy">
-            AI GPU racks, HPC systems, rack liquid cooling deployments with CDU integration, enterprise deployments, colocation programs, and retrofit cooling architectures.
+            GPU racks, HPC systems, rack liquid cooling deployments with CDU integration, enterprise deployments, colocation programs, modular data centers, and retrofit cooling architectures.
           </p>
         </div>
       </section>
@@ -1169,12 +1195,12 @@
       <section class="info-band">
         <h2>Request manifold supply for your deployment.</h2>
         <p>
-          Pacific AI Infrastructure supports in-rack manifold sourcing for liquid-cooled AI and high-density compute deployments. Share your rack architecture, server count, coolant loop design, and deployment timeline to discuss configuration fit and supply alignment.
+          Pacific AI Infrastructure supports in-rack manifold sourcing for liquid-cooled GPU, HPC, colocation, modular data center, and other high heat-load deployments. Share your rack architecture, server count, coolant loop design, and deployment timeline to review configuration fit and supply alignment.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Manifold%20Deployment%20Inquiry" class="button primary">Request quote</a>
-          <a href="/index.html#products" class="button secondary">Back to products</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
+          <a href="mailto:info@pacificaiinfrastructure.com" class="button secondary">Email PAI</a>
         </div>
       </section>
 
@@ -1183,7 +1209,7 @@
 
   <footer class="footer">
     <div class="footer-top">
-      Supporting in-rack manifold sourcing, rack coolant distribution, QDC integration, and liquid cooling deployment hardware for AI infrastructure. Honolulu, Hawaii.
+      Supporting in-rack manifold sourcing, rack coolant distribution, QDC integration, and liquid cooling deployment hardware for high-density cooling infrastructure. Honolulu, Hawaii.
     </div>
 
     <div class="footer-bottom">
