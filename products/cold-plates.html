@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Direct-to-chip cold plate solutions for AI GPUs, CPUs, and high-density liquid-cooled compute environments.">
+  <meta name="description" content="Direct-to-chip cold plate solutions for GPUs, CPUs, HPC, colocation, and other high-density liquid-cooled compute environments.">
 
   <style>
     * {
@@ -86,6 +86,27 @@
     .nav-links a:hover {
       opacity: 1;
       color: #0071e3;
+    }
+
+
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #fff;
     }
 
     .mobile-menu {
@@ -709,6 +730,11 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.24s ease, opacity 0.24s ease;
+
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .mobile-nav.is-open {
@@ -721,10 +747,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 58px;
+        min-height: 52px;
         color: #1d1d1f;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 750;
         letter-spacing: -0.03em;
         border-bottom: 1px solid rgba(0,0,0,0.12);
@@ -906,7 +932,7 @@
         <a href="/index.html#supplier-access">Supplier Access</a>
         <a href="/index.html#products">Products</a>
         <a href="/index.html#solutions">Solutions</a>
-        <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
         <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
@@ -926,7 +952,7 @@
       <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
       <a href="/products/deployment-components.html">Deployment Components</a>
       <a href="/products/rack-hardware.html">Rack Hardware</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+      <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
   </nav>
@@ -938,15 +964,15 @@
           <p class="product-kicker">Product · Direct-to-chip cooling</p>
 
           <h1 class="product-title">
-            Cold Plates <span>for AI liquid cooling systems.</span>
+            Cold Plates <span>for high-density liquid cooling systems.</span>
           </h1>
 
           <p class="product-text">
-            Direct-to-chip thermal interfaces designed to remove heat at the source in liquid-cooled AI and high-density compute environments. Cold plates sit at the core of the cooling loop, helping GPU and CPU platforms operate within demanding thermal envelopes.
+            Direct-to-chip thermal interfaces designed to remove heat at the source in liquid-cooled GPU, CPU, HPC, colocation, and other high-density compute environments. Cold plates sit at the core of the cooling loop, helping high-power platforms operate within demanding thermal envelopes.
           </p>
 
           <div class="cta-row">
-            <a href="mailto:info@pacificaiinfrastructure.com?subject=Cold%20Plate%20Project%20Quote" class="button primary">Request project quote</a>
+            <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
             <a href="/index.html#products" class="button secondary">Back to products</a>
           </div>
         </div>
@@ -969,7 +995,7 @@
 
             <div class="spec">
               <strong>AI Density</strong>
-              <span>Supports high-density compute and rack-scale cooling programs.</span>
+              <span>Supports GPU, HPC, colocation, and rack-scale cooling programs.</span>
             </div>
           </div>
         </div>
@@ -993,7 +1019,7 @@
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Cold%20Plate%20Deployment%20Inquiry" class="button primary">Discuss cold plate supply</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
           <a href="/products/qdc.html" class="button secondary">View QDCs</a>
         </div>
 
@@ -1050,7 +1076,7 @@
           <p class="tile-label">Why It Matters</p>
           <h2 class="tile-title">Heat removed at the chip.</h2>
           <p class="tile-copy">
-            Cold plates remove heat directly at the GPU or CPU package, enabling higher power density and more stable liquid-cooled AI deployments.
+            Cold plates remove heat directly at the GPU or CPU package, enabling higher power density and more stable liquid-cooled deployments.
           </p>
           <p class="tile-small-copy">
             Important for dense rack environments where air cooling alone cannot support the thermal load.
@@ -1064,7 +1090,7 @@
           <p class="tile-label">Typical Applications</p>
           <h2 class="tile-title">GPU and CPU platforms.</h2>
           <p class="tile-copy">
-            Used in AI GPU servers, CPU-intensive HPC systems, OEM compute platforms, liquid-cooled racks, and custom high-density deployments.
+            Used in GPU servers, CPU-intensive HPC systems, OEM compute platforms, liquid-cooled racks, colocation deployments, and custom high-density infrastructure.
           </p>
           <p class="tile-small-copy">
             Often integrated with manifolds, QDCs, hoses, fittings, and CDU-side coolant distribution.
@@ -1156,9 +1182,9 @@
 
         <div class="tile soft-gray">
           <p class="tile-label">Target Environments</p>
-          <h2 class="tile-title">AI and HPC systems.</h2>
+          <h2 class="tile-title">GPU, HPC, and colocation systems.</h2>
           <p class="tile-copy">
-            AI GPU racks, high-performance computing environments, enterprise liquid cooling projects, high-density rack programs, and custom compute infrastructure builds.
+            GPU racks, high-performance computing environments, colocation deployments, enterprise liquid cooling projects, high-density rack programs, and custom compute infrastructure builds.
           </p>
         </div>
       </section>
@@ -1166,12 +1192,12 @@
       <section class="info-band">
         <h2>Request cold plate supply for your deployment.</h2>
         <p>
-          Pacific AI Infrastructure supports cold plate sourcing for liquid-cooled AI and high-density compute programs. Share your platform type, deployment volume, rack count, and project timeline to discuss configuration fit and supply alignment.
+          Pacific AI Infrastructure supports cold plate sourcing for liquid-cooled GPU, HPC, colocation, enterprise, and other high-density compute programs. Share your platform type, deployment volume, rack count, and project timeline so PAI can review configuration fit and supply alignment.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Cold%20Plate%20Deployment%20Inquiry" class="button primary">Request quote</a>
-          <a href="/index.html#products" class="button secondary">Back to products</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
+          <a href="mailto:info@pacificaiinfrastructure.com" class="button secondary">Email PAI</a>
         </div>
       </section>
 
@@ -1180,7 +1206,7 @@
 
   <footer class="footer">
     <div class="footer-top">
-      Supporting cold plate sourcing, liquid cooling component supply, and rack-level deployment alignment for AI infrastructure. Honolulu, Hawaii.
+      Supporting cold plate sourcing, liquid cooling component supply, and rack-level deployment alignment for high-density infrastructure. Honolulu, Hawaii.
     </div>
 
     <div class="footer-bottom">
