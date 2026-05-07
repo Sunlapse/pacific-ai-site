@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Quick disconnect couplings for AI liquid cooling systems, rack manifolds, CDU interfaces, server connections, and cold plate integration.">
+  <meta name="description" content="Quick disconnect couplings for high-density liquid cooling systems, rack manifolds, CDU interfaces, server connections, and cold plate integration.">
 
   <style>
     * {
@@ -86,6 +86,26 @@
     .nav-links a:hover {
       opacity: 1;
       color: #0071e3;
+    }
+
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #fff;
     }
 
     .mobile-menu {
@@ -709,6 +729,11 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.24s ease, opacity 0.24s ease;
+
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .mobile-nav.is-open {
@@ -721,10 +746,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 58px;
+        min-height: 52px;
         color: #1d1d1f;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 750;
         letter-spacing: -0.03em;
         border-bottom: 1px solid rgba(0,0,0,0.12);
@@ -905,8 +930,8 @@
         <a href="/index.html#deployment-types">Deployment</a>
         <a href="/index.html#supplier-access">Supplier Access</a>
         <a href="/index.html#products">Products</a>
-        <a href="/index.html#solutions">Solutions</a
-        <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+        <a href="/index.html#solutions">Solutions</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
         <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
@@ -919,14 +944,15 @@
     <div class="mobile-nav" id="mobileNav">
       <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#supplier-access">Supplier Access</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
       <a href="/products/cold-plates.html">Cold Plates</a>
       <a href="/products/manifolds.html">Manifolds</a>
+      <a href="/products/qdc.html">Quick Disconnects</a>
       <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
       <a href="/products/deployment-components.html">Deployment Components</a>
       <a href="/products/rack-hardware.html">Rack Hardware</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
   </nav>
@@ -938,7 +964,7 @@
           <p class="product-kicker">Product · Leak-free fluid connections</p>
 
           <h1 class="product-title">
-            Quick Disconnect Couplings <span>for AI liquid cooling systems.</span>
+            Quick Disconnect Couplings <span>for high-density liquid cooling systems.</span>
           </h1>
 
           <p class="product-text">
@@ -946,7 +972,7 @@
           </p>
 
           <div class="cta-row">
-            <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Project%20Quote" class="button primary">Request project quote</a>
+            <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
             <a href="/index.html#products" class="button secondary">Back to products</a>
           </div>
         </div>
@@ -982,7 +1008,7 @@
         <p class="section-kicker">Quick Disconnect Couplings</p>
         <h2>Small components. Critical connection points.</h2>
         <p>
-          QDCs are used throughout liquid-cooled AI infrastructure to reduce fluid loss, support fast service workflows, and create reliable connection points between the cooling system and compute hardware.
+          QDCs are used throughout high-density liquid cooling infrastructure to reduce fluid loss, support fast service workflows, and create reliable connection points between the cooling system and compute hardware.
         </p>
       </section>
 
@@ -993,7 +1019,7 @@
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Deployment%20Inquiry" class="button primary">Discuss QDC supply</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
           <a href="/products/manifolds.html" class="button secondary">View manifolds</a>
         </div>
 
@@ -1091,7 +1117,7 @@
           <p class="tile-label">Deployment Fit</p>
           <h2 class="tile-title">Designed around rack constraints.</h2>
           <p class="tile-copy">
-            AI racks require connector choices that fit dense physical layouts while maintaining reliable flow paths and service access.
+            High-density racks require connector choices that fit dense physical layouts while maintaining reliable flow paths and service access.
           </p>
           <p class="tile-small-copy">
             PAI helps align QDC selection with CDU, manifold, hose, and cold plate architecture.
@@ -1200,9 +1226,9 @@
 
         <div class="tile soft-gray">
           <p class="tile-label">Ideal Use Cases</p>
-          <h2 class="tile-title">AI and HPC liquid cooling systems.</h2>
+          <h2 class="tile-title">GPU, HPC, colocation, and high heat-load liquid cooling systems.</h2>
           <p class="tile-copy">
-            H100, H200, GB200, and other high-density GPU racks, CDU-to-rack connections, manifold supply and return lines, OEM liquid cooling assemblies, and retrofit deployments.
+            H100, H200, GB200, HPC, colocation, modular data center, and other high heat-load deployments, plus CDU-to-rack connections, manifold supply and return lines, OEM liquid cooling assemblies, and retrofit work.
           </p>
         </div>
       </section>
@@ -1210,12 +1236,12 @@
       <section class="info-band">
         <h2>Request QDC supply for your deployment.</h2>
         <p>
-          Pacific AI Infrastructure supports QDC sourcing for AI infrastructure projects requiring reliable rack-level fluid connections. Share your rack count, GPU platform, target timeline, and deployment location to discuss fit, configuration, and volume.
+          Pacific AI Infrastructure supports QDC sourcing for high-density cooling projects requiring reliable rack-level fluid connections. Share your rack count, GPU platform, target timeline, and deployment location so PAI can review fit, configuration, availability, and volume requirements.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=QDC%20Deployment%20Inquiry" class="button primary">Request quote</a>
-          <a href="/index.html#products" class="button secondary">Back to products</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
+          <a href="mailto:info@pacificaiinfrastructure.com" class="button secondary">Email PAI</a>
         </div>
       </section>
 
@@ -1224,7 +1250,7 @@
 
   <footer class="footer">
     <div class="footer-top">
-      Supporting QDC sourcing, rack manifold connections, CDU interfaces, server connections, and liquid cooling deployment hardware for AI infrastructure. Honolulu, Hawaii.
+      Supporting QDC sourcing, rack manifold connections, CDU interfaces, server connections, and liquid cooling deployment hardware for GPU, HPC, colocation, modular data center, and other high heat-load environments. Honolulu, Hawaii.
     </div>
 
     <div class="footer-bottom">
