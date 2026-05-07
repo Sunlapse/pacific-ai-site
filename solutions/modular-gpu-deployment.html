@@ -9,27 +9,22 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Modular GPU deployment support for compact liquid-cooled AI infrastructure, 2 to 4 GPU systems, and direct-to-chip cooling architectures.">
+  <meta name="description" content="Modular GPU deployment support for compact liquid-cooled high-density infrastructure, 2 to 4 GPU systems, and direct-to-chip cooling architectures.">
 
   <meta property="og:title" content="Modular GPU Deployment | Pacific AI Infrastructure">
-  <meta property="og:description" content="Support for compact liquid-cooled GPU systems and modular AI infrastructure deployment.">
+  <meta property="og:description" content="Support for compact liquid-cooled GPU systems and modular high-density infrastructure deployment.">
   <meta property="og:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
   <meta property="og:url" content="https://www.pacificaiinfrastructure.com/solutions/modular-gpu-deployment.html">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Modular GPU Deployment | Pacific AI Infrastructure">
-  <meta name="twitter:description" content="Support for compact liquid-cooled GPU systems and modular AI infrastructure deployment.">
+  <meta name="twitter:description" content="Support for compact liquid-cooled GPU systems and modular high-density infrastructure deployment.">
   <meta name="twitter:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -41,9 +36,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .nav {
       position: sticky;
@@ -93,12 +86,27 @@
       color: #2f2f34;
     }
 
-    .nav-links a {
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: #0071e3; }
+
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
       text-decoration: none;
+      opacity: 1;
     }
 
-    .nav-links a:hover {
-      color: #0071e3;
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #ffffff;
     }
 
     .menu-toggle {
@@ -121,17 +129,9 @@
       transition: 0.2s ease;
     }
 
-    .menu-toggle.is-open span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .menu-toggle.is-open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.is-open span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
+    .menu-toggle.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
     .mobile-menu {
       display: none;
@@ -144,11 +144,13 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
       padding: 18px 22px 24px;
+      max-height: calc(100dvh - 52px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
-    .mobile-menu.is-open {
-      display: block;
-    }
+    .mobile-menu.is-open { display: block; }
 
     .mobile-menu a {
       display: block;
@@ -160,9 +162,7 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .mobile-menu a:last-child {
-      border-bottom: 0;
-    }
+    .mobile-menu a:last-child { border-bottom: 0; }
 
     .page {
       max-width: 1180px;
@@ -221,13 +221,8 @@
       font-weight: 900;
     }
 
-    .blue {
-      color: #0071e3;
-    }
-
-    .green {
-      color: #22c55e;
-    }
+    .blue { color: #0071e3; }
+    .green { color: #22c55e; }
 
     .hero-copy {
       margin: 28px 0 0;
@@ -264,10 +259,7 @@
       box-shadow: 0 14px 28px rgba(0, 113, 227, 0.20);
     }
 
-    .btn-primary:hover {
-      background: #0066cc;
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover { background: #0066cc; transform: translateY(-1px); }
 
     .btn-secondary {
       color: #0066cc;
@@ -275,10 +267,7 @@
       border: 1px solid #0071e3;
     }
 
-    .btn-secondary:hover {
-      background: #ffffff;
-      transform: translateY(-1px);
-    }
+    .btn-secondary:hover { background: #ffffff; transform: translateY(-1px); }
 
     .model-card {
       background: rgba(255, 255, 255, 0.74);
@@ -317,15 +306,8 @@
       width: 100%;
     }
 
-    .flow-box.light {
-      background: rgba(255, 255, 255, 0.76);
-      color: #1d1d1f;
-    }
-
-    .flow-box.dark {
-      background: #111827;
-      color: #ffffff;
-    }
+    .flow-box.light { background: rgba(255, 255, 255, 0.76); color: #1d1d1f; }
+    .flow-box.dark { background: #111827; color: #ffffff; }
 
     .flow-box h3 {
       margin: 0 0 9px;
@@ -343,9 +325,7 @@
       font-weight: 500;
     }
 
-    .flow-box.dark p {
-      color: #e5e7eb;
-    }
+    .flow-box.dark p { color: #e5e7eb; }
 
     .flow-arrow {
       display: flex;
@@ -530,33 +510,14 @@
       border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .footer-top {
-      margin-bottom: 18px;
-    }
-
-    .footer a {
-      color: #6e6e73;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      color: #0071e3;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .footer-top { margin-bottom: 18px; }
+    .footer a { color: #6e6e73; text-decoration: none; }
+    .footer a:hover { color: #0071e3; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
 
     @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
 
       .hero {
         grid-template-columns: 1fr;
@@ -565,120 +526,35 @@
         padding: 38px 0 58px;
       }
 
-      .model-card {
-        max-width: 640px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
+      .model-card { max-width: 640px; }
+      .info-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 620px) {
-      .nav-inner {
-        padding: 0 16px;
-      }
-
-      .brand-link {
-        font-size: 13px;
-        gap: 8px;
-      }
-
-      .brand-link img {
-        width: 20px;
-        height: 20px;
-      }
-
-      .page {
-        padding: 18px 14px 0;
-      }
-
-      .breadcrumb {
-        display: none;
-      }
-
-      .hero {
-        padding: 36px 0 50px;
-      }
-
-      .eyebrow {
-        font-size: 12px;
-        letter-spacing: 0.18em;
-      }
-
-      .hero h1 {
-        font-size: 56px;
-      }
-
-      .hero-copy {
-        font-size: 20px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .model-card {
-        padding: 26px 18px 18px;
-        border-radius: 24px;
-      }
-
-      .model-flow {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .flow-box {
-        min-height: auto;
-        padding: 24px 18px;
-      }
-
-      .flow-arrow span {
-        transform: rotate(90deg);
-      }
-
-      .step {
-        grid-template-columns: 42px 1fr;
-        padding: 16px;
-      }
-
-      .content-section {
-        padding-top: 48px;
-        border-radius: 24px 24px 0 0;
-      }
-
-      .content-inner {
-        padding: 0 16px 34px;
-      }
-
-      .section-heading h2 {
-        font-size: 42px;
-      }
-
-      .section-heading p {
-        font-size: 18px;
-      }
-
-      .info-card {
-        padding: 22px;
-      }
-
-      .cta-panel {
-        padding: 34px 20px;
-      }
-
-      .footer {
-        padding: 28px 16px 36px;
-      }
-
-      .footer-top,
-      .footer-bottom {
-        flex-direction: column;
-      }
+      .nav-inner { padding: 0 16px; }
+      .brand-link { font-size: 13px; gap: 8px; }
+      .brand-link img { width: 20px; height: 20px; }
+      .page { padding: 18px 14px 0; }
+      .breadcrumb { display: none; }
+      .hero { padding: 36px 0 50px; }
+      .eyebrow { font-size: 12px; letter-spacing: 0.18em; }
+      .hero h1 { font-size: 56px; }
+      .hero-copy { font-size: 20px; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .model-card { padding: 26px 18px 18px; border-radius: 24px; }
+      .model-flow { grid-template-columns: 1fr; gap: 12px; }
+      .flow-box { min-height: auto; padding: 24px 18px; }
+      .flow-arrow span { transform: rotate(90deg); }
+      .step { grid-template-columns: 42px 1fr; padding: 16px; }
+      .content-section { padding-top: 48px; border-radius: 24px 24px 0 0; }
+      .content-inner { padding: 0 16px 34px; }
+      .section-heading h2 { font-size: 42px; }
+      .section-heading p { font-size: 18px; }
+      .info-card { padding: 22px; }
+      .cta-panel { padding: 34px 20px; }
+      .footer { padding: 28px 16px 36px; }
+      .footer-top, .footer-bottom { flex-direction: column; }
     }
   </style>
 </head>
@@ -697,6 +573,7 @@
       <a href="/index.html#supplier-access">Supplier Access</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
+      <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
     </div>
 
@@ -709,18 +586,18 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-      <a href="/index.html#deployment-types">Deployment</a>
-      <a href="/index.html#supplier-access">Supplier Access</a>
-      <a href="/index.html#products">Products</a>
-      <a href="/index.html#solutions">Solutions</a>
-      <a href="/products/cold-plates.html">Cold Plates</a>
-      <a href="/products/manifolds.html">Manifolds</a>
-      <a href="/products/qdc.html">Quick Disconnects</a>
-      <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
-      <a href="/products/deployment-components.html">Deployment Components</a>
-      <a href="/products/rack-hardware.html">Rack Hardware</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
-      <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
+  <a href="/index.html#deployment-types">Deployment</a>
+  <a href="/index.html#supplier-access">Supplier Access</a>
+  <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
+  <a href="/index.html#products">Products</a>
+  <a href="/index.html#solutions">Solutions</a>
+  <a href="/products/cold-plates.html">Cold Plates</a>
+  <a href="/products/manifolds.html">Manifolds</a>
+  <a href="/products/qdc.html">Quick Disconnects</a>
+  <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
+  <a href="/products/deployment-components.html">Deployment Components</a>
+  <a href="/products/rack-hardware.html">Rack Hardware</a>
+  <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
 </div>
 
 <main class="page">
@@ -741,11 +618,11 @@
       </h1>
 
       <p class="hero-copy">
-        PAI supports compact liquid-cooled GPU deployments by aligning cooling architecture, component sourcing, rack hardware, and deployment timelines around smaller high-performance AI systems.
+        PAI supports compact liquid-cooled GPU deployments by aligning cooling architecture, component sourcing, rack hardware, and deployment timelines around smaller high-density compute systems.
       </p>
 
       <div class="hero-actions">
-        <a href="mailto:info@pacificaiinfrastructure.com?subject=Modular%20GPU%20Deployment%20Inquiry" class="btn btn-primary">Discuss modular project</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="btn btn-primary">Start Project Review</a>
         <a href="/index.html#solutions" class="btn btn-secondary">Back to solutions</a>
       </div>
     </div>
@@ -756,7 +633,7 @@
       <div class="model-flow">
         <div class="flow-box light">
           <h3>Compact GPU Node</h3>
-          <p>2 to 4 GPU systems, compact servers, and smaller AI deployment footprints.</p>
+          <p>2 to 4 GPU systems, compact servers, and smaller high-density deployment footprints.</p>
         </div>
 
         <div class="flow-arrow">
@@ -804,7 +681,7 @@
 
     <div class="section-heading">
       <p class="section-kicker">Where this fits</p>
-      <h2>Smaller AI systems still need serious cooling coordination.</h2>
+      <h2>Smaller high-density systems still need serious cooling coordination.</h2>
       <p>
         Modular GPU deployments can move faster than full rack-scale builds, but they still depend on component compatibility, serviceability, coolant routing, and reliable supplier execution.
       </p>
@@ -814,7 +691,7 @@
       <div class="info-card">
         <h3>Compact deployments</h3>
         <p>
-          Support for smaller liquid-cooled GPU systems used for inference, fine-tuning, internal AI workloads, and research environments.
+          Support for smaller liquid-cooled GPU systems used for inference, fine-tuning, HPC, internal compute workloads, and research environments.
         </p>
       </div>
 
@@ -836,9 +713,12 @@
     <div class="cta-panel">
       <h2>Planning a compact liquid-cooled GPU build?</h2>
       <p>
-        Contact PAI to discuss component sourcing, compatibility, and deployment support for modular GPU infrastructure.
+        Submit your project details for PAI review. We will evaluate GPU platform, rack layout, cooling scope, component requirements, and timeline before following up.
       </p>
-      <a href="mailto:info@pacificaiinfrastructure.com?subject=Modular%20GPU%20Deployment%20Inquiry" class="btn btn-primary">Contact PAI</a>
+      <div class="hero-actions" style="justify-content: center; margin-top: 0;">
+        <a href="https://review.pacificaiinfrastructure.com" class="btn btn-primary">Start Project Review</a>
+        <a href="mailto:info@pacificaiinfrastructure.com" class="btn btn-secondary">Email PAI</a>
+      </div>
     </div>
 
   </div>
@@ -849,8 +729,6 @@
     <div>Honolulu, Hawaii</div>
     <div class="footer-links">
       <a href="/index.html">Home</a>
-      <a href="/index.html#products">Products</a>
-      <a href="/index.html#solutions">Solutions</a>
     </div>
   </div>
 
