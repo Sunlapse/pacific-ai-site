@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Deployment components for liquid-cooled AI infrastructure. Hose assemblies, QDCs, fittings, valves, and integration hardware for rack and CDU deployment.">
+  <meta name="description" content="Deployment components for liquid-cooled high-density infrastructure. Hose assemblies, QDCs, fittings, valves, and integration hardware for rack and CDU deployment.">
 
   <style>
     * {
@@ -86,6 +86,26 @@
     .nav-links a:hover {
       opacity: 1;
       color: #0071e3;
+    }
+
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #fff;
     }
 
     .mobile-menu {
@@ -699,6 +719,11 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.24s ease, opacity 0.24s ease;
+
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .mobile-nav.is-open {
@@ -711,10 +736,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 58px;
+        min-height: 52px;
         color: #1d1d1f;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 750;
         letter-spacing: -0.03em;
         border-bottom: 1px solid rgba(0,0,0,0.12);
@@ -894,9 +919,10 @@
       <div class="nav-links">
         <a href="/index.html#deployment-types">Deployment</a>
         <a href="/index.html#supplier-access">Supplier Access</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
         <a href="/index.html#products">Products</a>
         <a href="/index.html#solutions">Solutions</a>
-        <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
         <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
@@ -909,6 +935,7 @@
     <div class="mobile-nav" id="mobileNav">
       <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#supplier-access">Supplier Access</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
       <a href="/products/cold-plates.html">Cold Plates</a>
@@ -916,7 +943,6 @@
       <a href="/products/qdc.html">Quick Disconnects</a>
       <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
       <a href="/products/rack-hardware.html">Rack Hardware</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
   </nav>
@@ -928,15 +954,15 @@
           <p class="product-kicker">Product · Field deployment hardware</p>
 
           <h1 class="product-title">
-            Deployment Components <span>for liquid-cooled AI systems.</span>
+            Deployment Components <span>for liquid-cooled high-density systems.</span>
           </h1>
 
           <p class="product-text">
-            Field-ready hose assemblies, connectors, fittings, valves, routing hardware, and supporting integration components used to install, connect, service, and expand liquid-cooled AI infrastructure.
+            Field-ready hose assemblies, connectors, fittings, valves, routing hardware, and supporting integration components used to install, connect, service, and expand liquid-cooled GPU, HPC, colocation, and other high heat-load infrastructure.
           </p>
 
           <div class="cta-row">
-            <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Project%20Quote" class="button primary">Request project quote</a>
+            <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
             <a href="/index.html#products" class="button secondary">Back to products</a>
           </div>
         </div>
@@ -983,7 +1009,7 @@
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Inquiry" class="button primary">Discuss deployment supply</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
           <a href="/products/qdc.html" class="button secondary">View QDCs</a>
         </div>
 
@@ -1073,7 +1099,7 @@
             Deployment components help connect CDU outputs, rack manifolds, in-rack routing, and server-side liquid cooling assemblies.
           </p>
           <p class="tile-small-copy">
-            This is especially important for retrofit programs, hybrid air-to-liquid deployments, and phased AI rack rollouts.
+            This is especially important for retrofit programs, hybrid air-to-liquid deployments, and phased GPU, HPC, colocation, and other high-density rack rollouts.
           </p>
         </div>
 
@@ -1146,9 +1172,9 @@
 
         <div class="tile soft-gray">
           <p class="tile-label">Target Environments</p>
-          <h2 class="tile-title">AI rack deployment programs.</h2>
+          <h2 class="tile-title">High-density deployment programs.</h2>
           <p class="tile-copy">
-            New liquid cooling builds, retrofit rack conversion, hybrid cooling deployment, high-density AI clusters, CDU-connected racks, and modular GPU deployments.
+            New liquid cooling builds, retrofit rack conversion, hybrid cooling deployment, high-density GPU and HPC clusters, CDU-connected racks, colocation projects, and modular deployments.
           </p>
         </div>
       </section>
@@ -1156,12 +1182,12 @@
       <section class="info-band">
         <h2>Request deployment component supply.</h2>
         <p>
-          Pacific AI Infrastructure supports deployment-ready liquid cooling component supply for AI infrastructure projects. Share your rack design, deployment timeline, cooling architecture, and installation scope to discuss fit, assembly requirements, and supply alignment.
+          Pacific AI Infrastructure supports deployment-ready liquid cooling component supply for GPU, HPC, colocation, modular data center, and other high heat-load projects. Share your rack design, deployment timeline, cooling architecture, and installation scope for PAI review.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Deployment%20Components%20Inquiry" class="button primary">Request quote</a>
-          <a href="/index.html#products" class="button secondary">Back to products</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
+          <a href="mailto:info@pacificaiinfrastructure.com" class="button secondary">Email PAI</a>
         </div>
       </section>
 
@@ -1170,7 +1196,7 @@
 
   <footer class="footer">
     <div class="footer-top">
-      Supporting deployment component sourcing, hose assemblies, QDCs, fittings, valves, and rack-level liquid cooling installation hardware for AI infrastructure. Honolulu, Hawaii.
+      Supporting deployment component sourcing, hose assemblies, QDCs, fittings, valves, and rack-level liquid cooling installation hardware for high-density cooling infrastructure. Honolulu, Hawaii.
     </div>
 
     <div class="footer-bottom">
