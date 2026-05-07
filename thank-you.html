@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Project Review Submitted | Pacific AI Infrastructure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/IMG_3107.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+
+  <meta name="description" content="Thank you for submitting a project review request to Pacific AI Infrastructure.">
+  <meta name="robots" content="noindex, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      height: 52px;
+      background: #fbfbfd;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      overflow: visible;
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      height: 52px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      font-size: 13px;
+      position: relative;
+      z-index: 102;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-logo {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: #333;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.78;
+      transition: opacity 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      z-index: 103;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #1d1d1f;
+      margin: 4px auto;
+      border-radius: 999px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .section {
+      padding: 72px 24px;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .thank-you-card {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 32px;
+      padding: 64px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.07);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .thank-you-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, #123447, #2e6f88, #81b8c8);
+    }
+
+    .eyebrow {
+      color: #2f6f87;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin: 0 0 24px;
+      max-width: 760px;
+    }
+
+    .lead {
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.35;
+      color: #555;
+      max-width: 760px;
+      margin: 0 0 34px;
+    }
+
+    .review-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 34px 0;
+    }
+
+    .review-item {
+      background: #f5f5f7;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 18px;
+      padding: 18px;
+      font-size: 14px;
+      line-height: 1.35;
+      color: #555;
+    }
+
+    .review-item strong {
+      display: block;
+      color: #1d1d1f;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: #123447;
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(18,52,71,0.18);
+    }
+
+    .button.primary:hover {
+      background: #0d2939;
+    }
+
+    .button.secondary {
+      background: rgba(18,52,71,0.08);
+      color: #123447;
+    }
+
+    .small-note {
+      margin-top: 26px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .footer {
+      padding: 34px 24px 48px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 22px;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: #555;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 52px;
+        left: 0;
+        right: 0;
+        background: rgba(251,251,253,0.98);
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        transform: translateY(-120%);
+        transition: transform 0.22s ease;
+        z-index: 9998;
+        padding: 14px 24px 24px;
+      }
+
+      body.menu-open .mobile-menu {
+        transform: translateY(0);
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 15px 0;
+        text-decoration: none;
+        font-size: 17px;
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+      }
+
+      body.menu-open .nav-toggle span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      body.menu-open .nav-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+
+      body.menu-open .nav-toggle span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+      .section {
+        padding: 44px 16px;
+      }
+
+      .thank-you-card {
+        border-radius: 24px;
+        padding: 38px 24px;
+      }
+
+      .review-list {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-brand" aria-label="Pacific AI Infrastructure home">
+        <img src="/IMG_3107.png" alt="PAI" class="nav-logo">
+        <span>Pacific AI Infrastructure</span>
+      </a>
+      <div class="nav-links">
+        <a href="/index.html#deployment-types">Deployment</a>
+        <a href="/index.html#supplier-access">Supplier Access</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#solutions">Solutions</a>
+        <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
+        <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/index.html#deployment-types">Deployment</a>
+    <a href="/index.html#supplier-access">Supplier Access</a>
+    <a href="/index.html#products">Products</a>
+    <a href="/index.html#solutions">Solutions</a>
+    <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
+    <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
+  </div>
+
+  <main class="section">
+    <div class="container">
+      <section class="thank-you-card" aria-labelledby="thank-you-title">
+        <p class="eyebrow">Project review submitted</p>
+        <h1 id="thank-you-title">Thank you. PAI received your project details.</h1>
+        <p class="lead">
+          Our team will review your deployment type, GPU platform, rack density, cooling scope, timeline, and component requirements before following up with next steps.
+        </p>
+
+        <div class="review-list" aria-label="PAI review process">
+          <div class="review-item">
+            <strong>1. Intake review</strong>
+            We check the project basics, location, stage, cooling need, and submitted notes.
+          </div>
+          <div class="review-item">
+            <strong>2. Technical fit</strong>
+            We evaluate rack density, GPU platform, component needs, and likely cooling path.
+          </div>
+          <div class="review-item">
+            <strong>3. Next steps</strong>
+            PAI will follow up if we need drawings, specifications, quantity ranges, or a project call.
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a href="/index.html" class="button primary">Return to PAI Home</a>
+          <a href="mailto:info@pacificaiinfrastructure.com" class="button secondary">Email PAI</a>
+        </div>
+
+        <p class="small-note">
+          For urgent project timing or active RFQ support, email info@pacificaiinfrastructure.com with your company name and project location.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Pacific AI Infrastructure. All rights reserved.</div>
+      <div><a href="mailto:info@pacificaiinfrastructure.com">info@pacificaiinfrastructure.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.nav-toggle');
+    const menuLinks = document.querySelectorAll('.mobile-menu a');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
