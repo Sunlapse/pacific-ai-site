@@ -9,17 +9,17 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Liquid cooling deployment support for high-density AI infrastructure, rack-level systems, and direct-to-chip cooling environments.">
+  <meta name="description" content="Liquid cooling deployment support for high-density GPU, HPC, colocation, and other high heat-load rack environments, including direct-to-chip cooling systems.">
 
   <meta property="og:title" content="Liquid Cooling Deployment | Pacific AI Infrastructure">
-  <meta property="og:description" content="Support for deploying liquid-cooled rack infrastructure for high-density AI systems.">
+  <meta property="og:description" content="Support for deploying liquid-cooled rack infrastructure for high-density GPU, HPC, colocation, and high heat-load systems.">
   <meta property="og:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
   <meta property="og:url" content="https://www.pacificaiinfrastructure.com/solutions/liquid-cooling-deployment.html">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Liquid Cooling Deployment | Pacific AI Infrastructure">
-  <meta name="twitter:description" content="Support for deploying liquid-cooled rack infrastructure for high-density AI systems.">
+  <meta name="twitter:description" content="Support for deploying liquid-cooled rack infrastructure for high-density GPU, HPC, colocation, and high heat-load systems.">
   <meta name="twitter:image" content="https://www.pacificaiinfrastructure.com/social-preview.png">
 
   <style>
@@ -93,6 +93,26 @@
     .nav-links a { text-decoration: none; }
     .nav-links a:hover { color: #0071e3; }
 
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #fff;
+    }
+
     .menu-button {
       display: none;
       width: 44px;
@@ -145,24 +165,39 @@
       left: 0;
       right: 0;
       z-index: 9998;
-      background: rgba(255,255,255,0.98);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.14);
-      padding: 18px 22px 22px;
+      flex-direction: column;
+      padding: 18px 24px 30px;
+      background: #fbfbfd;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+      max-height: calc(100dvh - 52px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     .mobile-menu a {
-      display: block;
-      padding: 15px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
       color: #1d1d1f;
       text-decoration: none;
-      font-size: 18px;
-      font-weight: 800;
-      border-bottom: 1px solid rgba(0,0,0,0.07);
+      font-size: 22px;
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      border-bottom: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .mobile-menu a::after {
+      content: "›";
+      color: #86868b;
+      font-size: 30px;
+      line-height: 1;
     }
 
     .mobile-menu a:last-child { border-bottom: 0; }
-    .nav.open .mobile-menu { display: block; }
+    .nav.open .mobile-menu { display: flex; }
 
     .page-wrap {
       max-width: 1180px;
@@ -579,10 +614,11 @@
     </a>
 
     <div class="nav-links">
-      <a href="/#deployment">Deployment</a>
+      <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#supplier-access">Supplier Access</a>
-      <a href="/#products">Products</a>
-      <a href="/#solutions">Solutions</a>
+      <a href="/index.html#products">Products</a>
+      <a href="/index.html#solutions">Solutions</a>
+      <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
     </div>
 
@@ -598,6 +634,7 @@
   <div class="mobile-menu" id="mobileMenu">
       <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#supplier-access">Supplier Access</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
       <a href="/products/cold-plates.html">Cold Plates</a>
@@ -606,7 +643,6 @@
       <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
       <a href="/products/deployment-components.html">Deployment Components</a>
       <a href="/products/rack-hardware.html">Rack Hardware</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
   </div>
 </nav>
@@ -614,7 +650,7 @@
 <main class="page-wrap">
 
   <p class="breadcrumb">
-    <a href="/">Home</a> / <a href="/#solutions">Solutions</a> / Liquid Cooling Deployment
+    <a href="/">Home</a> / <a href="/index.html#solutions">Solutions</a> / Liquid Cooling Deployment
   </p>
 
   <section class="hero">
@@ -622,16 +658,16 @@
       <p class="eyebrow">Solution Pathway</p>
 
       <h1>
-        Deploy <span class="blue">liquid-cooled</span> rack environments for <span class="green">high-density</span> AI infrastructure.
+        Deploy <span class="blue">liquid-cooled</span> rack environments for <span class="green">high-density</span> infrastructure.
       </h1>
 
       <p class="hero-copy">
-        PAI supports new liquid cooling deployments by aligning cooling architecture, component sourcing, rack hardware, and deployment timelines around the project plan.
+        PAI supports new liquid cooling deployments by aligning cooling architecture, component sourcing, rack hardware, and deployment timelines around GPU, HPC, colocation, and other high heat-load project plans.
       </p>
 
       <div class="hero-actions">
-        <a href="mailto:info@pacificaiinfrastructure.com?subject=Liquid%20Cooling%20Deployment%20Inquiry" class="btn btn-primary">Discuss deployment project</a>
-        <a href="/#solutions" class="btn btn-secondary">Back to solutions</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="btn btn-primary">Start Project Review</a>
+        <a href="/index.html#solutions" class="btn btn-secondary">Back to solutions</a>
       </div>
     </div>
 
@@ -689,7 +725,7 @@
       <li>New direct-to-chip liquid cooling deployments</li>
       <li>Rack-level component alignment for high-density GPU systems</li>
       <li>Cold plate, manifold, QDC, hose, CDU interface, and rack hardware coordination</li>
-      <li>Deployment planning for liquid-cooled AI and HPC infrastructure</li>
+      <li>Deployment planning for liquid-cooled GPU, HPC, colocation, and high heat-load infrastructure</li>
       <li>Component compatibility support across multiple vendors</li>
       <li>Supply timing and deployment sequencing for project-based builds</li>
     </ul>
@@ -703,16 +739,19 @@
       <li>Coordinate sourcing across qualified manufacturing partners</li>
       <li>Support compatibility review between rack hardware, cooling components, and deployment requirements</li>
       <li>Help reduce confusion between product selection, supply timing, and installation readiness</li>
-      <li>Support projects where liquid cooling is part of a larger AI infrastructure rollout</li>
+      <li>Support projects where liquid cooling is part of a larger high-density infrastructure rollout</li>
     </ul>
   </section>
 
   <section class="cta-band">
-    <h2>Planning a liquid-cooled AI deployment?</h2>
+    <h2>Planning a liquid-cooled deployment?</h2>
     <p>
-      Contact Pacific AI Infrastructure to discuss rack-level cooling components, deployment hardware, and supply coordination for high-density AI infrastructure.
+      Submit your deployment details for PAI review, including GPU platform, rack density, cooling scope, timeline, and component requirements.
     </p>
-    <a href="mailto:info@pacificaiinfrastructure.com?subject=Liquid%20Cooling%20Deployment%20Inquiry" class="btn btn-primary">Contact PAI</a>
+    <div class="hero-actions" style="justify-content:center; margin-top:0;">
+      <a href="https://review.pacificaiinfrastructure.com" class="btn btn-primary">Start Project Review</a>
+      <a href="mailto:info@pacificaiinfrastructure.com" class="btn btn-secondary">Email PAI</a>
+    </div>
   </section>
 
   <footer class="footer">
