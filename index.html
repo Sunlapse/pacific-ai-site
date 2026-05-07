@@ -681,22 +681,27 @@
       }
 
       .mobile-nav {
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        z-index: 9998;
-        display: flex;
-        flex-direction: column;
-        padding: 18px 24px 30px;
-        background: #fbfbfd;
-        border-top: 1px solid rgba(0,0,0,0.08);
-        box-shadow: 0 24px 60px rgba(0,0,0,0.22);
-        transform: translateY(-18px);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.24s ease, opacity 0.24s ease;
-      }
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 24px 30px;
+  background: #fbfbfd;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+  transform: translateY(-18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.24s ease, opacity 0.24s ease;
+
+  max-height: calc(100dvh - 64px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
 
       .mobile-nav.is-open {
         transform: translateY(0);
@@ -909,20 +914,20 @@
       </button>
     </div>
 
-    <div class="mobile-nav" id="mobileNav">
-      <a href="/index.html#deployment-types">Deployment</a>
-      <a href="/index.html#supplier-access">Supplier Access</a>
-      <a href="/index.html#products">Products</a>
-      <a href="/index.html#solutions">Solutions</a>
-      <a href="/products/cold-plates.html">Cold Plates</a>
-      <a href="/products/manifolds.html">Manifolds</a>
-      <a href="/products/qdc.html">Quick Disconnects</a>
-      <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
-      <a href="/products/deployment-components.html">Deployment Components</a>
-      <a href="/products/rack-hardware.html">Rack Hardware</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/dl/aefd60">Start Project Review</a>
-      <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
-    </div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/index.html#deployment-types">Deployment</a>
+  <a href="/index.html#supplier-access">Supplier Access</a>
+  <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
+  <a href="/index.html#products">Products</a>
+  <a href="/index.html#solutions">Solutions</a>
+  <a href="/products/cold-plates.html">Cold Plates</a>
+  <a href="/products/manifolds.html">Manifolds</a>
+  <a href="/products/qdc.html">Quick Disconnects</a>
+  <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
+  <a href="/products/deployment-components.html">Deployment Components</a>
+  <a href="/products/rack-hardware.html">Rack Hardware</a>
+  <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
+</div>
   </nav>
 
   <main>
