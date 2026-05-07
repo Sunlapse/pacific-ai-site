@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="Rack hardware for liquid-cooled AI infrastructure. Rack-level mechanical and integration components for high-density compute deployments.">
+  <meta name="description" content="Rack hardware for liquid-cooled high-density infrastructure. Rack-level mechanical and integration components for GPU, HPC, colocation, modular data center, and other high heat-load deployments.">
 
   <style>
     * {
@@ -86,6 +86,27 @@
     .nav-links a:hover {
       opacity: 1;
       color: #0071e3;
+    }
+
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #fff;
+      opacity: 1;
     }
 
     .mobile-menu {
@@ -699,6 +720,10 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.24s ease, opacity 0.24s ease;
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .mobile-nav.is-open {
@@ -711,10 +736,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 58px;
+        min-height: 52px;
         color: #1d1d1f;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 750;
         letter-spacing: -0.03em;
         border-bottom: 1px solid rgba(0,0,0,0.12);
@@ -896,7 +921,7 @@
         <a href="/index.html#supplier-access">Supplier Access</a>
         <a href="/index.html#products">Products</a>
         <a href="/index.html#solutions">Solutions</a>
-        <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
         <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
@@ -909,6 +934,7 @@
     <div class="mobile-nav" id="mobileNav">
       <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#supplier-access">Supplier Access</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
       <a href="/products/cold-plates.html">Cold Plates</a>
@@ -916,7 +942,7 @@
       <a href="/products/qdc.html">Quick Disconnects</a>
       <a href="/products/cdu-interfaces.html">CDU Interfaces</a>
       <a href="/products/deployment-components.html">Deployment Components</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/d/aefd60" target="_blank" rel="noopener">Start Project Review</a>
+      <a href="/products/rack-hardware.html">Rack Hardware</a>
       <a href="mailto:info@pacificaiinfrastructure.com">Contact PAI</a>
     </div>
   </nav>
@@ -928,22 +954,22 @@
           <p class="product-kicker">Product · Rack-level mechanical infrastructure</p>
 
           <h1 class="product-title">
-            Rack Hardware <span>for liquid-cooled AI deployments.</span>
+            Rack Hardware <span>for liquid-cooled high-density deployments.</span>
           </h1>
 
           <p class="product-text">
-            Structural and mechanical components that support high-density GPU racks, liquid cooling hardware, manifold mounting, hose routing, service access, and clean rack-scale deployment.
+            Structural and mechanical components that support high-density GPU, HPC, colocation, modular data center, and other heat-load environments where rack layout, liquid cooling hardware, manifold mounting, hose routing, and service access must be planned together.
           </p>
 
           <div class="cta-row">
-            <a href="mailto:info@pacificaiinfrastructure.com?subject=Rack%20Hardware%20Deployment%20Inquiry" class="button primary">Request project quote</a>
+            <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
             <a href="/index.html#products" class="button secondary">Back to products</a>
           </div>
         </div>
 
         <div class="product-visual-card">
           <div class="product-image-wrap">
-            <img src="/images/rack-hardware.png" alt="Rack hardware for liquid-cooled AI infrastructure">
+            <img src="/images/rack-hardware.png" alt="Rack hardware for liquid-cooled high-density infrastructure">
           </div>
 
           <div class="spec-strip">
@@ -979,11 +1005,11 @@
       <section class="wide">
         <h2 class="wide-title">Built around high-density rack constraints.</h2>
         <p class="wide-copy">
-          AI rack deployments require mechanical planning for mounting, coolant routing, manifold placement, cable clearance, and maintenance access.
+          High-density rack deployments require mechanical planning for mounting, coolant routing, manifold placement, cable clearance, and maintenance access.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Rack%20Hardware%20Deployment%20Inquiry" class="button primary">Discuss rack hardware</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
           <a href="/products/manifolds.html" class="button secondary">View manifolds</a>
         </div>
 
@@ -1040,13 +1066,13 @@
           <p class="tile-label">Mechanical Integration</p>
           <h2 class="tile-title">Mounting systems, rails, and support hardware.</h2>
           <p class="tile-copy">
-            Rack hardware supports servers, manifolds, fluid distribution components, and deployment layouts inside high-density AI racks.
+            Rack hardware supports servers, manifolds, fluid distribution components, and deployment layouts inside high-density racks.
           </p>
           <p class="tile-small-copy">
             PAI supports rack-level mechanical sourcing for new builds, upgrades, and liquid cooling retrofit projects.
           </p>
           <div class="tile-image">
-            <img src="/images/rack-hardware.png" alt="Rack hardware for AI infrastructure">
+            <img src="/images/rack-hardware.png" alt="Rack hardware for high-density infrastructure">
           </div>
         </div>
 
@@ -1070,10 +1096,10 @@
           <p class="tile-label">Deployment Use</p>
           <h2 class="tile-title">For high-density GPU and liquid-cooled rack environments.</h2>
           <p class="tile-copy">
-            Rack hardware supports liquid-cooled AI systems where density, coolant routing, and serviceability must be planned together.
+            Rack hardware supports liquid-cooled high-density systems where density, coolant routing, and serviceability must be planned together.
           </p>
           <p class="tile-small-copy">
-            Useful for H100, H200, GB200, modular GPU deployments, and rack-scale infrastructure requiring structured mechanical integration.
+            Useful for H100, H200, GB200, modular GPU deployments, HPC clusters, colocation environments, and rack-scale infrastructure requiring structured mechanical integration.
           </p>
         </div>
 
@@ -1195,9 +1221,9 @@
 
         <div class="tile soft-gray">
           <p class="tile-label">Ideal Use Cases</p>
-          <h2 class="tile-title">AI racks, GPU clusters, and retrofit deployments.</h2>
+          <h2 class="tile-title">GPU clusters, HPC, colocation, and retrofit deployments.</h2>
           <p class="tile-copy">
-            Rack-level hardware for high-density AI infrastructure, modular GPU deployment, liquid cooling retrofit projects, and large-scale data center builds.
+            Rack-level hardware for high-density GPU infrastructure, HPC, colocation, modular deployment, liquid cooling retrofit projects, and large-scale data center builds.
           </p>
         </div>
       </section>
@@ -1205,12 +1231,12 @@
       <section class="info-band">
         <h2>Request rack hardware support for your deployment.</h2>
         <p>
-          Pacific AI Infrastructure supports sourcing and coordination for rack hardware used in liquid-cooled AI infrastructure. Share your rack type, GPU platform, manifold layout, cooling approach, and deployment timeline to discuss fit.
+          Pacific AI Infrastructure supports sourcing and coordination for rack hardware used in liquid-cooled high-density infrastructure. Share your rack type, GPU platform, manifold layout, cooling approach, and deployment timeline for PAI review.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=Rack%20Hardware%20Deployment%20Inquiry" class="button primary">Request quote</a>
-          <a href="/index.html#products" class="button secondary">Back to products</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
+          <a href="mailto:info@pacificaiinfrastructure.com" class="button secondary">Email PAI</a>
         </div>
       </section>
 
@@ -1219,7 +1245,7 @@
 
   <footer class="footer">
     <div class="footer-top">
-      Supporting rack hardware, manifold mounting, hose routing, mechanical integration, and liquid cooling deployment components for AI infrastructure. Honolulu, Hawaii.
+      Supporting rack hardware, manifold mounting, hose routing, mechanical integration, and liquid cooling deployment components for GPU, HPC, colocation, modular data center, and other high heat-load infrastructure. Honolulu, Hawaii.
     </div>
 
     <div class="footer-bottom">
