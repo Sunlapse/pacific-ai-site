@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
-  <meta name="description" content="CDU interface hardware and integration assemblies for liquid-cooled AI infrastructure. Supporting rack-to-CDU coolant distribution, serviceability, and system integration.">
+  <meta name="description" content="CDU interface hardware and integration assemblies for liquid-cooled high-density infrastructure. Supporting rack-to-CDU coolant distribution, serviceability, and system integration.">
 
   <style>
     * {
@@ -86,6 +86,27 @@
     .nav-links a:hover {
       opacity: 1;
       color: #0071e3;
+    }
+
+    .nav-review-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #0071e3;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    .nav-review-button:hover {
+      background: #0077ed;
+      color: #fff;
+      opacity: 1;
     }
 
     .mobile-menu {
@@ -707,6 +728,11 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.24s ease, opacity 0.24s ease;
+
+        max-height: calc(100dvh - 64px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .mobile-nav.is-open {
@@ -719,10 +745,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 58px;
+        min-height: 52px;
         color: #1d1d1f;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 750;
         letter-spacing: -0.03em;
         border-bottom: 1px solid rgba(0,0,0,0.12);
@@ -904,7 +930,7 @@
         <a href="/index.html#supplier-access">Supplier Access</a>
         <a href="/index.html#products">Products</a>
         <a href="/index.html#solutions">Solutions</a>
-        <a href="https://pai-cooling-portal-x3iv.glide.page/dl/aefd60" class="button primary">Start Project Review</a>
+        <a href="https://review.pacificaiinfrastructure.com" class="nav-review-button">Start Project Review</a>
         <a href="mailto:info@pacificaiinfrastructure.com">Contact</a>
       </div>
 
@@ -917,7 +943,7 @@
     <div class="mobile-nav" id="mobileNav">
       <a href="/index.html#deployment-types">Deployment</a>
       <a href="/index.html#supplier-access">Supplier Access</a>
-      <a href="https://pai-cooling-portal-x3iv.glide.page/dl/aefd60">Start Project Review</a>
+      <a href="https://review.pacificaiinfrastructure.com">Start Project Review</a>
       <a href="/index.html#products">Products</a>
       <a href="/index.html#solutions">Solutions</a>
       <a href="/products/cold-plates.html">Cold Plates</a>
@@ -936,15 +962,15 @@
           <p class="product-kicker">Product · CDU connection layer</p>
 
           <h1 class="product-title">
-            CDU Interfaces <span>for liquid-cooled AI racks.</span>
+            CDU Interfaces <span>for liquid-cooled high-density racks.</span>
           </h1>
 
           <p class="product-text">
-            Interface hardware and integration assemblies that connect liquid-cooled racks to coolant distribution units, supporting supply and return routing, serviceability, and rack-level system integration.
+            Interface hardware and integration assemblies that connect liquid-cooled racks to coolant distribution units, supporting supply and return routing, serviceability, and rack-level system integration for GPU, HPC, colocation, and other high heat-load deployments.
           </p>
 
           <div class="cta-row">
-            <a href="mailto:info@pacificaiinfrastructure.com?subject=CDU%20Interface%20Project%20Quote" class="button primary">Request project quote</a>
+            <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
             <a href="/index.html#products" class="button secondary">Back to products</a>
           </div>
         </div>
@@ -991,7 +1017,7 @@
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=CDU%20Interface%20Deployment%20Inquiry" class="button primary">Discuss CDU interface supply</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
           <a href="/products/manifolds.html" class="button secondary">View manifolds</a>
         </div>
 
@@ -1051,7 +1077,7 @@
             CDU interfaces help avoid mismatch between the CDU, manifold layout, hose routing, valve placement, and field installation requirements.
           </p>
           <p class="tile-small-copy">
-            Important for high-density GPU racks where service access, flow path clarity, and deployment consistency matter.
+            Important for high-density GPU, HPC, colocation, and other high heat-load racks where service access, flow path clarity, and deployment consistency matter.
           </p>
           <div class="tile-image">
             <img src="/images/cdu-main.png" alt="CDU interface hardware">
@@ -1062,7 +1088,7 @@
           <p class="tile-label">Typical Applications</p>
           <h2 class="tile-title">Rack cooling integration.</h2>
           <p class="tile-copy">
-            Used in CDU-connected liquid cooling systems, in-rack CDU layouts, floor-mounted CDU architectures, and direct-to-chip AI rack deployments.
+            Used in CDU-connected liquid cooling systems, in-rack CDU layouts, floor-mounted CDU architectures, and direct-to-chip high-density rack deployments.
           </p>
           <p class="tile-small-copy">
             Often aligned with manifolds, hoses, valves, quick disconnects, and rack-level routing hardware.
@@ -1154,9 +1180,9 @@
 
         <div class="tile soft-gray">
           <p class="tile-label">Target Environments</p>
-          <h2 class="tile-title">AI and HPC racks.</h2>
+          <h2 class="tile-title">GPU and HPC racks.</h2>
           <p class="tile-copy">
-            High-density GPU rack programs, in-rack CDU deployments, floor-mounted CDU architectures, enterprise liquid cooling projects, and custom rack liquid cooling builds.
+            High-density GPU rack programs, HPC deployments, colocation environments, in-rack CDU deployments, floor-mounted CDU architectures, enterprise liquid cooling projects, and custom rack liquid cooling builds.
           </p>
         </div>
       </section>
@@ -1164,12 +1190,12 @@
       <section class="info-band">
         <h2>Request CDU interface supply for your deployment.</h2>
         <p>
-          Pacific AI Infrastructure supports CDU-side interface hardware and connection assemblies for liquid-cooled AI deployments. Share your rack architecture, CDU type, deployment timeline, and system layout to discuss configuration fit and supply alignment.
+          Pacific AI Infrastructure supports CDU-side interface hardware and connection assemblies for liquid-cooled GPU, HPC, colocation, and high heat-load deployments. Share your rack architecture, CDU type, deployment timeline, and system layout so PAI can review configuration fit and supply alignment.
         </p>
 
         <div class="cta-row">
-          <a href="mailto:info@pacificaiinfrastructure.com?subject=CDU%20Interface%20Deployment%20Inquiry" class="button primary">Request quote</a>
-          <a href="/index.html#products" class="button secondary">Back to products</a>
+          <a href="https://review.pacificaiinfrastructure.com" class="button primary">Start Project Review</a>
+          <a href="mailto:info@pacificaiinfrastructure.com" class="button secondary">Email PAI</a>
         </div>
       </section>
 
@@ -1178,7 +1204,7 @@
 
   <footer class="footer">
     <div class="footer-top">
-      Supporting CDU interface hardware, liquid cooling component sourcing, and rack-level deployment alignment for AI infrastructure. Honolulu, Hawaii.
+      Supporting CDU interface hardware, liquid cooling component sourcing, and rack-level deployment alignment for high-density infrastructure. Honolulu, Hawaii.
     </div>
 
     <div class="footer-bottom">
